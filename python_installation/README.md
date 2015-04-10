@@ -1,51 +1,51 @@
 # Let’s start with Python
 
-We're finally here!
+ついにここまで来ました！We're finally here!
 
-But first, let us tell you what Python is. Python is a very popular programming language that can be used for creating websites, games, scientific software, graphics and much, much more.
+けど、最初にPythonとは何かお話させて下さいね。Pythonはとても人気のあるプログラミング言語です。Webサイトや、ゲーム、サイエンス、グラッフィックス、などなど、たくさんの場面で使われています。
 
-Python originated in the late 1980s and its main goal is to be readable by human beings (not only machines!), which is why it looks much simpler than other programming languages. This makes it easy to learn, but don't worry, Python is also really powerful!
+Pythonは1980年台の終わりに、人間が読みやすい（機械だけでなく）言語を目的に開発されました。だから、他の言語に比べて、Pythonはとてもシンプルで、勉強しやすいのです。でもご心配なく、Pythonはとってもパワフルな言語でもありますから！
 
 # Python installation
 
-> This subchapter is based on a tutorial by Geek Girls Carrots (http://django.carrots.pl/)
+> このセクションは、Geek Girls Carrots (http://django.carrots.pl/)のチュートリアルをもとに作成されています。
 
-Django is written in Python. We need Python to do anything in Django. Let's start with installing it! We want you to install Python 3.4, so if you have any earlier version, you will need to upgrade it.
+Django　は、Pythonで開発されています。なにをするにせよ、まずはPythonが必要です。インストールしましょう！　Python 3.4 をインストールします。3.4以前のバージョンをインストール済みの場合は、アップグレードしてください。
 
 ### Windows
 
-You can download Python for Windows from the website https://www.python.org/downloads/release/python-343/. After downloading the ***.msi** file, you should run it (double-click on it) and follow the instructions there. It is important to remember the path (the directory) where you installed Python. It will be needed later!
+Windowsをお使いのかたは、　次のリンクからダウンロードすることができます。 https://www.python.org/downloads/release/python-343/.  ***.msi** ファイルをダウンロードしたら、ダブルクリックして実行して、指示のとおりインストールしてください。Pythonをどのディレクトリにインストールしたか確認して、おぼえておいてくださいね。後ほど必要になってきます。
 
 ### Linux
 
-It is very likely that you already have Python installed out of the box. To check if you have it installed (and which version it is), open a console and type the following command:
+おそらく殆どの場合、Pythonはすでにインストール済みでしょう。インストールされているか確認するためには（バージョンを確認するためにも）、コンソールを起動して次のコマンドを打ってください。
 
     $ python3 --version
     Python 3.4.2
 
-If you don't have Python installed or if you want a different version, you can install it as follows:
+もし、Pythonがインストールされていない場合、あるいはバージョンが古い場合は、次の指示に従ってインストールしてください。
 
 #### Ubuntu
 
-Type this command into your console:
+次のコマンドをコンソールに打って下さい。
 
     sudo apt-get install python3.4
 
 #### Fedora
 
-Use this command in your console:
+次のコマンドをコンソールに打って下さい。
 
     sudo yum install python3.4
 
 ### OS X
 
-You need to go to the website https://www.python.org/downloads/release/python-342/ and download the Python installer:
+Webサイトからダウンロードしてインストールしましょう。 https://www.python.org/downloads/release/
 
-* download the *Mac OS X 64-bit/32-bit installer* *DMG* file,
-* double click to open it,
-* double click *Python.mpkg* to run the installer.
+*  *Mac OS X 64-bit/32-bit installer* *DMG* ファイルをダウンロードして下さい。
+* ダブルクリックで開いてください。
+*  *Python.mpkg* をダブルクリックして、インストーラーを実行してください。
 
-Verify the installation was successful by opening the *Terminal* application and running the `python3` command:
+インストールが正しく行われたか確認するために、 *ターミナル* を開いて、`python3` コマンド次のようにタイプしてみましょう。
 
     $ python3 --version
     Python 3.4.2
