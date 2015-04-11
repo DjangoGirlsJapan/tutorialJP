@@ -1,37 +1,37 @@
 # CSS - make it pretty!
 
-Our blog still looks pretty ugly, right? Time to make it nice! We will use CSS for that.
+ブログはつくりましたが、このままだとカッコ良くないですよね。カッコよくしていきましょう。ここからはCSSを使っていきます。
 
 ## What is CSS?
 
 Cascading Style Sheets (CSS) is a language used for describing the look and formatting of a website written in markup language (like HTML). Treat it as make-up for our webpage ;).
 
-But we don't want to start from scratch again, right? We will, once more, use something that has already been done by programmers and released on the Internet for free. You know, reinventing the wheel is no fun.
+でも、またゼロから作りたくないですよね。プログラマーたちがすでに作って無料で公開しているツールを使いましょう。わざわざイチから作り直す必要はないですからね。
 
 ## Let's use Bootstrap!
 
-Bootstrap is one of the most popular HTML and CSS frameworks for developing beautiful websites: http://getbootstrap.com/
+Bootstrap は美しいWebサイトを開発するためのHTMLとCSSのフレームワークとしてとても有名です: http://getbootstrap.com/
 
-It was written by programmers who worked for Twitter and is now developed by volunteers from all over the world.
+これは、もともとTwitterのプログラマーが作成したもので、今は、世界中の有志のボランティアで開発されています。
 
 ## Install Bootstrap
 
-To install Bootstrap, you need to add this to your `<head>` in your `.html` file (`blog/templates/blog/post_list.html`):
+Bootstrapをインストールするには、 `.html` ファイル (`blog/templates/blog/post_list.html`)　の`<head>` の中に、次のとおり書き加えてください。:
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
 
-This doesn't add any files to your project. It just points to files that exist on the internet.
-Just go ahead, open your website and refresh the page. Here it is!
+これは、あなたのプロジェクトにはファイルを追加していません。インターネット上にあるファイルを指しているだけです。
+では、Webサイトを開いてページを再読み込みしてください。
 
 ![Figure 14.1](images/bootstrap1.png)
 
-Looking nicer already!
+これだけで見た目がずいぶん良くなりましたね！
 
 ## Static files in Django
 
-Another thing you will learn about today is called __static files__. Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
+もう１つ、今日ここで学ぶことは、 __静的ファイル__です. 静的ファイルとは、CSSファイルや画像ファイルといった、動的ではなく、呼び出Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
 
 CSS is a static file, so in order to customize CSS, we need to first configure static files in Django. You'll only need to do it once. Let's start:
 
