@@ -1,16 +1,16 @@
 # What is Django?
 
-Django (_/ˈdʒæŋɡoʊ/ jang-goh_) is a free and open source web application framework, written in Python. It's a web framework - a set of components that helps you to develop websites faster and easier.
+Django (_/ˈdʒæŋɡoʊ/ jang-goh_) は、無料でオープンソースとして公開されているPythonを使用したWebアプリケーションフレームワークです。Webフレームワーク、つまり、Web対応のアプリケーション構築を早く簡単に開発する枠組みです。
 
-You see, when you're building a website, you always need a similiar set of components: a way to handle user authentication (signing up, signing in, signing out), a management panel for your website, forms, a way to upload files, etc.
+ほら、Webサイトを構築する時、同じような構造が毎回必要になってきますよね。ユーザー認証（サインアップ、サインイン、サインアウト）、管理者用の画面、フォーム、ファイルのアップロードなど。
 
-Luckily for you other people long ago noticed that web developers face similar problems when building a new site, so they teamed up and created frameworks (Django is one of them) that give you ready-made components you can use.
+幸運なことに、開発者たちは同じ問題をLuckily for you other people long ago noticed that web developers face similar problems when building a new site, so they teamed up and created frameworks (Django is one of them) that give you ready-made components you can use.
 
 Frameworks exist to save you from having to reinvent the wheel and help alleviate some of the overhead when you’re building a new site.
 
 ## Why do you need a framework?
 
-To understand what Django actually is for, we need to take a closer look at the servers. The first thing is that the server needs to know that you want it to serve you a webpage.
+Djangoを本当に理解するために、サーバーをもっとよく見てみましょう。To understand what Django actually is for, we need to take a closer look at the servers. The first thing is that the server needs to know that you want it to serve you a webpage.
 
 Imagine a mailbox (port) which is monitored for incoming letters (requests). This is done by a web server. The web server reads the letter, and sends a response with a webpage. But when you want to send something, you need to have some content. And Django is something that helps you create the content.
 

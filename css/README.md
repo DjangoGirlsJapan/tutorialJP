@@ -31,29 +31,29 @@ Bootstrapをインストールするには、 `.html` ファイル (`blog/templa
 
 ## Static files in Django
 
-もう１つ、今日ここで学ぶことは、 __静的ファイル__です. 静的ファイルとは、CSSファイルや画像ファイルといった、動的ではなく、呼び出Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
+もう１つ、今日ここで学ぶことは、 __静的ファイル__です. 静的ファイルとは、CSSファイルや画像ファイルといった、Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
 
 CSS is a static file, so in order to customize CSS, we need to first configure static files in Django. You'll only need to do it once. Let's start:
 
 ### Configure static files in Django
 
-First, we need to create a directory to store our static files in. Go ahead and create a directory called `static` inside your `djangogirls` directory.
+始めに、静的ファイルを保存するためのディレクトリを作ります。 `djangogirls` ディレクトリの中に、ディレクトリを作成して`static` と名前をつけてください。.
 
     djangogirls
     ├─── static
     └─── manage.py
 
-Open up the `mysite/settings.py` file, scroll to the bottom of it and add the following lines:
+ `mysite/settings.py` ファイルを開き、下にスクロールして次の行を追加して下さい。
 
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, "static"),
     )
 
-This way Django will know where to find your static files.
+これで、あなたの静的ファイルの保存場所をDjangoが分かってくれます。
 
 ## Your first CSS file!
 
-Let's create a CSS file now, to add your own style to your web-page. Create a new directory called `css` inside your `static` directory. Then create a new file called `blog.css` inside this `css` directory. Ready?
+CSSファイルを作って、Webサイトにあなたのスタイル設定していきましょう。 `static` ディレクトリの中に、`css` という名前の新しいディレクトリを作成してください。. その`css` ディレクトリの中に、`blog.css` という名前の新しいファイルを作成してください。準備はいいですか？
 
     static
     └─── css
@@ -65,15 +65,15 @@ We won't be going too deep into customizing and learning about CSS here, because
 
 But let's do at least a little. Maybe we could change the color of our header? To understand colors, computers use special codes. They start with `#` and are followed by 6 letters (A-F) and numbers (0-9). You can find color codes for example here: http://www.colorpicker.com/. You may also use [predefined colors](http://www.w3schools.com/cssref/css_colornames.asp), such as `red` and `green`.
 
-In your `static/css/blog.css` file you should add the following code:
+ `static/css/blog.css` ファイルに、次のコードを記述しましょう。
 
     h1 a {
         color: #FCA205;
     }
 
-`h1 a` is a CSS Selector. This means we're applying our styles to any `a` element inside of an `h1` element (e.g. when we have in code something like: `<h1><a href="">link</a></h1>`).  In this case, we're telling it to change its color to `#FCA205`, which is orange. Of course, you can put your own color here!
+`h1 a` はCSSセレクタです。`h1` 要素の中にある`a` 要素 （例：このようなコードのこと `<h1><a href="">link</a></h1>`）にスタイルを適用します、という意味になります。この場合、テキストの色を`#FCA205`、オレンジ色にする、という意味です。もちろん、あなたの好きな色に変更してもいいですよ。
 
-In a CSS file we determine styles for elements in the HTML file. The elements are identified by the element name (i.e. `a`, `h1`, `body`), the attribute `class` or the attribute `id`. Class and id are names you give the element by yourself. Classes define groups of elements, and ids point to specific elements. For example, the following tag may be identified by CSS using the tag name `a`, the class `external_link`, or the id `link_to_wiki_page`:
+CSSファイルで、HTMLの各要素のスタイルを指定していきます。 The elements are identified by the element name (i.e. `a`, `h1`, `body`), the attribute `class` or the attribute `id`. Class and id are names you give the element by yourself. Classes define groups of elements, and ids point to specific elements. For example, the following tag may be identified by CSS using the tag name `a`, the class `external_link`, or the id `link_to_wiki_page`:
 
     <a href="http://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
 
@@ -87,9 +87,9 @@ We're just loading static files here :). Then, between the `<head>` and `</head>
 
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
-We just told our template where our CSS file is located.
+これで、テンプレートにCSSファイルがある場所を教えたわけです。
 
-Your file should now look like this:
+あなたのファイルは、このようになっていますか:
 
     {% load staticfiles %}
     <html>
