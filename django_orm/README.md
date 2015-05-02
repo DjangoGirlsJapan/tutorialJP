@@ -23,23 +23,23 @@
 
 ### All objects
 
-最初に、postsデータを全部表示させてみましょう。次のコマンドで、postsのデータを全部表示させることが出来ます。
+最初に、ポストデータを全部表示させてみましょう。次のコマンドで、ポストのデータを全部表示させることが出来ます。
 
     >>> Post.objects.all()
     Traceback (most recent call last):
           File "<console>", line 1, in <module>
     NameError: name 'Post' is not defined
 
-ごめんなさい、エラーになってしまいましたね。Postがないというエラーです。その通りなんです。最初にインポートをしななくてはならないのに、忘れていました。
+ごめんなさい、エラーになってしまいましたね。Postがないというエラーです。その通りなんです。最初にインポートをしなくてはならないのに、忘れていました。
 
     >>> from blog.models import Post
 
-こんな風に書くだけで、blog.modelsからPostモデルをインポート出来ます。それでは、もう一度試してみましょう。
+こんな風に書くだけで、`blog.models`から`Post`モデルをインポート出来ます。それでは、もう一度試してみましょう。
 
     >>> Post.objects.all()
     [<Post: my post title>, <Post: another post title>]
 
-さっきDjangoの管理画面から作ったpostsのリストが表示されました。だけど、次はこのコンソール画面から、新たにpostsを作ってみたいですよね。それはどうすればいいのでしょうか。
+さっきDjangoの管理画面から作ったポストのリストが表示されました。だけど、次はこのコンソール画面から、新たにポストを作ってみたいですよね。それはどうすればいいのでしょうか。
 
 ### Create object
 
@@ -64,7 +64,7 @@
 
 `ola` というユーザ名の `User` モデルのインスタンスを、取り出せたでしょう？よかった！勿論、他のユーザ名のユーザを取り出しても構いません。
 
-さあ、遂にコンソール画面から、最初のpostを作成出来ますね。
+さあ、遂にコンソール画面から、最初のポストを作成出来ますね。
 
     >>> Post.objects.create(author = me, title = 'Sample title', text = 'Test')
 
@@ -79,26 +79,26 @@
 
 ### Filter objects
 
-クエリセットの大部分は、フィルタ機能だと言えるでしょう。ユーザolaさんのpostsを全部確認してみましょうか。全部のpostsを取り出すのではなく、olaさんのpostsだけを取り出したい場合は、`Post.objects.all()` の `all` を `filter` に変更します。クエリセットの結果として、カッコの中に、blogの内容が一覧で表示されました。以下の例だと、 `author` が `me` と等しいものだけが抽出されています。
+クエリセットの大部分は、フィルタ機能だと言えるでしょう。ユーザolaさんのポストを全部確認してみましょうか。全部のポストを取り出すのではなく、olaさんのポストだけを取り出したい場合は、`Post.objects.all()` の `all` を `filter` に変更します。クエリセットの結果として、カッコの中に、blogの内容が一覧で表示されました。以下の例だと、 `author` が `me` と等しいものだけが抽出されています。
 
     >>> Post.objects.filter(author=me)
     [<Post: Sample title>, <Post: Post number 2>, <Post: My 3rd post!>, <Post: 4th title of post>]
 
-もしかすると `title` フィールドに `title` という単語が含まれているpostsだけを取り出したくなるかもしれませんね。
+もしかすると `title` フィールドに `title` という単語が含まれているポストだけを取り出したくなるかもしれませんね。
 
     >>> Post.objects.filter(title__contains='title')
     [<Post: Sample title>, <Post: 4th title of post>]
 
 > **Note** `title` と `contains` の間に、アンダーバーが2個続いていますが、これはDjangoのORMの構文です。フィールド名のtitleと、照合タイプのcontainsを、2つのアンダーバーで連結させています。もしアンダーバーが1個だけだと、title_contains というフィールド名だと判断されてしまい、エラーになります。("FieldError: Cannot resolve keyword title_contains")
 
-また、公開済みの全postsを取り出すことも出来ます。全てのpostsの中から、既に公開済みのpostsを取り出してみましょう。それには、 `published_date` を指定します。
+また、公開済みの全ポストを取り出すことも出来ます。全てのポストの中から、既に公開済みのポストを取り出してみましょう。それには、 `published_date` を指定します。
 
 
     >>> from django.utils import timezone
     >>> Post.objects.filter(published_date__lte=timezone.now())
     []
 
-そうでした、残念なことに、まだどのpostsも公開されていませんね。じゃあ、postsを公開してみるとしましょう。まず公開するpostsを決めましょう。
+そうでした、残念なことに、まだどのポストも公開されていませんね。じゃあ、ポストを公開してみるとしましょう。まず公開するポストを決めましょう。
 
     >>> post = Post.objects.get(id=1)
 
@@ -106,7 +106,7 @@
 
     >>> post.publish()
 
-じゃあ、もう一度公開済みのpostsを取り出しましょう。(上方向キーを3回押せば、さっきのコマンドを呼び出せるでしょう。コマンドを表示出来たら、Enterキーを押してみましょう)
+じゃあ、もう一度公開済みのポストを取り出しましょう。(上方向キーを3回押せば、さっきのコマンドを呼び出せるでしょう。コマンドを表示出来たら、Enterキーを押してみましょう)
 
     >>> Post.objects.filter(published_date__lte=timezone.now())
     [<Post: Sample title>]
