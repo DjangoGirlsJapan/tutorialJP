@@ -10,16 +10,16 @@
 
 Gedit　はオープンソースの無料エディタです。全てのOSで使用できます。 
 
-[Download it here](https://wiki.gnome.org/Apps/Gedit#Download)
+[ダウンロード](https://wiki.gnome.org/Apps/Gedit#Download) 
 
 ## Sublime Text 2
 
 Sublime Text は、とても人気のエディタです。無料の評価版があり、インストールも使い方も簡単です。こちらも全てのOSで利用できます。
 
-[Download it here](http://www.sublimetext.com/2)
+[ダウンロード](http://www.sublimetext.com/2)
 
 ## Atom
 
 Atom は、[GitHub](http://github.com/)による新しいエディタです。無料で、オープンソースで、インストールも使い方も簡単です。Windows、OSX、 Linuxで利用可能です。
 
-[Download it here](https://atom.io/)
+[ダウンロード](https://atom.io/)
