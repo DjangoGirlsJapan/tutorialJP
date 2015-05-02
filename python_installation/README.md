@@ -52,4 +52,4 @@ Webサイトからダウンロードしてインストールしましょう。 h
 
 ----
 
-If you have any doubts or if something went wrong and you have no idea what to do next - please ask your coach! Sometimes things are not going smoothly and it's better to ask for help from someone with more experience.
+分からない時や、質問がある時は、コーチに質問してくださいね。ときどき上手くいかないこともあります。そんな時は、経験豊富な人に聞くといいですよ。
