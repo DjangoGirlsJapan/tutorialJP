@@ -1,8 +1,8 @@
 # Let’s start with Python
 
-ついにここまで来ました！We're finally here!
+ついにここまで来ました！
 
-けど、最初にPythonとは何かお話させて下さいね。Pythonはとても人気のあるプログラミング言語です。Webサイトや、ゲーム、サイエンス、グラッフィックス、などなど、たくさんの場面で使われています。
+まずは、最初にPythonとは何かお話させて下さいね。Pythonはとても人気のあるプログラミング言語です。Webサイトや、ゲーム、サイエンス、グラッフィックス、などなど、たくさんの場面で使われています。
 
 Pythonは1980年台の終わりに、人間が読みやすい（機械だけでなく）言語を目的に開発されました。だから、他の言語に比べて、Pythonはとてもシンプルで、勉強しやすいのです。でもご心配なく、Pythonはとってもパワフルな言語でもありますから！
 
@@ -52,4 +52,4 @@ Webサイトからダウンロードしてインストールしましょう。 h
 
 ----
 
-If you have any doubts or if something went wrong and you have no idea what to do next - please ask your coach! Sometimes things are not going smoothly and it's better to ask for help from someone with more experience.
+分からない時や、質問がある時は、コーチに質問してくださいね。ときどき上手くいかないこともあります。そんな時は、経験豊富な人に聞くといいですよ。
