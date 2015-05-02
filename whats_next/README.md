@@ -1,20 +1,23 @@
 # What's next?
 
-Congratulate yourself! __You're totally awesome__. We're proud! <3
+おめでとうございます。素晴らしいです。よくやりましたね。
+
 
 ### What to do now?
 
-Take a break and relax. You have just done something really huge.
+まずは少し休んでください。あなたはやり遂げました。
 
-After that make sure to:
+休んだ後は、こちらも確認してください：
 
-- Follow Django Girls on [Facebook](http://facebook.com/djangogirls) or [Twitter](http://twitter.com/djangogirls) to stay up to date
+- Django Girls の [Facebook](http://facebook.com/djangogirls)と[Twitter](http://twitter.com/djangogirls) です。
+
 
 ### Can you recommend any further resources?
 
-Yes! First, go ahead and try our other book, called [Django Girls Tutorial: Extensions](http://djangogirls.gitbooks.io/django-girls-tutorial-extensions/).
+このチュートリアルの拡張版である、[Django Girls Tutorial: Extensions](http://djangogirls.gitbooks.io/django-girls-tutorial-extensions/)を試してみてください。
 
-Later on, you can try recources listed below. They're all very recommended!
+他にオススメの資料のリストを下記に記述します。とてもいいですよ。
+
 - [Django's official tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial01/)
 - [New Coder tutorials](http://newcoder.io/tutorials/)
 - [Code Academy Python course](http://www.codecademy.com/en/tracks/python)
