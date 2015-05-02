@@ -4,7 +4,7 @@
 
 ## What is CSS?
 
-Cascading Style Sheets (CSS)とは、HTMLなどのマークアップ言語で書かれたWebサイトの見た目や書式を記述するための言語です。私達のWebページをメイクアップするものとして扱います。
+Cascading Style Sheets (CSS)とは、HTMLなどのマークアップ言語で書かれたWebサイトの見た目や書式を記述するための言語です。私達のWebページをメイクアップするものとして使います。
 
 でも、またゼロから作りたくないですよね。プログラマーたちがすでに作って無料で公開しているツールを使いましょう。わざわざイチから作り直す必要はないですからね。
 
@@ -21,7 +21,6 @@ Bootstrapをインストールするには、 `.html` ファイル (`blog/templa
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-
 これは、あなたのプロジェクトにはファイルを追加していません。インターネット上にあるファイルを指しているだけです。
 では、Webサイトを開いてページを再読み込みしてください。
 
@@ -31,9 +30,10 @@ Bootstrapをインストールするには、 `.html` ファイル (`blog/templa
 
 ## Static files in Django
 
-もう１つ、今日ここで学ぶことは、 __静的ファイル__ です. 静的ファイルとは、CSSファイルや画像ファイルといった、Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
+もう１つ、今日ここで学ぶことは、 __静的ファイル__ です. 静的ファイルとは、CSSファイルや画像ファイルといった、動的な変更が発生しないファイルのことです。
+そのため、これらのファイルはリクエストに依存せず、どのユーザに対しても中身は同じになります。
 
-CSS is a static file, so in order to customize CSS, we need to first configure static files in Django. You'll only need to do it once. Let's start:
+CSSは静的ファイルです。そのためCSSをカスタマイズするためには、最初にDjangoの中で設定を行う必要があります。この設定を行うのは1回だけです。さぁはじめましょう：
 
 ### Configure static files in Django
 
