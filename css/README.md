@@ -4,7 +4,7 @@
 
 ## What is CSS?
 
-Cascading Style Sheets (CSS) is a language used for describing the look and formatting of a website written in markup language (like HTML). Treat it as make-up for our webpage ;).
+Cascading Style Sheets (CSS)とは、HTMLなどのマークアップ言語で書かれたWebサイトの見た目や書式を記述するための言語です。私達のWebページをメイクアップするものとして扱います。
 
 でも、またゼロから作りたくないですよね。プログラマーたちがすでに作って無料で公開しているツールを使いましょう。わざわざイチから作り直す必要はないですからね。
 
@@ -31,7 +31,7 @@ Bootstrapをインストールするには、 `.html` ファイル (`blog/templa
 
 ## Static files in Django
 
-もう１つ、今日ここで学ぶことは、 __静的ファイル__です. 静的ファイルとは、CSSファイルや画像ファイルといった、Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
+もう１つ、今日ここで学ぶことは、 __静的ファイル__ です. 静的ファイルとは、CSSファイルや画像ファイルといった、Static files are all your CSS and images -- files that are not dynamic, so their content doesn't depend on request context and will be the same for every user.
 
 CSS is a static file, so in order to customize CSS, we need to first configure static files in Django. You'll only need to do it once. Let's start:
 
@@ -251,4 +251,3 @@ Don't be afraid to tinker with this CSS a little bit and try to change some thin
 Anyway, we really recommend taking this free online [Codeacademy HTML & CSS course](http://www.codecademy.com/tracks/web) as some post-workshop homework to learn everything you need to know about making your websites prettier with CSS.
 
 Ready for the next chapter?! :)
-
