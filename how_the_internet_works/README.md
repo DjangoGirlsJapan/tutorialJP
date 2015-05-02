@@ -1,19 +1,20 @@
 # How the Internet works
 
-> This chapter is inspired by a talk "How the Internet works" by Jessica McKellar (http://web.mit.edu/jesstess/www/).
+> この章は、Jessica McKellar の"How the Internet works"(http://web.mit.edu/jesstess/www/) にインスパイアされて書いています。
 
-We bet you use the Internet every day. But do you actually know what happens when you type an address like http://djangogirls.org into your browser and press 'Enter'?
+貴女もインターネットを毎日使っているでしょう。でもhttp://djangogirls.orgみたいに、アドレスを打ってエンターキーを押したとき、その先で何が起こっていると思いますか？
 
-The first thing you need to understand is that a website is just a bunch of files saved on a hard disk. Just like your movies, music or pictures.
-However, there is one part that is unique for websites: they include computer code called HTML.
+最初に知っておくべきことは、ウェブサイトって実は、ハードディスクに保存されたただのファイルだっていうこと。動画や音楽、写真と同じです。
+一つ違うことがあるとすれば、それはHTMLと呼ばれるプログラムが書かれていること。
 
+プログラミングについてあまり詳しくないと、HTMLに馴染みがないかも知れないけど、ChromeやSafariやFirefoxといったブラウザが読んでくれるから大丈夫。
 If you're not familiar with programming, it can be hard to grasp HTML at first, but your web browsers (like Chrome, Safari, Firefox, etc.) love it. Web browsers are designed to understand this code,
 follow its instructions and present all these files that your website is made of exactly the way you want them to be presented.
 
-As with every file, we need to store HTML files somewhere on a hard disk. For the Internet, we use special, powerful computers called *servers*. They don't have
-a screen, mouse or a keyboard, because their main purpose is to store data and serve it. That's why they're called *servers* -- because they *serve* you data.
+どのファイルもそうですが、HTMLファイルもハードディスクに保存しなくてはなりません。インターネットではその役目はパワフルな*サーバ*と呼ばれるコンピュータに任されます。サーバは
+保存したデータを配信するのが主な役割なので、ディスプレイもマウスもキーボードもありません。配信（サーブ）するためのコンピュータだから、*サーバ*と呼ばれるというわけです。
 
-OK, but you want to know how the Internet looks like, right?
+インターネットがどんな「見た目」か、知りたくなってきたでしょう？
 
 We drew you a picture! It looks like this:
 
