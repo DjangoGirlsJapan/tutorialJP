@@ -1,23 +1,17 @@
 # Django urls
 
-We're about to build our first webpage -- a homepage for your blog! But first, let's learn a little bit about Django urls.
 最初のウェブページを立てましょう、あなたのブログです。始めに、djangoのURLについて少し学びましょう。
 
 ## What is a URL?
 
-A URL is simply a web address, you can see a URL every time you visit any website - it is visible in your browser's address bar (yes! `127.0.0.1:8000` is a URL! And http://djangogirls.com is also a URL):
-
-URLはシンプルなWEB上のアドレスです。どのサイトでもURLを見れます、ブラウザのアドレスバーで見ることができます。（そう、127.0.0.1:8000がURLです。）
+URLは簡単に言えばWEB上のアドレスです。サイトのURLは、ブラウザのアドレスバーで見ることができます。（そう、`127.0.0.1:8000` や http://djangogirls.com がURLです。）
 
 ![Url](images/url.png)
 
-Every page on the Internet needs its own URL. This way your application knows what it should show to a user who opens a URL. In Django we use something called `URLconf` (URL configuration), which is a set of patterns that Django will try to match with the received URL to find the correct view.
-
-インターネットの全てのページはURLを持っています。これはアプリケーションがURLを開いている人を表すのがわかります。djangoでは`URL_conf`（URL設定）と呼ばれるものを使います。これは正しいviewを見つけてURLを返します。
+インターネットの全てのページはURLを持っています。それによって、これから作るアプリケーションが、URLを指定してアクセスしてきたユーザに、何を見せたらいいのかわかるのです。Djangoでは`URL_conf`（URL設定）と呼ばれるものを使います。これは、指定されたURLに合わせてDjangoがどのviewを返したらいいか判断する仕組みのことです。
 
 ## How do URLs work in Django?
 
-Let's open up the `mysite/urls.py` file and see what it looks like:
 `mysite/urls.py`を開いて、中身をみてみると：
 
     from django.conf.urls import include, url
@@ -31,33 +25,22 @@ Let's open up the `mysite/urls.py` file and see what it looks like:
         url(r'^admin/', include(admin.site.urls)),
     ]
 
-As you can see, Django already put something here for us.
-見たとおり、Djangoは既にこのようなものを置いてくれています。
-
-Lines that start with `#` are comments - it means that those lines won't be run by Python. Pretty handy, right?
+ご覧のとおり、Djangoは既にこのようなものを置いてくれています。
 
 `#`で始まっている行はコメント行です。これはPythonによって実行されない行です。とっても便利でしょう？
 
-The admin URL, which you visited in previous chapter is already here:
-adminのURLは以前の章に既にありました：
+前の章で訪れたadminのURLについてはすでに書いてありますね。
 
     url(r'^admin/', include(admin.site.urls)),
 
-It means that for every URL that starts with `admin/` Django will find a corresponding *view*. In this case we're including a lot of admin URLs so it isn't all packed into this small file -- it's more readable and cleaner.
-
-`admin/`で始まる全部のURLはそうです。Djangoは一致したビューを見つけます。この場合は多くのadminのURLが含まれていて、少ないファイルに全て入っていません。読みやすくてきれいです。
+`admin/`で始まる全てのURLについて、Djangoが返すべき*view*をこの行で指定しています。今回の場合、adminで始まるURLをたくさん作ることになりますが、その全てをこの小さいファイルに書くようなことはしません。この方がきれいで読みやすいですし。
 
 ## Regex
 
-Do you wonder how Django matches URLs to views? Well, this part is tricky. Django uses `regex` -- regular expressions. Regex has a lot (a lot!) of rules that form a search pattern. It is not so easy to understand so we won't worry about it today and you'll definitely get to know them in the future. Today we will only use the ones we need.
-
 どのやってDjangoはビューにURLをマッチするのかと思うかもしれません。そうです、この部分はひとひねりしています。Djangoは`regex`、正規表現を使います。Regexは多くの（本当に多くの）検索パターンのルールを持っています。理解するのは簡単では無いですが、今は心配しないで下さい。将来、それらを正確に理解できるでしょう。今回は必要なものだけ使っています。
 
-Here is a simple example just to not leave you stuck on this sentence:
-imagine you have a website with the address like that: `http://www.mysite.com/post/12345/`, where `12345` is the number of your post. Writing separate views for all the post numbers would be really annoying. Django makes it easier by allowing you to write `http://www.mysite.com/post/<a number>/`. Django will take care of the rest!
-
-ここで簡単な例を次のセンテンスに集中して下さい。このようなアドレスをウェブサイトで持ったことを想像して下さい：`http://www.mysite.com/post/12345/`
-12345はあなたが投稿した番号です。全ての投稿した番号を分けて書くことは頭を悩まします。Djangoはそれを`http://www.mysite.com/post/<a number>/`という書き方で簡単に作ります。後はお任せです！
+説明のため、あんまり悩まないですむような簡単な例を紹介します。
+`http://www.mysite.com/post/12345/`のようなアドレスを持つウェブサイトがあるとします。ここで、`12345`はブログポストの番号です。ブログポストの番号ごとに、それぞれ別々のviewを書くなんて絶対無理ですよね。Djangoでは`http://www.mysite.com/post/<a number>/`と書くだけで、後は全部お任せできるんです！
 
 ## Your first Django url!
 
