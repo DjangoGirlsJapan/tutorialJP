@@ -46,11 +46,7 @@ URLは簡単に言えばWEB上のアドレスです。サイトのURLは、ブ�
 
 さあ最初のURLを作りましょう！'http://127.0.0.1:8000/'はブログの入口ページなので、投稿したブログポストのリストを表示したいです。
 
-We also want to keep the `mysite/urls.py` file clean, so we will import urls from our `blog` application to the main `mysite/urls.py` file.
-
 `mysite/urls.py` ファイルは簡潔なままにしておきたいので、`mysite/urls.py`では`blog`アプリからURLをインポートするだけにしましょう。
-
-Go ahead, delete the commented lines (lines starting with `#`) and add a line that will import `blog.urls` into the main url (`''`).
 
 コメントされた行（`#`で始まる行）を消して、入口ページのURL（'``'）には`blog.urls`をインポートするように書いてください。
 
