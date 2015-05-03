@@ -1,33 +1,33 @@
 # Django views - time to create!
 
-Time to get rid of the bug we created in the last chapter :)
+それでは前の章の続きをやりましょう。確かビューの作成がまだだったので、エラーになっていましたね。
 
-A *view* is a place where we put the "logic" of our application. It will request information from the `model` you created before and pass it to a `template` that you will create in the next chapter. Views are just Python methods that are a little bit more complicated than the thing we did in the __Introduction to Python__ chapter.
+*ビュー* はアプリのロジックを担当しています。ビューは要求に応じて `model` から情報を取得し `template` に渡します。モデルはついさっき作りましたし、テンプレートもすぐ次の章で作ります。ビューは、Pythonで記述されているだけです。__Introduction to Python__ の章でやったことよりも、ちょっと複雑なだけですよ。
 
-Views are placed in the `views.py` file. We will add our *views* to the `blog/views.py` file.
+ビューは、`views.py` に記述します。私達の場合 `blog/views.py` に書くことになります。
 
 ## blog/views.py
 
-OK, let's open up this file and see what's in there:
+では、早速 blog/views.py を開いてみましょう。
 
     from django.shortcuts import render
 
     # Create your views here.
 
-Not too much stuff here yet. The simplest *view* can look like this.
+まだ何もないですね。とりあえず、次のような、ちょっとした *ビュー* を作ってみましょう。
 
     def post_list(request):
 
         return render(request, 'blog/post_list.html', {})
 
-As you can see, we created a method (`def`) called `post_list` that takes `request` and `return` a method `render` that will render (put together) our template `blog/post_list.html`.
+よく見てみましょうか。まず `post_list` というメソッド( `def` から始まる部分のことです)を、記述しています。この `post_list` は `request` を引数に取り、`render` メソッドを `return` しています。`render` メソッドは `blog/post_list.html` というテンプレートファイルを使って、引数で受け取った `request` の内容を出力しています。
 
-Save the file, go to http://127.0.0.1:8000/ and see what we have got now.
+ファイルを保存したら、どんな風に表示されるか、ブラウザで http://127.0.0.1:8000/ を確認してみましょう。
 
-Another error! Read what's going on now:
+今度は別のエラーになりましたね。なんと書いてあるでしょうか。
 
 ![Error](images/error.png)
 
-This one is easy: *TemplateDoesNotExist*. Let's fix this bug and create a template in the next chapter!
+この *TemplatedoesNoteExist* エラーの解決は、簡単です。テンプレートファイルがないだけなので、それでは次の章でテンプレートを作ってみましょう！
 
-> Learn more about Django views by reading the official documentation: https://docs.djangoproject.com/en/1.8/topics/http/views/
+> Djangoのビューについてもっと知りたいのなら、英語で書かれていますが、オフィシャルドキュメントを是非読んでみてください：https://docs.djangoproject.com/en/1.8/topics/http/views/
