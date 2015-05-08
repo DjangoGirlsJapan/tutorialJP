@@ -1,14 +1,14 @@
-# Template extending
+# テンプレートの拡張
 
-Another nice thing Django has for you is __template extending__. What does this mean? It means that you can use the same parts of your HTML for different pages of your website.
+Djangoの便利な機能の一つに、 __テンプレートの拡張機能__ があります。ウェブサイトを作る時、どのページでも同じHTMLタグを使うことがありますよね。たとえば、ヘッダーやフッター部分は、どのページでも同じものを使いませんか？そういう時に、便利な機能です。
 
-This way you don't have to repeat yourself in every file, when you want to use the same information/layout.  And if you want to change something, you don't have to do it in every template, just once!
+この機能を使えば、ウェブサイトの共通部分(ヘッダーやフッター、メニューバーなど)に変更を加えたい時、全てのHTMLファイルに対して、同じ作業を繰り返さなくてすみます。一箇所だけ変更すれば、その変更は全てのページに適用されます。
 
-## Create base template
+## ベースとなる骨組みのテンプレートファイルの作成
 
-A base template is the most basic template that you extend on every page of your website.
+ベーステンプレートは、ウェブサイトの全てのページの骨組みともいうべきテンプレートです。
 
-Let's create a `base.html` file in `blog/templates/blog/`:
+`blog/templates/blog/` に、 `base.html` というファイル名で、ベーステンプレートファイルを作ってみましょう。
 
     blog
     └───templates
@@ -16,7 +16,7 @@ Let's create a `base.html` file in `blog/templates/blog/`:
                 base.html
                 post_list.html
 
-Then open it up and copy everything from `post_list.html` to `base.html` file, like this:
+`base.html` ファイルを開いて `post_list.html` の内容を全部 `base.html` にコピーしたら、以下の様になるでしょう。
 
     {% load staticfiles %}
     <html>
@@ -50,7 +50,7 @@ Then open it up and copy everything from `post_list.html` to `base.html` file, l
         </body>
     </html>
 
-Then in `base.html`, replace your whole `<body>` (everything between `<body>` and `</body>`) with this:
+コピーしたら `BODYタグ` 部分を、以下の内容に書き換えましょう。 `BODYタグ` は、わかりますよね？  `<body>` から `</body>` までの部分のことですよ。
 
     <body>
         <div class="page-header">
@@ -66,14 +66,14 @@ Then in `base.html`, replace your whole `<body>` (everything between `<body>` an
         </div>
     </body>
 
-We basically replaced everything between `{% for post in posts %}{% endfor %}` with:
+続いて `{% for post in posts %}{% endfor %}` という部分も、以下の様に書き換えましょう。
 
     {% block content %}
     {% endblock %}
 
-What does it mean? You just created a `block`, which is a template tag that allows you to insert HTML in this block in other templates that extend `base.html`. We will show you how to do this in a moment.
+どうしてこんな風に書くのか、考えてみましょう。 `base.html` に `block タグ` を記述しました。そうすると、別のテンプレートの内容を、この `block タグ` の部分に挿入することが出来るようになります。これが、テンプレートの拡張です。それでは、この `block タグ` に挿入する `post_list.html` も修正してみましょう。
 
-Now save it, and open your `blog/templates/blog/post_list.html` again. Delete everything else other than what's inside the body and then also delete `<div class="page-header"></div>`, so the file will look like this:
+`base.html` を保存して `blog/templates/blog/post_list.html` を開きましょう。まず、BODYタグの中身以外は全て削除してしまいます。 `<div class="page-header"></div>` も削除してしまって、最終的には以下の様にします。
 
     {% for post in posts %}
         <div class="post">
@@ -85,11 +85,11 @@ Now save it, and open your `blog/templates/blog/post_list.html` again. Delete ev
         </div>
     {% endfor %}
 
-And now add this line to the beginning of the file:
+修正出来たら、次の行をファイルの先頭に書き加えましょう。
 
     {% extends 'blog/base.html' %}
 
-It means that we're now extending the `base.html` template in `post_list.html`. Only one thing left: put everything (except the line we just added) between `{% block content %}` and `{% endblock content %}`. Like this:
+こんな風にすると `base.html` の `block` 部分に `post_list.html` を組み込んで使うことが出来るという訳です。実際に `block` 部分に組み込むには、以下の様に `{% block content %}` と `{% endblock content %}` タグで囲わなくてはなりません。
 
     {% extends 'blog/base.html' %}
 
@@ -105,6 +105,6 @@ It means that we're now extending the `base.html` template in `post_list.html`. 
         {% endfor %}
     {% endblock content %}
 
-That's it! Check if your website is still working properly :)
+うまくテンプレート機能が動作しているか、ウェブサイトにを開いて確認してみましょう。
 
-> If you have an error `TemplateDoesNotExists` that says that there is no `blog/base.html` file and you have `runserver` running in the console, try to stop it (by pressing Ctrl+C - Control and C buttons together) and restart it by running a `python manage.py runserver` command.
+> `blog/base.html` が見当たらない場合、 `TemplateDoesNotExists` のエラーが出るかもしれません。その場合は、コンソールで動いている `runserver` を一旦止めてみましょう。停止させるには、コントロールボタンとCボタンを同時に押し、もう一度起動させるには `python manage.py runserver` コマンドを使います。
