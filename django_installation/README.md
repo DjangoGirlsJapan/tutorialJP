@@ -7,7 +7,7 @@ tutorial](http://django-marcador.keimlink.de/) licensed under Creative Commons
 Attribution-ShareAlike 4.0 International License. The django-marcador tutorial
 is copyrighted by Markus Zapke-Gr端ndemann et al.
 
-> このチャプターの一部はCreative Commons Attribution-ShareAlike 4.0 International License のライセンスによる[django-marcador tutorial](http://django-marcador.keimlink.de/)に基づいています。このdjango-marcador tutorialはMarkus Zapke-Gr端ndemann et al.が著作権を保有しています。
+> このチャプターの一部はCreative Commons Attribution-ShareAlike 4.0 International License のライセンスによる[django-marcador tutorial](http://django-marcador.keimlink.de/)に基づいています。このdjango-marcador tutorialはMarkus Zapke-Gründemann et al.が著作権を保有しています。
 
 ## Virtual environment
 ## 仮想環境
