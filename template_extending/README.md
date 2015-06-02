@@ -71,7 +71,7 @@ Djangoの便利な機能の一つに、 __テンプレートの拡張機能__ �
     {% block content %}
     {% endblock %}
 
-どうしてこんな風に書くのか、考えてみましょう。 `base.html` に `block タグ` を記述しました。そうすると、別のテンプレートの内容を、この `block タグ` の部分に挿入することが出来るようになります。これが、テンプレートの拡張です。それでは、この `block タグ` に挿入する `post_list.html` も修正してみましょう。
+どうしてこんな風に書くのか、考えてみましょう。 `base.html` に `block` を記述しました。そうすると、別のテンプレートの内容を、この `block` の部分に挿入することが出来るようになります。これが、テンプレートの拡張です。それでは、この `block` に挿入する `post_list.html` も修正してみましょう。
 
 `base.html` を保存して `blog/templates/blog/post_list.html` を開きましょう。まず、BODYタグの中身以外は全て削除してしまいます。 `<div class="page-header"></div>` も削除してしまって、最終的には以下の様にします。
 
@@ -89,7 +89,7 @@ Djangoの便利な機能の一つに、 __テンプレートの拡張機能__ �
 
     {% extends 'blog/base.html' %}
 
-こんな風にすると `base.html` の `block` 部分に `post_list.html` を組み込んで使うことが出来るという訳です。実際に `block` 部分に組み込むには、以下の様に `{% block content %}` と `{% endblock content %}` タグで囲わなくてはなりません。
+こんな風にすると `base.html` の `block` 部分に `post_list.html` を組み込んで使うことが出来るという訳です。実際に `block` 部分に組み込むには、以下の様に `{% block content %}` と `{% endblock content %}` で囲わなくてはなりません。
 
     {% extends 'blog/base.html' %}
 
@@ -107,4 +107,4 @@ Djangoの便利な機能の一つに、 __テンプレートの拡張機能__ �
 
 うまくテンプレート機能が動作しているか、ウェブサイトにを開いて確認してみましょう。
 
-> `blog/base.html` が見当たらない場合、 `TemplateDoesNotExists` のエラーが出るかもしれません。その場合は、コンソールで動いている `runserver` を一旦止めてみましょう。停止させるには、コントロールボタンとCボタンを同時に押し、もう一度起動させるには `python manage.py runserver` コマンドを使います。
+> 確認するとき `blog/base.html` が見当たらないという、 `TemplateDoesNotExists` のエラーが出るかもしれません。その場合は、コンソールで動いている `runserver` を一旦止めてみましょう。停止させるのは Ctrl-C (コントロールキーを押しながら'C'キーを押す) で、もう一度起動させるには `python manage.py runserver` コマンドを使います。
