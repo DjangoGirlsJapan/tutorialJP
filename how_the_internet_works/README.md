@@ -2,14 +2,12 @@
 
 > この章は、Jessica McKellar の"How the Internet works"(http://web.mit.edu/jesstess/www/) にインスパイアされて書いています。
 
-貴女もインターネットを毎日使っているでしょう。でもhttp://djangogirls.orgみたいに、アドレスを打ってエンターキーを押したとき、その先で何が起こっていると思いますか？
+貴女もインターネットを毎日使っているでしょう。でも "http://djangogirls.org" みたいに、アドレスを打ってエンターキーを押してページを表示したとき、裏ではどんなことが起こっているか、考えてみたことはありますか？
 
 最初に知っておくべきことは、ウェブサイトって実は、ハードディスクに保存されたただのファイルだっていうこと。動画や音楽、写真と同じです。
 一つ違うことがあるとすれば、それはHTMLと呼ばれるプログラムが書かれていること。
 
-プログラミングについてあまり詳しくないと、HTMLに馴染みがないかも知れないけど、ChromeやSafariやFirefoxといったブラウザが読んでくれるから大丈夫。
-If you're not familiar with programming, it can be hard to grasp HTML at first, but your web browsers (like Chrome, Safari, Firefox, etc.) love it. Web browsers are designed to understand this code,
-follow its instructions and present all these files that your website is made of exactly the way you want them to be presented.
+プログラミングについてあまり詳しくないと、HTMLに馴染みがないかも知れないけど、貴女は読めなくて大丈夫。Chrome や Safari や Firefox といったブラウザたちは、HTML を読むために設計されていて、HTML に書かれたことを読み、HTML に書かれた通りの見た目のページを表示してくれているのです。
 
 どのファイルもそうですが、HTMLファイルもハードディスクに保存しなくてはなりません。インターネットではその役目はパワフルな*サーバ*と呼ばれるコンピュータに任されます。サーバは
 保存したデータを配信するのが主な役割なので、ディスプレイもマウスもキーボードもありません。配信（サーブ）するためのコンピュータだから、*サーバ*と呼ばれるというわけです。
