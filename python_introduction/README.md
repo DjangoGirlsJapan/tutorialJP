@@ -51,7 +51,7 @@ Pythonコンソールを終わる時は、`exit()`　とタイプするか、シ
     >>> "Hi there " + "Ola"
     'Hi there Ola'
 
-文字列を繰り返すためには、演算子を使って繰り返し回数を指定することもできます。You can also multiply strings with a number:
+文字列を繰り返すためには、演算子を使って繰り返し回数を指定することもできます。:
 
     >>> "Ola" * 3
     'OlaOlaOla'
@@ -80,18 +80,18 @@ Pythonコンソールを終わる時は、`exit()`　とタイプするか、シ
     >>> len("Ola")
     3
 
-どうして、文字列の後に`.` をつけて関数を呼び出したり (`"Ola".upper()`のように)、あるいは、先に関数を呼び出してかっこの中に文字列をいれているのか、と疑問に思ったかもしれません。 Well, in some cases, functions belong to objects, like `upper()`, which can only be performed on strings. In this case, we call the function a __method__. Other times, functions don't belong to anything specific and can be used on different types of objects, just like `len()`. That's why we're giving `"Ola"` as a parameter to the `len` function.
+どうして、文字列の後に`.` をつけて関数を呼び出したり (`"Ola".upper()`のように)、あるいは、先に関数を呼び出してかっこの中に文字列をいれているのか、と疑問に思ったかもしれません。そうですね。時に、オブジェクトに結びついた関数というのがあります。例えば、`upper()`は、文字列にのみ実行される関数です。私たちはこれを__メソッド__と呼びます。それとは別に、特定のオブジェクトに関連せず、異なるタイプのオブジェクトに対して実行できる関数があります。例えば`len()`ですね。`len` 関数の引数として`"Ola"`をかっこの中にいれているのです。
 
 ### Summary
 
 文字列はだいじょうぶですね。ここまでに学んだことをまとめましょう。
 
-- __the prompt__ - typing commands (code) into the Python prompt results in answers in Python
-- __numbers and strings__ - in Python numbers are used for math and strings for text objects
-- __operators__ - like + and *, combine values to produce a new one
-- __functions__ - like upper() and len(), perform actions on objects.
+- __プロンプト__ - Pythonプロンプトにコマンド（コード）を入力すると、答えがかえってきます。
+- __数値 と 文字列__ - 数値は計算に、文字列はテキストに使われます。
+- __演算子__ - 例えば + や * のように、値を計算して新しい値を返します。
+- __関数__ - upper() や len() のようにオブジェクトに対して行う機能のことです。
 
-These are the basics of every programming language you learn. もう少し難易度の高いものに挑戦してみましょう。準備はいいですか？
+すべてのプログラミング言語に共通する基礎になります。 もう少し難易度の高いものに挑戦してみましょう。準備はいいですか？
 
 ## Errors
 
@@ -109,14 +109,14 @@ These are the basics of every programming language you learn. もう少し難易
 
 できました！`str` 関数を`len`の中に記述しました。`str()`は、その中身を文字列に変換します。
 
-- The `str` function converts things into __strings__
-- The `int` function converts things into __integers__
+- `str`関数は、__文字列__に変換します。 
+- `int`関数は、文字列や数値を__整数__に変換します。 
 
 > 重要！: 数字は文字列にすることはできますが、全ての文字が数字に変換できるわけではありません。 例えば `int('hello')` は数字にはなりませんよね？
 
 ## Variables
 
-variables（変数）は、プログラミングの重要なコンセプトです。後で使うためにつける単なる名札ではありません。プログラマーは変数を使ってデータを保管したり、 コードを読みやすくして、後でそれが何だったか覚えておかなくてもいいようにします。
+変数（variables）は、プログラミングの重要なコンセプトです。後で使うためにつける単なる名札ではありません。プログラマーは変数を使ってデータを保管したり、 コードを読みやすくして、後でそれが何だったか覚えておかなくてもいいようにします。
 
 変数`name`を新しくつくってみましょう。
 
@@ -266,14 +266,14 @@ variables（変数）は、プログラミングの重要なコンセプトで�
 
 ディクショナリとリストはどう使い分ければよいのでしょうか？そうですね、これはゆっくり考えてみるべきポイントですね！この後の解答を読むまえに、考えてみてください。
 
-- Do you just need an ordered sequence of items? Go for a list.
-- Do you need to associate values with keys, so you can look them up efficiently (by key) later on? Use a dictionary.
+- 必要なのは、順序付けられた一連のアイテムですか？　リストを使いましょう。
+- キーに対応する値が必要？キーから値を参照する？　ディクショナリを使いましょう。
 
-Dictionaries, like lists, are *mutable*, meaning that they can be changed after they are created. You can add new key/value pairs to the dictionary after it is created, like:
+ディクショナリやリストは、生成後に値を変更できるオブジェクトです。これを *mutable* と呼びます。次のように、ディクショナリを作ったあとで、新しいキーと値を追加することができます。:
 
     >>> participant['favorite_language'] = 'Python'
 
-Like lists, using `len()` method on the dictionaries, returns the number of key-value pairs in the dictionary. Go ahead and type in the command:
+リストと同様に、`len()`関数をディクショナリに使ってみましょう。ディクショナリでは、キーと値のペアの数を返します。コマンドを入力してやってみましょう。:
 
     >>> len(participant)
     4
@@ -300,10 +300,10 @@ Like lists, using `len()` method on the dictionaries, returns the number of key-
 
 素晴らしいです! これで、あなたはプログラミングについて沢山のことを学びました。ここまでのところをまとめましょう。
 
-- __errors__ - you now know how to read and understand errors that show up if Python doesn't understand a command you've given it
-- __variables__ - names for objects that allow you to code more easily and to make your code more readable
-- __lists__ - lists of objects stored in a particular order
-- __dictionaries__ - objects stored as key-value pairs
+- __エラー__ - あなたのコマンドをPythonが理解できない時にエラーが表示されます。
+- __変数__ - コードを簡単にまた読みやすくするために、文字や数値などのオブジェクトにつける名札。
+- __リスト__ - 複数の値（要素）が順に並んでいるもの。
+- __ディクショナリ__ - キーと値のペアの集合です。
 
 次に進む準備はいいですか？ :)
 
@@ -354,7 +354,7 @@ Pythonにいくつか比較する数字をあたえてみました。数字を�
 - __and__ - `and`の左辺と右辺が共にTrueの場合、True。
 - __or__ -  `or`の左辺あるいは右辺の少なくとも１つがTrueの時、True。
 
-Have you heard of the expression "comparing apples to oranges"? Let's try the Python equivalent:
+"comparing apples to oranges"という英語の表現を聞いたことはありますか？文字通り訳すと「リンゴとオレンジを比較する」となり、「比較にならないものを比較する」という意味です。Pythonでも同じようなことをやってみましょう。:
 
     >>> 1 > 'django'
     Traceback (most recent call last):
@@ -446,7 +446,7 @@ Windowsでは、次のようになります。
 
 ## If...elif...else
 
-ある条件が成立するときに処理を行いたいという時が. That's why Python has something called __if 条件式__.
+ある条件が成立するときに処理を行いたいという時に用いるのが、__if 条件式__です。
 
 では、 **python_intro.py** ファイルのコードを次のように書き換えてください。
 
@@ -504,20 +504,20 @@ Windowsでは、次のようになります。
 
 ### Summary
 
-In the last three exercises you learned about:
+３つのエクササイズを通して、これまでに学んだことは、、、:
 
-- __comparing things__ - in Python you can compare things by using `>`, `>=`, `==`, `<=`, `<` and the `and`, `or` operators
-- __Boolean__ - a type of object that can only have one of two values: `True` or `False`
-- __Saving files__ - storing code in files so you can execute larger programs.
-- __if...elif...else__ - statements that allow you to execute code only when certain conditions are met.
+- __比較__ - 比較に用いる `>`, `>=`, `==`, `<=`, `<` そして`and`, `or` といった演算子があります。
+- __ブール型__ - `True` と `False` ２つの値のみを持ちます。
+- __ファイルの保存__ - コードはファイルに保存することで、大きなプログラムも実行できます。
+- __if...elif...else__ - 条件分岐することで、特定の条件によって処理を分けて実行することができます。
 
-Time for the last part of this chapter!
+では、このチャプターの最後のパートに挑戦していきましょう！
 
 ## Your own functions!
 
-Remember functions like `len()` that you can execute in Python? Well, good news, you will learn how to write your own functions now!
+Pythonには`len()`のように関数があったのを覚えていますか？ ここでは、自分で関数を作る方法を学びます。
 
-A function is a sequence of instructions that Python should execute. Each function in Python starts with the keyword `def`, is given a name and can have some parameters. Let's start with an easy one. Replace the code in **python_intro.py** with the following:
+実行する機能をひとまとめにしたものを関数といいます。`Pythonでは、functionは`def`というキーワードからはじまり、引数を含むことができます。簡単なものからはじめてみましょう。**python_intro.py** の中身を書きのコードに置き換えてください。:
 
     def hi():
         print('Hi there!')
@@ -525,21 +525,21 @@ A function is a sequence of instructions that Python should execute. Each functi
 
     hi()
 
-Okay, our first function is ready!
+あなたの最初の関数を実行する準備ができましたね!
 
-You may wonder why we've written the name of the function at the bottom of the file. This is because Python reads the file and executes it from top to bottom. So in order to use our function, we have to re-write it at the bottom.
+ここであなたは、最後の行になぜ関数の名前を書いたのだろう、と疑問に感じたかもしれません。これは、Pythonがファイルを読み、上から下へ実行していくからです。関数を定義したあとに、もう一度その関数を書いて呼び出します。
 
-Let's run this now and see what happens:
+では実行して、どうなるか見てみましょう:
 
     $ python3 python_intro.py
     Hi there!
     How are you?
 
-That was easy! Let's build our first function with parameters. We will use the previous example - a function that says 'hi' to the person running it - with a name:
+簡単にできましたね！次に引数をつかった関数を作ってみましょう。先ほどの例を使います。'hi'という挨拶をする関数に、挨拶をする人の名前をいれてみます。
 
     def hi(name):
 
-As you can see, we now gave our function a parameter that we called `name`:
+このとおり、関数に`name`という引数を足します。:
 
     def hi(name):
         if name == 'Ola':
@@ -551,7 +551,7 @@ As you can see, we now gave our function a parameter that we called `name`:
 
     hi()
 
-As you can see, we needed to put two indents before the `print` function, because `if` needs to know what should happen when the condition is met. Let's see how it works now:
+上記のように、`print`関数の前に、インデントを２ついれる必要があります。 `if` の条件式が真の時に、なにをすべきかという処理はインデントの後に記述します。 実行して、どのように動くか見てみましょう。:
 
     $ python3 python_intro.py
     Traceback (most recent call last):
@@ -559,63 +559,64 @@ As you can see, we needed to put two indents before the `print` function, becaus
       hi()
     TypeError: hi() missing 1 required positional argument: 'name'
 
-Oops, an error. Luckily, Python gives us a pretty useful error message.
-It tells us that the function `hi()` (the one we defined) has one required argument (called `name`) and that we forgot to pass it when calling the function.
-Let's fix it at the bottom of the file:
+おっと、エラーがでてしまいました。Pythonがエラーメッセージを表示してくれています。
+定義した関数`hi()`は、`name`という引数が必要ですが、関数を呼び出す時に引数を忘れてしまっています。
+最後の行を修正しましょう。:
+
 
     hi("Ola")
 
-and run it again:
+実行してください。:
 
     $ python3 python_intro.py
     Hi Ola!
 
-And if we change the name?
+では、名前を変えてみたらどうなりますか？
 
     hi("Sonja")
 
-and run it:
+再度実行してください。:
 
     $ python3 python_intro.py
     Hi Sonja!
 
-Now what do you think will happen if you write another name in there? (Not Ola or Sonja) Give it a try and see if you're right. It should print out this:
+では、OlaやSonja以外の名前を入れた時、どうなるかわかりますか？やってみて、予測が正しいか確認して下さい。このように出力されましたか。:
 
     Hi anonymous!
 
-This is awesome, right? This way you don't have to repeat yourself every time you want to change the name of the person the function is supposed to greet. And that's exactly why we need functions - you never want to repeat your code!
+すばらしいですね。挨拶をする人の名前を毎回何度も繰り返して書く必要がなくなりました。これが関数を作る理由です。何度も繰り返してコードを書く必要はありません！
 
-Let's do something smarter -- there are more names than two, and writing a condition for each would be hard, right?
+もっとスマートなやり方を試してみましょう。 --２人以上の名前があり、それぞれに対して条件をつけるのは大変ですよね。
 
     def hi(name):
         print('Hi ' + name + '!')
 
     hi("Rachel")
 
-Let's call the code now:
+では、実行してみましょう。：
 
     $ python3 python_intro.py
     Hi Rachel!
 
-Congratulations! You just learned how to write functions :)!
+おめでとうございます！Functionsの書き方を学びましたね。:)!
 
 ## Loops
 
-That's the last part already. That was quick, right? :)
+さぁ、もう最期のパートですよ。あっという間ですね。 :)
 
-As we mentioned, programmers are lazy, they don't like to repeat themselves. Programming is all about automating things, so we don't want to greet every person by their name manually, right? That's where loops come in handy.
+先ほどお話したとおり、プログラマーはめんどくさがりで、同じことを繰り返すことは好きではありません。プログラミングはすべてを自動的に処理したい。私たちはすべての人の名前ひとつひとつに対して挨拶をしたくないですよね？こういう時にループが便利です。
 
-Still remember lists? Let's do a list of girls:
+リストを覚えていますか？女の子の名前をリストにしてみましょう。:
 
     girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
 
-We want to greet all of them by their name. We have the `hi` function to do that, so let's use it in a loop:
+名前を呼んで、全員にあいさつをしてみましょう。 `hi` 関数が使えますね。ループの中でつかいましょう。:
 
     for name in girls:
 
-The ```for``` statement behaves similarly to the ```if``` statement, code below both of these need to be indented four spaces.
+この ```for``` は ```if``` に似ています。この次に続くコードは、４つスペースを入れる必要があります。
 
-Here is the full code that will be in the file:
+ファイルに書かれるコードはこのようになります。:
 
     def hi(name):
         print('Hi ' + name + '!')
@@ -625,7 +626,7 @@ Here is the full code that will be in the file:
         hi(name)
         print('Next girl')
 
-and when we run it:
+実行してみましょう。:
 
     $ python3 python_intro.py
     Hi Rachel!
@@ -639,14 +640,14 @@ and when we run it:
     Hi You!
     Next girl
 
-As you can see, everything you put inside a `for` statement with an indent will be repeated for every element of the list `girls`.
+ご覧のとおり、`girls`リストのすべての要素に対して、`for` の中にインデントして書かれたことがくりかえされています。
 
-You can also use `for` on numbers using the `range` function:
+`for` 文では、`range` 関数をつかって指定した回数だけ繰り返すこともできます。:
 
     for i in range(1, 6):
         print(i)
 
-Which would print:
+これを実行すると、次のように出力されます:
 
     1
     2
@@ -654,14 +655,14 @@ Which would print:
     4
     5
 
-`range` is a function that creates a list of numbers following one after the other (these numbers are provided by you as parameters).
+`range`関数は、引数に指定した開始と終了の数値から連続する数値の値を要素として持つリスト型のオブジェクトを作成します。
 
-Note that the second of these two numbers is not included in the list that is output by Python (meaning `range(1, 6)` counts from 1 to 5, but does not include the number 6).
+2つ目の引数（終了の数値）は、リストに含まれないことに注意してください。つまり、 `range(1, 6)` は、１から５のことであり、６は含まれません。
 
 ## Summary
 
 以上です！__おめでとう！頑張りました！__ これは簡単ではなかったと思います。自分を褒めてあげてくださいね。ここまで進めることができたのは、本当に素晴らしいことです！
 
-You might want to briefly do something else - stretch, walk around for a bit, rest your eyes - before going on to the next chapter. :)
+次のチャプターにうつるまえに、少し気晴らしに、ストレッチやお散歩をして、目や身体を休ませてあげてくださいね。 :)
 
 ![Cupcake](images/cupcake.png)
