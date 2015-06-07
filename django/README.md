@@ -4,26 +4,26 @@ Django (_/ˈdʒæŋɡoʊ/ jang-goh_) は、無料でオープンソースとし�
 
 ほら、Webサイトを構築する時、同じような構造が毎回必要になってきますよね。ユーザー認証（サインアップ、サインイン、サインアウト）、管理者用の画面、フォーム、ファイルのアップロードなど。
 
-幸運なことに、開発者たちは同じ問題をLuckily for you other people long ago noticed that web developers face similar problems when building a new site, so they teamed up and created frameworks (Django is one of them) that give you ready-made components you can use.
+開発者たちはサイトを構築する度に同じ問題を抱えたため、みんなで力を合わせてフレームワークを開発しました。（Djangoはフレームワークのひとつです。）幸運なことに、私たちは、開発に必要な要素がすでに含まれているフレームワークを使って開発することができます。
 
-Frameworks exist to save you from having to reinvent the wheel and help alleviate some of the overhead when you’re building a new site.
+フレームワークを使うことで、私たちは開発を土台から作り直すことを避けられます。また、新しいサイトを構築する際にかかる最初の準備に必要なコストを軽減します。
 
 ## Why do you need a framework?
 
-Djangoを本当に理解するために、サーバーをもっとよく見てみましょう。To understand what Django actually is for, we need to take a closer look at the servers. The first thing is that the server needs to know that you want it to serve you a webpage.
+Djangoを本当に理解するために、サーバーをもっとよく見てみましょう。 The first thing is that the server needs to know that you want it to serve you a webpage.
 
-Imagine a mailbox (port) which is monitored for incoming letters (requests). This is done by a web server. The web server reads the letter, and sends a response with a webpage. But when you want to send something, you need to have some content. And Django is something that helps you create the content.
+メールボックスを想像してみてください。メールボックス（ポート）は入ってくる手紙（リクエスト）を監視しています。これはウェブサーバーによって行われています。Webサーバーが手紙を読み、Webページから返事を送ります。送ろうとする時、コンテンツが必要ですね。Djangoは、あなたがそのコンテンツを作る手助けをするものです。
 
 ## What happens when someone requests a website from your server?
 
-When a request comes to a web server it's passed to Django which tries to figure out what actually is requested. It takes a webpage address first and tries to figure out what to do. This part is done by Django's __urlresolver__ (note that a website address is called a URL - Uniform Resource Locator - so the name *urlresolver* makes sense). It is not very smart - it takes a list of patterns and tries to match the URL. Django checks patterns from top to the bottom and if something is matched then Django passes the request to the associated function (which is called *view*).
+Webサーバーにリクエストがあると、Djangoに伝えられ、リクエストの内容を把握しようとします。　まずWebページのアドレスを調べ、When a request comes to a web server it's passed to Django which tries to figure out what actually is requested. It takes a webpage address first and tries to figure out what to do. これは、Djangoの__urlresolver__が行います。（WebサイトのアドレスはURLと呼ばれます。 Uniform Resource Locator　の略です。ーresolverとは「解決するもの」という意味ですので、*urlresolver* というのはうなずけますよね。). あまり賢いとはいえません。 - it takes a list of patterns and tries to match the URL. Djangoは上から下にURLパターンを順に調べていきます。そこで何かがマッチすると、Djangoは*ビュー*と呼ばれる関数にリクエストを送ります。
 
-Imagine a mail carrier with a letter. She is walking down the street and checks each house number against the one on the letter. If it matches, she puts the letter there. This is how the urlresolver works!
+郵便配達員を思い浮かべてください。配達員は、通りを歩き、ひとつひとつの家の番地と、手紙に書かれている番地を見比べて行きます。マッチする番地があったら、手紙をそこに置いていきます。urlresolverも同じ仕組みです。
 
-In the *view* function all the interesting things are done: we can look at a database to look for some information. Maybe the user asked to change something in the data? Like a letter saying "Please change description of my job."  The *view* can check if you are allowed to do that, then update the job description for you and send back a message: "Done!". Then the *view* generates a response and Django can send it to the user's web browser.
+*ビュー*関数では、面白いことが行われます。私たちは、データベースに情報を探しにいきます。時に、ユーザーがデータを変更するよう求めてきますよね？例えば、「私の仕事内容を変えて下さい」といった手紙のように。*ビュー*は、まずあなたにその権限があるか確認します。次に、仕事内容を書き換えて、「完了しました！」というメッセージをあなたに送り返します。そして、*ビュー*が反応を返して、DjangoがユーザーのWebブラウザに情報を送ります。
 
-Of course, the description above is a little bit simplified, but you don't need to know all the technical things yet. Having a general idea is enough.
+もちろん、上記の説明は、多少簡略化して説明しています。しかし、今ここでは、技術的なことを完璧に理解する必要はありません。概念が分かれば十分です。
 
-So instead of diving too much into details, we will simply start creating something with Django and we will learn all the important parts along the way!
+これ以上詳細について深く説明するより、きっと、Djangoを使って実際に手を動かして作ってみる方がいいでしょう。重要な事はすべてその過程で学べますよ!
 
 
