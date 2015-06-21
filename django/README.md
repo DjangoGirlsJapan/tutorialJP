@@ -10,13 +10,13 @@ Django (_/ˈdʒæŋɡoʊ/ jang-goh_) は、無料でオープンソースとし�
 
 ## Why do you need a framework?
 
-Djangoを本当に理解するために、サーバーをもっとよく見てみましょう。 The first thing is that the server needs to know that you want it to serve you a webpage.
+Djangoを本当に理解するために、サーバーの役割についてもう少し考えてみましょう。サーバーにWebページを配信してもらうようにするには、サーバーにそのような設定をする必要があります。
 
-メールボックスを想像してみてください。メールボックス（ポート）は入ってくる手紙（リクエスト）を監視しています。これはウェブサーバーによって行われています。Webサーバーが手紙を読み、Webページから返事を送ります。送ろうとする時、コンテンツが必要ですね。Djangoは、あなたがそのコンテンツを作る手助けをするものです。
+手紙が届くポストを想像してください。手紙はユーザからWebサーバーに送られるリクエストで、ポストはWebサーバーのポートのことです。Webサーバーはこのポストを監視して、手紙が届くとそれを読み、Webページから返事を送ります。送ろうとする時、コンテンツが必要ですね。Djangoは、あなたがそのコンテンツを作る手助けをするものです。
 
 ## What happens when someone requests a website from your server?
 
-Webサーバーにリクエストがあると、Djangoに伝えられ、リクエストの内容を把握しようとします。　まずWebページのアドレスを調べ、When a request comes to a web server it's passed to Django which tries to figure out what actually is requested. It takes a webpage address first and tries to figure out what to do. これは、Djangoの__urlresolver__が行います。（WebサイトのアドレスはURLと呼ばれます。 Uniform Resource Locator　の略です。ーresolverとは「解決するもの」という意味ですので、*urlresolver* というのはうなずけますよね。). あまり賢いとはいえません。 - it takes a list of patterns and tries to match the URL. Djangoは上から下にURLパターンを順に調べていきます。そこで何かがマッチすると、Djangoは*ビュー*と呼ばれる関数にリクエストを送ります。
+Webサーバーにリクエストがあると、Djangoに伝えられ、リクエストの内容を把握しようとします。　まずWebページのアドレスを調べ、リクエストに対して何をするか決めます。これは、Djangoの__urlresolver__が行います。（WebサイトのアドレスはURLと呼ばれます。 Uniform Resource Locator　の略です。ーresolverとは「解決するもの」という意味ですので、*urlresolver* というのはうなずけますよね。)。あまり賢いとはいえません。Djangoは上から下にURLパターンを順に調べていきます。そこで何かがマッチすると、Djangoは*ビュー*と呼ばれる関数にリクエストを送ります。
 
 郵便配達員を思い浮かべてください。配達員は、通りを歩き、ひとつひとつの家の番地と、手紙に書かれている番地を見比べて行きます。マッチする番地があったら、手紙をそこに置いていきます。urlresolverも同じ仕組みです。
 
@@ -25,5 +25,3 @@ Webサーバーにリクエストがあると、Djangoに伝えられ、リク�
 もちろん、上記の説明は、多少簡略化して説明しています。しかし、今ここでは、技術的なことを完璧に理解する必要はありません。概念が分かれば十分です。
 
 これ以上詳細について深く説明するより、きっと、Djangoを使って実際に手を動かして作ってみる方がいいでしょう。重要な事はすべてその過程で学べますよ!
-
-
