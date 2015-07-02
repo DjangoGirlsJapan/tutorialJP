@@ -25,13 +25,13 @@ Ok, では `blog/forms.py` を開いて次のコードを入力します：
             model = Post
             fields = ('title', 'text',)
 
-djangoパッケージからformsパッケージをインポートします(`from django import forms`)。そして私たちが定義したmodels.pyから `Post` モデルをインポートします(`from .models import Post`)。
+まずDjangoのフォームをインポートします(`from django import forms`)。そして私たちが定義したmodels.pyから `Post` モデルをインポートします(`from .models import Post`)。
 
 予想しているでしょうが、このフォームの名前は `PostForm` にします。そしてこのフォームを `ModelForm` として使用できるように `forms.ModelForm` を継承します（そうするとDjangoはにいくつかの魔法を行います) 。
 
 次に、 インナークラスとして `class Meta` を定義し、どのモデルからこのフォームを作成するべきかを指定します(`model = Post`)。
 
-最後に、どのフィールドをこのフォームで使用するかをを指定します。ここでは `title` と `text` のみ指定します。`author` は現在ログインしている人のはずであり、`created_date` は投稿日が自動で入るべきです。
+最後に、どのフィールドをこのフォームで使用するかを指定します。ここでは `title` と `text` のみ指定します。`author` は現在ログインしている人のはずであり、`created_date` は投稿日が自動で入るべきです。
 
 
 そして *view* とテンプレートでフォームを表示するようにします。
