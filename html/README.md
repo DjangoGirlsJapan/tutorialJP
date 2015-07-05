@@ -8,9 +8,9 @@ Djangoのテンプレートは、HTMLという言語でできています。 (�
 
 ## What is HTML?
 
-HTML is a simple code that is interpreted by your web browser - such as Chrome, Firefox or Safari - to display a webpage for the user.
+HTMLはシンプルなプログラムで、ChromeやFireFox、SafariといったWebブラウザが解釈して、ユーザーが読めるようにしてディスプレイに表示します。
 
-HTML stands for "HyperText Markup Language". __HyperText__ means it's a type of text that supports hyperlinks between pages. __Markup__ means we have taken a document and marked it up with code to tell something (in this case, a browser) how to interpret the page. HTML code is built with __tags__, each one starting with `<` and ending with `>`. These tags markup __elements__.
+HTML は "HyperText Markup Language"の略です。 __HyperText__とは、テキストなどをクリックすると別のページに繋がるハイパーリンクが使えるということです。__Markup__は、目印をつけるという意味です。文章の各部分がどのような役割を果たしているかブラウザに伝えます。`<`と `>`に囲まれた__タグ__によってマークアップされたものは、要素と呼ばれます。
 
 ## Your first template!
 
@@ -125,43 +125,43 @@ HTML stands for "HyperText Markup Language". __HyperText__ means it's a type of 
 
 ここで、３つの `div` ブロックを作りました。
 
-- 最初の `div` 要素は、ブログのタイトルです。見出しとリンクが含まれていますね。 - it's a heading and a link
+- 最初の `div` 要素は、ブログのタイトルです。見出しとリンクが含まれていますね。
 - その他の２つの `div` 要素は、ブログ記事を投稿日時とを囲んでいます。 `h2` の見出しは、リンクタグがついた記事のタイトルです。そして、２つの`p`　パラグラフがありますね。投稿日時とブログ記事の内容です。
 
 ブラウザで見るとこのようになります。:
 
 ![Figure 11.4](images/step6.png)
 
-Yaaay! うまく表示されましたね！でも、まだこのテンプレートは__同じ情報__を表示するだけですね。 - 先ほどお話したようにテンプレートとは、__同じフォーマット__で、__異なる__情報を表示するものです。　whereas earlier we were talking about templates as allowing us to display __different__ information in the __same format__.
+Yaaay! うまく表示されましたね！でも、まだこのテンプレートは__同じ情報__を表示するだけですね。 - 先ほどお話したようにテンプレートとは、__同じフォーマット__で、__異なる__情報を表示するものです。　
 
 私たちが本来やりたいことというのは、Djangoのアドミニに追加された記事の情報を、同じフォーマットで表示することです。 - では、次のレベルにいってみましょう。
 
 ## One more thing
 
-It'd be good to see if your website will be still working on Heroku, right? Let's try deploying again.
+このWebサイトがローカルだけでなく、同じようにHerokuでも動いているのを見たいですね。再度デプロイしてみましょう。
 
-First off, let's see what files have changed since we last deployed:
+まずは、先ほどのデプロイから、どのファイルが更新されたか状態を確認しましょう。:
 
     $ git status
 
-Let's tell `git` to include all the changes from the current directory:
+次に、作業ディレクトリ内のすべての変更を`git` に追加します。:
 
     $ git add -A .
 
-> __Note__ `-A` (short for "all") means that `git` will also recognize if you've deleted files (by default, it only recognizes new/modified files). Also remember (from chapter 3) that `.` means the current directory.
+> __補足__ `-A` ("all"の意味) とすると、削除されたファイルも`git`は認識します。（デフォルトでは、新規ファイルと変更のあったファイルだけを認識します）そして、チャプター３で説明があったように、 `.` は、カレントディレクトリを示していますので、忘れないようにしましょう。
 
-Before we upload all the files, let's check what `git` will be uploading (all the files that `git` will upload should now appear in green):
+すべてのファイルをアップロードする前に、 `git` が何をアップロードしようとしているのか、確認しておきましょう。（ `git`がアップロードしようとしている全てのファイルが緑色で表示されます）:
 
     $ git status
 
-We're almost there, now it's time to tell it to save this change in its history. We're going to give it a "commit message" where we describe what we've changed. You can type anything you'd like at this stage, but it's helpful to type something descriptive so that you can remember what you've done in the future.
+あとちょっとです！がんばりましょう。gitに変更を保存しておきましょう。どのような変更を加えたかわかるように、”コミットメッセージ”をつけておきます。メッセージはなんでも構いませんが、後でなにをしたかわかるような説明をしておくとよいでしょう。
 
     $ git commit -m "Changed the HTML for the site."
 
-> __Note__ Make sure you use double quotes around the commit message.
+> __補足__ コミットメッセージは、ダブルクォーテーションで囲みましょう。
 
-Once we've done that, we can finally upload (push) our changes to the website on heroku:
+この次に、やっと変更をHerokuのWebサイトにアップロード（プッシュ）することができます。:
 
     git push heroku master
 
-And that should be it! Once Heroku is finished, you can go ahead and refresh your website in the browser. Changes should be visible!
+アップロードの作業は以上です。Herokuでの処理がおわれば、ブラウザ上で変更を加えられたサイトが見れるでしょう。ブラウザを再読み込みして確認してください。変更されていますね！
