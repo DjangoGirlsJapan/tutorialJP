@@ -115,7 +115,7 @@ Ok, では `blog/forms.py` を開いて次のコードを入力します：
 - フォームを表示する必要があります。簡単な例としては `{{ form.as_p }}` と記述することです。
 - 上記の行はformtタグでラップする必要があります: `<form method="POST">...</form>`
 - `Save` ボタンが必要です。HTMLではボタンは次のように書きます: `<button type="submit">Save</button>`
-- 最後にformタグ内(開formタグ直後)に `{% csrf_token %}` を追加します。これによりこのフォームがセキュアになるので、とても大切です。もしこれを記述せずにフォームを保存しようとするとDjangoは文句を言います。
+- 最後にformタグ内(開formタグ直後)に `{% raw %}{% csrf_token %}{% endraw %}` を追加します。これによりこのフォームがセキュアになるので、とても大切です。もしこれを記述せずにフォームを保存しようとするとDjangoは文句を言います。
 
 ![CSFR Forbidden page](images/csrf2.png)
 
