@@ -3,7 +3,7 @@
 > このチャプターの一部はGeek Girls Carrots (http://django.carrots.pl/) のチュートリアルに基づいています。
 
 > このチャプターの一部はCreative Commons Attribution-ShareAlike 4.0 International License のライセンスによる [django-marcador
-tutorial](http://django-marcador.keimlink.de/)  に基づいています。このdjango-marcador tutorialはMarkus Zapke-Gründemann et al.が著作権を保有しています。
+tutorial](http://django-marcador.keimlink.de/)  に基づいています。このdjango-marcador tutorialはMarkus Zapke-Gründemann らが著作権を保有しています。
 
 ここからは、シンプルなブログを作っていきますよ！
 
@@ -11,7 +11,7 @@ tutorial](http://django-marcador.keimlink.de/)  に基づいています。こ�
 
 Djangoでは、ファイルやディレクトリの名前がとても重要です。ここで作成するファイルの名前は、後から変えるべきではありません。ファイルを移動させるのもいいアイディアとはいえません。Djangoでは、重要なファイルを決められたファイル構成で作成しておくことが必要です。
 
-> virtualenv（仮想環境）を実行しているでしょうか。コンソールに`(myvenv)`という括弧が表示されていなければ、virtualenvを実行してください。 チャプター__Django installation__の__Working with virtualenv__ で、仮想環境を実行する方法を説明しました。覚えていますか？次のコマンドを入力ですよ。: Windowsでは、`myvenv\Scripts\activate` Mac OS / Linuxでは、
+> virtualenv（仮想環境）を実行しているでしょうか。コンソールに`(myvenv)`という括弧が表示されていなければ、virtualenvを実行してください。 チャプター__Django installation__の__Working with virtualenv__ で、仮想環境を実行する方法を説明しました。覚えていますか？次のコマンドを入力ですよ。: Windowsでは、`myvenv\Scripts\activate`, Mac OS / Linuxでは、
 `myvenv/bin/activate` でしたね。
 
 
@@ -93,7 +93,7 @@ On Windows:
 
 ウェブサーバーは、あなたがコマンドプロンプトで実行を停止するまで動き続けています。さらにコマンドを実行する場合は、新しいターミナルウィンドウを開くか（その時、virtualenvをまた実行することを忘れないで下さい）、あるいは、実行中のウェブサーバーを停止してください。停止する時は、CTRL+C（コントロールとCボタンを同時に押す）です。（Windowsの方は、Ctrl+Breakで停止することがあります。）
 
-おめでとうございます!　これで、はじめてのWebサイトを作成して、サーバーを使って動かすことができました。すごいですね！ 
+おめでとうございます!　これで、はじめてのWebサイトを作成して、サーバーを使って動かすことができました。すごいですね！
 
 ![It worked!](images/it_worked2.png)
 
