@@ -1,19 +1,19 @@
-# Django Forms
+# Django フォーム
 
-The final thing we want to do on our website is create a nice way to add and edit blog posts. Django's `admin` is cool, but it is rather hard to customize and make pretty. With `forms` we will have absolute power over our interface - we can do almost anything we can imagine!
+最後に、ブログ記事の追加と編集を、ウェブサイト上でできるようにしましょう。Djangoの管理画面はクールですが、カスタマイズして綺麗に作るのはとても難しいです。`フォーム` はインターフェースを介してパワフルな機能を提供し、私たちが想像できるほとんどの操作を行うことができます。
 
-The nice thing about Django forms is that we can either define one from scratch or create a `ModelForm` which will save the result of the form to the model.
+Djangoのフォームの良いところは、ゼロからスクラッチもできるし、モデルにフォームの結果を保存するための `ModelForm` を作成することもできます。
 
-This is exactly what we want to do: we will create a form for our `Post` model.
+それを利用して、これから `Post` モデル用のフォームを作成しましょう。
 
-Like every important part of Django, forms have their own file: `forms.py`.
+Djangoの重要な他のパーツと同じように、フォームのためのファイル `forms.py` を作成します。
 
-We need to create a file with this name in the `blog` directory.
+`forms.py` というファイルを `blog` ディレクトリの配下に作成します。
 
     blog
        └── forms.py
 
-Ok, let's open it and type the following code:
+いいですね、では `blog/forms.py` を開いて次のコードを入力します：
 
     from django import forms
 
@@ -25,27 +25,27 @@ Ok, let's open it and type the following code:
             model = Post
             fields = ('title', 'text',)
 
-We need to import Django forms first (`from django import forms`) and, obviously, our `Post` model (`from .models import Post`).
+まずDjangoのフォームモジュールをインポートします(`from django import forms`)。そして私たちが定義したmodels.pyから `Post` モデルをインポートします(`from .models import Post`)。
 
-`PostForm`, as you probably suspect, is the name of our form. We need to tell Django, that this form is a `ModelForm` (so Django will do some magic for us) - `forms.ModelForm` is responsible for that.
+予想しているでしょうが、このフォームの名前は `PostForm` にします。そしてこのフォームを `ModelForm` として使用できるように `forms.ModelForm` を継承します（Djangoの機能をうまく使うためのおまじないと思ってください) 。
 
-Next, we have `class Meta`, where we tell Django which model should be used to create this form (`model = Post`).
+次に、 インナークラスとして `class Meta` を定義し、どのモデルからこのフォームを作成するべきかを指定します(`model = Post`)。
 
-Finally, we can say which field(s) should end up in our form. In this scenario we want only `title` and `text` to be exposed - `author` should be the person who is currently logged in (you!) and `created_date` should be automatically set when we create a post (i.e in the code), right?
+最後に、どのフィールドをこのフォームで使用するかを指定します。ここでは `title` と `text` のみ指定します。`author` は現在ログインしている人（あなたのことです）、`created_date` は投稿日が自動で入るようにしましょう。
 
-And that's it! All we need to do now is use the form in a *view* and display it in a template.
+ひとまずこっちはこれでおしまいです！次は *view* とテンプレートでフォームを表示するようにします。
 
-So once again we will create: a link to the page, a URL, a view and a template.
+そのためもう一度、ページへのリンクとURLとビューとテンプレートを作成します。
 
-## Link to a page with the form
+## フォームを含むページへのリンク
 
-It's time to open `blog/templates/blog/base.html`. We will add a link in `div` named `page-header`:
+`blog/templates/blog/base.html` を開き、 `div class="page-header"` タグ内にリンクを追加します:
 
     <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 
-Note that we want to call our new view `post_new`.
+新しいビュー `post_new` を呼び出していることに注意してください。
 
-After adding the line, your html file should now look like this:
+先ほどのリンクを追加した後のテンプレートファイルは次のようになります:
 
     {% load staticfiles %}
     <html>
@@ -72,15 +72,15 @@ After adding the line, your html file should now look like this:
         </body>
     </html>
 
-After saving and refreshing the page http://127.0.0.1:8000 you will obviously see a familiar `NoReverseMatch` error, right?
+これを保存して `http://127.0.0.1:8000` を更新してください。するとお馴染みの `NoReverseMatch` エラーが発生するはずです。発生しましたか?
 
 ## URL
 
-We open `blog/urls.py` and add a line:
+それではURLを追加します。 `blog/urls.py` を開き次の行を追加します。
 
     url(r'^post/new/$', views.post_new, name='post_new'),
 
-And the final code will look like this:
+追加した後の `blog/urls.py` は次のようになります。
 
     from django.conf.urls import include, url
     from . import views
@@ -91,34 +91,34 @@ And the final code will look like this:
         url(r'^post/new/$', views.post_new, name='post_new'),
     ]
 
-After refreshing the site, we see an `AttributeError`, since we don't have `post_new` view implemented. Let's add it right now.
+サイトを更新すると `AttributeError` が発生します。これは `post_view` を実装していないためです。それでは `post_view` を追加しましょう。
 
-## post_new view
+## post_new ビュー
 
-Time to open the `blog/views.py` file and add the following lines with the rest of the `from` rows:
+`post_view` を実装していきます。 `blog/views.py` に次の行を追加します。まずは `from` の行から:
 
     from .forms import PostForm
 
-and our *view*:
+*view* はこのようになります:
 
     def post_new(request):
         form = PostForm()
         return render(request, 'blog/post_edit.html', {'form': form})
 
-To create a new `Post` form, we need to call `PostForm()` and pass it to the template. We will go back to this *view*, but for now, let's create quickly a template for the form.
+新しい `Post` フォームを作成するために、 `PostForm()` でPostFormをインスタンス化してテンプレートに渡します。また後でここの *view* の実装を変更しますが、そのまえにテンプレートを作りましょう。
 
-## Template
+## テンプレート
 
-We need to create a file `post_edit.html` in the `blog/templates/blog` directory. To make a form work we need several things:
+`blog/templates/blog` ディレクトリ配下に `post_edit.html` を作成します。フォームを動作させるためにはいくつかやることがあります。
 
-- we have to display the form. We can do that for example with a simple `{{ form.as_p }}`.
-- the line above needs to be wrapped with an HTML form tag: `<form method="POST">...</form>`
-- we need a `Save` button. We do that with an HTML button: `<button type="submit">Save</button>`
-- and finally just after the opening `<form ...>` tag we need to add `{% csrf_token %}`. This is very important, since it makes your forms secure! Django will complain if you forget about this bit if you try to save the form:
+- フォームを表示する必要があります。簡単な例としては `{{ form.as_p }}` と記述することです。
+- 上記の行はformtタグでラップする必要があります: `<form method="POST">...</form>`
+- `Save` ボタンが必要です。HTMLではボタンは次のように書きます: `<button type="submit">Save</button>`
+- 最後にformタグ内(開formタグ直後)に `{% raw %}{% csrf_token %}{% endraw %}` を追加します。これによりこのフォームがセキュアになるので、とても大切です。もしこれを記述せずにフォームを保存しようとするとDjangoは文句を言います。
 
 ![CSFR Forbidden page](images/csrf2.png)
 
-Ok, so let's see how the HTML in `post_edit.html` should look:
+それでは `post_edit.html` 内のHTMLがどのように見えるべきかを見てみましょう:
 
     {% extends 'blog/base.html' %}
 
@@ -130,60 +130,60 @@ Ok, so let's see how the HTML in `post_edit.html` should look:
         </form>
     {% endblock %}
 
-Time to refresh! Yay! Your form is displayed!
+更新します。わーい! フォームが表示されました!
 
 ![New form](images/new_form2.png)
 
-But, wait a minute! When you type something in `title` and `text` fields and try to save it - what will happen?
+しかし、ちょっと待ってください! `title` と `text` フィールドを入力して保存しようとすると何が起こるのでしょうか？
 
-Nothing! We are once again on the same page and our text is gone... and no new post is added. So what went wrong?
+何も起こりません! 同じページが再度表示され、私たちのテキストがなくなって...そして新しい投稿が追加されていません。何が間違っているのでしょうか？
 
-The answer is: nothing. We need to do a little bit more work in our *view*.
+その答えは...。間違えてはいませんが *view* に対してもう少し作業を行う必要があります。
 
-## Saving the form
+## formをsaveする
 
-Open `blog/views.py` once again. Currently all we have in `post_new` view is:
+`blog/views.py` を再度開きます。すでに `post_new` ビューがあります:
 
     def post_new(request):
         form = PostForm()
         return render(request, 'blog/post_edit.html', {'form': form})
 
-When we submit the form, we are back in the same view, but this time we have some more data in `request`, more specifically in `request.POST`. Remember that in the HTML file our `<form>` definition had the variable `method="POST"`? All the fields from the form are now in `request.POST`. You should not rename `POST` to anything else (the only other valid value for `method` is `GET`, but we have no time to explain what the difference is).
+フォームをsubmitするとき、今は同じビューに戻りますが、このとき `request` 内(より具体的には `request.POST` 内)にフォームのデータが保持されています。HTMLファイルで定義された `<form>` タグに `method="POST"` が指定されていたことを覚えていますか?フォームのすべてのフィールドが `request.POST` 内にあります。`POST` の名前を他の名前に変更することはできません (それを変更する唯一の方法は `method` に `GET` を指定することですが、それがなぜ間違いであるかを話す時間がありません)
 
-So in our *view* we have two separate situations to handle. First: when we access the page for the first time and we want a blank form. Second: when we go back to the *view* with all form's data we just typed. So we need to add a condition (we will use `if` for that).
+そのため *view* では2つの状況をハンドルするようにします。1つ目は初回アクセス時で空のフォームが欲しい時です。2つ目はフォームの入力を終えて全てのフォームのデータともに *view* に戻る時です。そこで条件を追加します(そのために `if` を使用します)。
 
     if request.method == "POST":
         [...]
     else:
         form = PostForm()
 
-It's time to fill in the dots `[...]`. If `method` is `POST` then we want to construct the `PostForm` with data from the form, right? We will do that with:
+それでは `[...]` の部分を埋めていきます。 `method` が `POST` の場合、フォームから送られたデータを用いて `PostForm` を作成するために次のようにします:
 
     form = PostForm(request.POST)
 
-Easy! Next thing is to check if the form is correct (all required fields are set and no incorrect values will be saved). We do that with `form.is_valid()`.
+簡単ですね! 次にフォームの値が正しいかどうかをチェックします（すべての必須フィールドが設定され、全く誤った値が保存されていないことを）。 `form.is_valid()` を使うことでチェックできます。
 
-We check if the form is valid and if so, we can save it!
+フォームをチェックして、フォームの値が有効であれば保存できます。
 
     if form.is_valid():
         post = form.save(commit=False)
         post.author = request.user
         post.save()
 
-Basically, we have two things here: we save the form with `form.save` and we add an author (since there was no `author` field in the `PostForm` and this field is required!). `commit=False` means that we don't want to save `Post` model yet - we want to add author first. Most of the time you will use `form.save()`, without `commit=False`, but in this case, we need to do that.
-`post.save()` will preserve changes (adding author) and a new blog post is created!
+基本的にここでは2つのことを行います。まず `form.save` でフォームを保存することと `author` を追加することです(まだ `PostForm` 内に `author` フィールドがありませんし、このフィールドは必須です)。`commit=False` は `Post` モデルをまだセーブしません。ではauthorを追加します。`commit=False` を指定せず `form.save()` を実行します。そしてこのケースではそれが必要です。
+`post.save()` は変更(authorの追加) を保存し、新しいブログ記事を作成します。
 
-Finally, it would be awesome if we can immediatelly go to `post_detail` page for newly created blog post, right? To do that we need one more import:
+最後に、新しく作成された記事の `post_detail` ページを表示できれば良いですよね? そのために次のインポートを追加します:
 
     from django.shortcuts import redirect
 
-Add it at the very beginning of your file. And now we can say: go to `post_detail` page for a newly created post.
+それをファイルの先頭に追加します。これでようやく、新しく作成されたポストのための `post_detail` ページに移動する処理を書けます。
 
     return redirect('blog.views.post_detail', pk=post.pk)
 
-`blog.views.post_detail` is the name of the view we want to go to. Remember that this *view* requires a `pk` variable? To pass it to the views we use `pk=post.pk`, where `post` is the newly created blog post!
+`blog.views.post_detail` は新しく作成されたポストのために `post_detail` ページに移動するためのビューです。 この *view* では `pk` 変数が必須であることを覚えていますか? `post` では新しいブログ記事が作成されます。
 
-Ok, we talked a lot, but we probably want to see what the whole *view* looks like now, right?
+OK, たくさんのことを説明しました。全体の *view* は以下のようになります。
 
     def post_new(request):
         if request.method == "POST":
@@ -197,36 +197,36 @@ Ok, we talked a lot, but we probably want to see what the whole *view* looks lik
             form = PostForm()
         return render(request, 'blog/post_edit.html', {'form': form})
 
-Let's see if it works. Go to the page http://127.0.0.1:8000/post/new/, add a `title` and `text`, save it... and voilà! The new blog post is added and we are redirected to `post_detail` page!
+では動作確認してみます。http://127.0.0.1:8000/post/new/ に行き、 `title` と `text` を追加し、保存します...。できあがり! 新しいブログ記事が追加され、`post_detail` にリダイレクトされます！
 
-You problably have noticed that we are not setting publish date at all. We will introduce a _publish button_ in __Django Girls Tutorial: Extensions__.
+おそらくあなたは日付が設定されていないことに気づいたことでしょう。 それについては __Django Girls Tutorial: Extensions__ 内の _publish button_ をみてください。
 
-That is awesome!
+素晴らしい！
 
-## Form validation
+## フォームのバリデーション(検証)
 
-Now, we will show you how cool Django forms are. A blog post needs to have `title` and `text` fields. In our `Post` model we did not say (as opposed to `published_date`) that these fields are not required, so Django, by default, expects them to be set.
+ここではDjangoのフォームのクールなところを紹介します。ブログのポストは `title` と `text` のフィールドが必要です。`Post` モデルでは、これらのフィールドがなくてもよいとは書いておらず(デフォルトの値が設定されている `published_date` とは対照的に)、Djangoではその場合、それらのフィールドには何らかの値が設定されないとエラーが起こるようになっています。
 
-Try to save the form without `title` and `text`. Guess, what will happen!
+`title` と `text` を入力せずに保存してみましょう。何が起こるでしょうか?
 
 ![Form validation](images/form_validation2.png)
 
-Django is taking care of validating that all the fields in our form are correct. Isn't it awesome?
+Djangoはフォームのすべてのフィールドが正しいことを検証してくれます。気が利くでしょう?
 
-> As we have recently used the Django admin interface the system currently thinks we are logged in. There are a few situations that could lead to us being logged out (closing the browser, restarting the DB etc.). If you find that you are getting errors creating a post referring to a lack of a logged in user, head to the admin page http://127.0.0.1:8000/admin and log in again. This will fix the issue temporarily. There is a permanent fix awaiting you in the __Homework: add security to your website!__ chapter after the main tutorial.
+> ここでは現在、Djangoの管理画面と同様に、ログイン状態で操作しています。いくつかの状況ではログアウト状態になることがあります(ブラウザを閉じる、DBを再起動するなど..)。ポストの作成時にログインユーザがわからないことでエラーが発生した場合、管理画面に移動し再度ログインすることで、その問題は一時的に解決します。メインチュートリアルの後 __Homework: add security to your website!__ の章に恒久的な対策がありますので宿題として取り組んでみてください。
 
 ![Logged in error](images/post_create_error.png)
 
+## フォームの編集
 
-## Edit form
+今、私たちは新しいフォームを追加する方法を知っています。しかし既存のデータを編集するためはどうすれば良いのでしょうか?それは先ほど行ったことと非常に似ています。すぐにいくつかの重要なものを作成してみましょう。（もしわからない場合、コーチに尋ねるか、もしくはすでに手順をカバーしているので、前の章を見てください）
 
-Now we know how to add a new form. But what if we want to edit an existing one? It is very similar to what we just did. Let's create some important things quickly (if you don't understand something, you should ask your coach or look at the previous chapters, since we covered all these steps already).
+`blog/templates/blog/post_detail.html` を開いて次の行を追加します:
 
-Open `blog/templates/blog/post_detail.html` and add this line:
 
     <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 
-so that the template will look like:
+テンプレートは次のようになります:
 
     {% extends 'blog/base.html' %}
 
@@ -241,13 +241,13 @@ so that the template will look like:
         <p>{{ post.text|linebreaks }}</p>
     {% endblock %}
 
-In `blog/urls.py` we add this line:
+`blog/urls.py` には次の行を追加します:
 
     url(r'^post/(?P<pk>[0-9]+)/edit/$', views.post_edit, name='post_edit'),
 
-We will reuse the template `blog/templates/blog/post_edit.html`, so the last missing thing is a *view*.
+テンプレート `blog/templates/blog/post_edit.html` を再利用します。そしてviewを追加します。
 
-Let's open a `blog/views.py` and add at the very end of the file:
+`blog/views.py` を開いて次をファイルの最後に追加します:
 
     def post_edit(request, pk):
         post = get_object_or_404(Post, pk=pk)
@@ -262,31 +262,31 @@ Let's open a `blog/views.py` and add at the very end of the file:
             form = PostForm(instance=post)
         return render(request, 'blog/post_edit.html', {'form': form})
 
-This looks almost exactly the same as our `post_new` view, right? But not entirely. First thing: we pass an extra `pk` parameter from urls. Next: we get the `Post` model we want to edit with `get_object_or_404(Post, pk=pk)` and then, when we create a form we pass this post as an `instance` both when we save the form:
+`post_view` とほとんど同じに見えますか? しかし完全に同じではありません。まずURLから `pk` パラメータを渡します。次に `Post` モデルを `get_object_or_404(Post, pk=pk)` で取得します。その後フォームを保存する際、この記事をインスタンスとしてフォームを作成します。
 
     form = PostForm(request.POST, instance=post)
 
-and when we just opened a form with this post to edit:
+そしてこの記事でフォームを開き編集します。
 
     form = PostForm(instance=post)
 
-Ok, let's test if it works! Let's go to `post_detail` page. There should be an edit button in the top-right corner:
+OK, 動作確認しましょう。 `post_detail` ページにいきます。そこの右上に [編集] ボタンがあるはずです:
 
 ![Edit button](images/edit_button2.png)
 
-When you click it you will see the form with our blog post:
+クリックするとブログの記事にフォームが表示されます:
 
 ![Edit form](images/edit_form2.png)
 
-Feel free to change the title or the text and save changes!
+あとはお気軽にタイトルやテキストを変更して保存してください。
 
-Congratulations! Your application is getting more and more complete!
+おめでとう！アプリケーションが完成しました。
 
-If you need more information about Django forms you should read the documentation: https://docs.djangoproject.com/en/1.8/topics/forms/
+Djangoのフォームについての詳細を知りたい場合、Django Projectのドキュメントを読んでください: https://docs.djangoproject.com/en/1.8/topics/forms/
 
-## One more thing: deploy time!
+## もう一つ: deployの時間です!
 
-It'd be good to see if your website will still be working on Heroku, right? Let's try deploying again. If you forgot how to do it, check the end of chapter [Deploy](../deploy/README.md):
+ではHeroku上で動作するかを確認しましょう。再度デプロイします。なおデプロイ方法を忘れてしまった場合は章の最後  [Deploy](../deploy/README.md) をチェックしてください:
 
     $ git status
     ...
@@ -297,4 +297,4 @@ It'd be good to see if your website will still be working on Heroku, right? Let'
     ...
     $ git push heroku master
 
-And that should be it! Congrats :)
+そしてdeployします! おめでとうございます :)
