@@ -1,91 +1,91 @@
 # Introduction to the command-line interface
 
-Huh, it's exciting, right?! You'll write your first line of code in just a few minutes :)
+さぁ、これから最初のコードを書いていきますよ。楽しんでいきましょう！:)
 
-__Let us introduce you to your first new friend: the command line!__
+__最初にお友達になるのはコレです。: コマンドライン!__
 
-The following steps will show you how to use the black window all hackers use. It might look a bit scary at first but really it's just a prompt waiting for commands from you.
+プログラマーが黒い画面に向かっている光景を見たことがありますか？ここからは、その黒い画面を触ってみます。最初はちょっとコワイと思うかもしれませんが、そんなことはありません。プロンプトと呼ばれるものがあなたの命令（コマンド）を待っています。
 
 ## What is the command line?
 
-The window, which is usually called the __command line__ or __command-line interface__, is a text-based application for viewing, handling and manipulating files on your computer (much like e.g. Windows Explorer or Finder on Mac, but without the graphical interface). Other names for the command line are: *cmd*, *CLI*, *prompt*, *console* or *terminal*.
+さて、__コマンドライン__ あるいは __コマンドライン　インターフェイス__と呼ばれるこの画面は、キーボードで入力したテキストで命令を出してコンピューターと直接対話するように、ファイルを見たり、変更したり (グラフィカル・インターフェースじゃないだけで、WindowsのエクスプローラやMacのファインダーと同じ役割です) するものです。このコマンドラインは、 *cmd*, *CLI*, *プロンプト*, *コンソール* or *ターミナル* と呼ばれることもあります。
 
 ## Open the command-line interface
 
-To start some experiments we need to open our command-line interface first.
+では、実際にコマンドラインを開いて、触ってみることとしましょう。
 
 ### Windows
 
-Go to Start menu → All Programs → Accessories → Command Prompt.
+［スタート］メニューから［すべてのプログラム］－［アクセサリ］－［コマンドプロンプト］を選択してください。
 
 ### Mac OS X
 
-Applications → Utilities → Terminal.
+［アプリケーション］ー［ユーティリティ］ー［ターミナル］を選択して下さい。
 
 ### Linux
 
-It's probably under Applications → Accessories → Terminal, but that may depend on your system. If it's not there, just Google it :)
+おそらく ［アプリケーション］ー［アクセサリ］ー［ターミナル］と選択し起動できるでしょう。あなたのシステムによってはこの通りではないことがあります。見つからないときは、Google先生にきいてみましょう。 :)
 
 ## Prompt
 
-You now should see a white or black window that is waiting for your commands.
+おそらく今、真っ白または真っ黒な画面が開かれていることでしょう。この画面はあなたの命令を待っています。
 
-If you're on Mac or Linux, you probably see `$`, just like this:
+MacあるいはLinuxの方は、次のように `$`　と表示されているのがわかりますか？:
 
     $
 
-On Windows, it's a `>` sign, like this:
+Windowsの方は、 `>` という記号が表示されていることでしょう。:
 
     >
 
-Each command will be prepended by this sign and one space, but you don't have to type it. Your computer will do it for you :)
+各コマンドの先頭には、この記号とスペースがつきます。あなたのコンピューターが表示してくれるので、自分で入力する必要はありません。 :)
 
-> Just a small note: in your case there maybe something like `C:\Users\ola>` or `Olas-MacBook-Air:~ ola$` before the prompt sign and that's 100% correct. In this tutorial we will just simplify it to the bare minimum.
+> ちょっと補足です。プロンプト記号の前に`C:\Users\ola>` or `Olas-MacBook-Air:~ ola$` のような表示がありますね。これは間違いではありません。100%正解です。このチュートリアルでは、シンプルにわかりやすくするために、その部分を省略して記述します。
 
 ## Your first command (YAY!)
 
-Let's start with something simple. Type this command:
+では最初は簡単なコマンドを実行してみましょう。次のように入力してみてください。:
 
     $ whoami
 
-or
+または
 
     > whoami
 
-And then hit Enter. This is our result:
+そして最後にEnterキーを押して下さい。このような結果が返ってきます:
 
     $ whoami
     olasitarska
 
-As you can see, the computer just presented you your username. Neat, huh?:)
+ご覧のとおり、コンピューターがあなたのユーザーネームを表示してくれましたね。面白いでしょ?:)
 
-> Try to type each command, do not copy paste. You'll remember more this way!
+> コピー＆ペーストではなく、コマンドを入力して試してみてください。そのうち自然と覚えられるようになりますからね！
 
 ## Basics
 
-Each operating system has a slightly different set of commands for the command line, so make sure to follow instructions for your operating system. Let's try this, shall we?
+OSによってコマンドが若干違います。あなたのコンピューターのOSの方法に従って、以下は進めていってくださいね。次にいってみましょう。
 
 ### Current directory
 
-It'd be nice to know where are we now, right? Let's see. Type this command and hit enter:
+今どこのディレクトリにいるか（どのフォルダで作業をしているか）、知りたいですよね？では、このようにキーボードで入力して、Enterキーをおしてください。:
 
     $ pwd
     /Users/olasitarska
 
-If you're on Windows:
+Windowsの方は次のように:
 
     > cd
     C:\Users\olasitarska
 
-You'll probably see something similiar on your machine. Once you open the command line you usually start at your user's home directory.
+おそらく、似たようなものがあなたの画面に表示されたのではないでしょうか。コマンドラインを起動した最初は、通常ユーザーのホームディレクトリが表示されます。
 
-> Note: 'pwd' stands for 'print working directory'.
+> 補足: 'pwd' は'print working directory'を意味しており、現在いる作業ディレクトリを取得することです。
 
 ---
 
 ### List files and directories
 
-So what's in it? It'd be cool to find out. Let's see:
+では、その中には何があるのでしょうか？表示させてみましょう。:
 
     $ ls
     Applications
@@ -108,7 +108,7 @@ So what's in it? It'd be cool to find out. Let's see:
 
 ### Change current directory
 
-Maybe we can now go to our Desktop directory?
+次に、デスクトップのディレクトリに移動してみましょう。
 
     $ cd Desktop
 
@@ -116,7 +116,7 @@ Windows:
 
     > cd Desktop
 
-Check if it's really changed:
+本当にディレクトリを移動できたか、確認してみましょう。:
 
     $ pwd
     /Users/olasitarska/Desktop
@@ -126,15 +126,15 @@ Windows:
     > cd
     C:\Users\olasitarska\Desktop
 
-Here it is!
+できていますね！
 
-> PRO tip: if you type `cd D` and then hit `tab` on your keyboard, the command line will automatically autofill the rest of the name so you can navigate faster. If there is more than one folder starting with "D", hit the `tab` button twice to get a list of options.
+> PRO tip:  `cd D`と入力して、キーボードの`tab`ボタンを押してください。すると、Dに続く残りの部分が自動的に補完されて入力されます。もし、Dから始まるディレクトリ名が他にもあれば、`tab`ボタンを繰り返し押すと候補が次々と表示されます。入力が楽になりますね。
 
 ---
 
 ### Create directory
 
-How about creating a Django Girls directory on your desktop? You can do it this way:
+それでは、Django Girlsのディレクトリをデスクトップに新規作成してみましょう。:
 
     $ mkdir djangogirls
 
@@ -142,15 +142,15 @@ Windows:
 
     > mkdir djangogirls
 
-This little command will create a folder with the name `djangogirls` on your desktop. You can check if it's there just by looking on your Desktop or by running a `ls`/`dir` command! Try it :)
+この短いコマンドで、デスクトップに`djangogirls`という名前の新しいフォルダが作成されました。あなたのデスクトップを見てフォルダが作成されていることを確認してみましょう。あるいは、先ほど学んだコマンド `ls`/`dir` を使って確認しましょう。 やってみてください。 :)
 
-> PRO tip: If you don't want to type the same commands over and over, try pressing the `up arrow` and `down arrow` on your keyboard to cycle through recently used commands.
+> PRO tip: 同じコマンドを何度もなんども入力したくない時は、上下矢印キー↑，↓を押せば、先ほどキーボードから入力したものが現れます。内容を修正したい場合には，左右矢印キー←，→を利用して修正したい位置にカーソルを移動させて，修正することができますよ。
 
 ---
 
 ### Exercise!
 
-Small challenge for you: in your newly created `djangogirls` directory create a directory called `test`. Use `cd` and `mkdir` commands.
+練習をしてみましょう。先ほど作成した`djangogirls` ディレクトリの中に、新たに`test`という名前のディレクトリを作成してください。使うコマンドは、 `cd` と `mkdir` ですよ。
 
 #### Solution:
 
@@ -166,15 +166,15 @@ Windows:
     > dir
     05/08/2014 07:28 PM <DIR>      test
 
-Congrats! :)
+おめでとうございます！よくできました！ :)
 
 ---
 
 ### Clean up
 
-We don't want to leave a mess, so let's remove everything we did until that point.
+練習がおわったら、それをそのままに置いておくと邪魔になりますね。削除しておきましょう。
 
-First, we need to get back to Desktop:
+はじめに、作業するディレクトリをデスクトップに戻しましょう。:
 
     $ cd ..
 
@@ -182,9 +182,9 @@ Windows:
 
     > cd ..
 
-Making `cd` to `..` will change your current directory to the parent directory (which means the directory that contains your current directory).
+`cd`の後にある`..`で、現在の親ディレクトリに移動します。（今作業しているフォルダのひとつ上のフォルダに移動するということですね。）
 
-Check where you are:
+現在の作業ディレクトリを確認しておきましょう。:
 
     $ pwd
     /Users/olasitarska/Desktop
@@ -194,9 +194,9 @@ Windows:
     > cd
     C:\Users\olasitarska\Desktop
 
-Now time to delete the `djangogirls` directory.
+では、`djangogirls`ディレクトリを削除しましょう。
 
-> __Attention__: Deleting files using `del`, `rmdir` or `rm` is irrecoverable, meaning _deleted files will be gone forever_! So, be very careful with this command.
+> __注意！__: `del`, `rmdir` や `rm` のコマンドを使って削除したファイルは、復活できません。完全に消えてしまいます。このコマンドを使う時は、よく気をつけてくださいね。
 
     $ rm -r djangogirls
 
@@ -205,7 +205,7 @@ Windows:
     > rmdir /S djangogirls
     djangogirls, Are you sure <Y/N>? Y
 
-Done! To be sure it's actually deleted, let's check it:
+できました! 本当に削除されたか、確認してみましょう。:
 
     $ ls
 
@@ -215,7 +215,7 @@ Windows:
 
 ### Exit
 
-That's it for now! You can safely close the command line now. Let's do it the hacker way, all right?:)
+ここまでです。それではコマンドラインを終了しましょう。かっこいいやり方で終わりたいですよね？:)
 
     $ exit
 
@@ -223,26 +223,26 @@ Windows:
 
     > exit
 
-Cool, huh?:)
+かっこいいですね！:)
 
 ## Summary
 
- Here is a summary of some useful commands:
+ ここに学んだコマンドをまとめておきます。:
 
-| Command (Windows) | Command (Mac OS / Linux) | Description             | Example                                       |
+| コマンド (Windows) | コマンド (Mac OS / Linux) | 説明             | 実行例                                       |
 | ----------------- | ------------------------ | ----------------------- | --------------------------------------------- |
-| exit              | exit                     | close the window        | **exit**                                      |
-| cd                | cd                       | change directory        | **cd test**                                   |
-| dir               | ls                       | list directories/files  | **dir**                                       |
-| copy              | cp                       | copy file               | **copy c:\test\test.txt c:\windows\test.txt** |
-| move              | mv                       | move file               | **move c:\test\test.txt c:\windows\test.txt** |
-| mkdir             | mkdir                    | create a new directory  | **mkdir testdirectory**                       |
-|del                | rm                       | delete a directory/file | **del c:\test\test.txt**                      |
+| exit              | exit                     | ウィンドウを閉じる        | **exit**                                      |
+| cd                | cd                       | ディレクトリを移動する        | **cd test**                                   |
+| dir               | ls                       | ディレクトリとファイルの一覧を表示  | **dir**                                       |
+| copy              | cp                       | ファイルをコピーする              | **copy c:\test\test.txt c:\windows\test.txt** |
+| move              | mv                       | ファイルを移動させる               | **move c:\test\test.txt c:\windows\test.txt** |
+| mkdir             | mkdir                    | ディレクトリを新規作成する  | **mkdir testdirectory**                       |
+| del               | rm                       | ディレクトリやファイルを削除する | **del c:\test\test.txt**                      |
 
-These are just a very few of the commands you can run in your command line but you're not going to use anything more than that today.
+ここで勉強したのはコマンドのほんの一部でしたが、このワークショップで使うコマンドはこれだけです。
 
-If you're curious, [ss64.com](http://ss64.com) contains a complete reference of commands for all operating systems.
+もっと勉強したい方は、 [ss64.com](http://ss64.com) に各OSのコマンド一覧があります。ご参考までに。
 
 ## Ready?
 
-Let's dive into Python!
+よし、次はPythonを勉強していきましょう!
