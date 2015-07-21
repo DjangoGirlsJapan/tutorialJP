@@ -1,66 +1,66 @@
 # Introduction to HTML
 
-What's a template, you may ask?
+テンプレートって何？とあなたは思っているかもしれませんね。
 
-A template is a file that we can re-use to present different information in a consistent format - for example, you could use a template to help you write a letter, because although each letter might contain a different message and be addressed to a different person, they will share the same format.
+テンプレートは、あらかじめ用意された共通したフォーマットのなかで異なる情報をみせるためのファイルです。 - 例えば、手紙を書く時に、中身は異なるメッセージや宛名や住所を書きますが、共通のフォーマットを使いますよね。それがテンプレートです。
 
-A Django template's format is described in a language called HTML (that's the HTML we mentioned in the first chapter __How the Internet works__).
+Djangoのテンプレートは、HTMLという言語でできています。 (はじめのチャプター__How the Internet works__で、HTMLについては少しお話しましたね。）
 
 ## What is HTML?
 
-HTML is a simple code that is interpreted by your web browser - such as Chrome, Firefox or Safari - to display a webpage for the user.
+HTMLはシンプルなプログラムで、ChromeやFireFox、SafariといったWebブラウザが解釈して、ユーザーが読めるようにしてディスプレイに表示します。
 
-HTML stands for "HyperText Markup Language". __HyperText__ means it's a type of text that supports hyperlinks between pages. __Markup__ means we have taken a document and marked it up with code to tell something (in this case, a browser) how to interpret the page. HTML code is built with __tags__, each one starting with `<` and ending with `>`. These tags markup __elements__.
+HTML は "HyperText Markup Language"の略です。 __HyperText__とは、テキストなどをクリックすると別のページに繋がるハイパーリンクが使えるということです。__Markup__は、目印をつけるという意味です。文章の各部分がどのような役割を果たしているかブラウザに伝えます。`<`と `>`に囲まれた__タグ__によってマークアップされたものは、要素と呼ばれます。
 
 ## Your first template!
 
-Creating a template means creating a template file. Everything is a file, right? You have probably noticed this already.
+テンプレートを作成するということは、テンプレートファイルを作成するという意味です。すべてはファイルですよね？あなたは、このことにすでに気がついていることと思います。
 
-Templates are saved in `blog/templates/blog` directory. So first create a directory called `templates` inside your blog directory. Then create another directory called `blog` inside your templates directory:
+テンプレートは `blog/templates/blog` ディレクトリに保存します。では、まず`blog`ディレクトリに `templates`　という新しいディレクトリを作成しましょう。次に、`templates`ディレクトリの中に、`blog`というディレクトリを作成します。:
 
     blog
     └───templates
         └───blog
 
-(You might wonder why we need two directories both called `blog` - as you will discover later, this is simply a useful naming convention that makes life easier when things start to get more complicated.)
+(なぜ`blog`という名前のディレクトリが２つもあるのだろうと、疑問に思ったかもしれませんね。 - 後にわかってくると思いますが、これは複雑になりやすい物事を楽にするための、わかりやすい命名規則なのです。)
 
-And now create a `post_list.html` file (just leave it blank for now) inside the `blog/templates/blog` directory.
+さて、`blog/templates/blog`ディレクトリの中に、 `post_list.html` というファイルを作成しましょう。 (今のところは、空っぽのファイルにしておいてください。)
 
-See how your website looks now: http://127.0.0.1:8000/
+ここで、あなたのWebサイトがどのように見えるか確認してみましょう。: http://127.0.0.1:8000/
 
-> If you still have an error `TemplateDoesNotExists`, try to restart your server. Go into command line, stop the server by pressing Ctrl+C (Control and C buttons together) and start it again by running a `python manage.py runserver` command.
+> もし、まだ`TemplateDoesNotExists`というエラーが出るようでしたら、サーバーをリスタートしてみてください。コマンドラインで、Ctrl+C (Control と C ボタンを同時に押す)を押すと、サーバーが止まります。`python manage.py runserver` とコマンドを打って、再度スタートしてください。
 
 ![Figure 11.1](images/step1.png)
 
-No error anymore! Congratulations :) However, your website isn't actually publishing anything except an empty page, because your template is empty too. We need to fix that.
+エラーが出なくなりました！おめでとう！！:) しかし、あなたのWebサイトはまだ何も表示されていませんね。あなたのテンプレートにまだ何もないからです。これを修正していきましょう。
 
-Add the following to your template file:
+テンプレートファイルに、次のとおりにコードを追加して下さい。:
 
     <html>
         <p>Hi there!</p>
         <p>It works!</p>
     </html>
 
-So how does your website look now? Click to find out: http://127.0.0.1:8000/
+さて、あなたのWebサイトは今度はどのように見えるでしょうか？確認してみましょう。: http://127.0.0.1:8000/
 
 ![Figure 11.2](images/step3.png)
 
-It worked! Nice work there :)
+表示されましたね！よくできました！ :)
 
-- The most basic tag, `<html>`, is always the beginning of any webpage and `</html>` is always the end. As you can see, the whole content of the website goes between the beginning tag `<html>` and closing tag `</html>`
-- `<p>` is a tag for paragraph elements; `</p>` closes each paragraph
+- `<html>`、Webページのはじまりにつけるタグです。そして`</html>` はページの最後につきます。先ほどの例でお分かりのように、最初の行の`<html>`と、 最終行の `</html>` の間に、Webサイトの全てのコンテンツが書かれています。
+- `<p>` はパラグラフのタグです。 `</p>` を各パラグラフの終わりにつけます。
 
 ## Head & body
 
-Each HTML page is also divided into two elements: __head__ and __body__.
+すべてのHTMLページは、２つの要素が必要です。: __head__ と __body__　です。
 
-- __head__ is an element that contains information about the document that is not displayed on the screen.
+- __head要素__ 　これには、ドキュメントに必要な情報を含んでいます。ディスプレイには表示されません。
 
-- __body__ is an element that contains everything else that is displayed as part of the web page.
+- __body要素__ 　これには、そのほかのWebページに表示される内容が含まれます。
 
-We use `<head>` to tell the browser about the configuration of the page, and `<body>` to tell it what's actually on the page.
+`<head>` は、ページの構成などをブラウザに伝えます。そして、`<body>` のタグ内の内容が、実際にページに表示されます。
 
-For example, you can put a webpage title element inside the `<head>`, like this:
+例えば、次の例のように、Webページのタイトルを `<head>`　タグの中に含めることができます。:
 
     <html>
         <head>
@@ -72,33 +72,33 @@ For example, you can put a webpage title element inside the `<head>`, like this:
         </body>
     </html>
 
-Save the file and refresh your page.
+ファイルを保存して、再読み込みしてみましょう。
 
 ![Figure 11.3](images/step4.png)
 
-Notice how the browser has understood that "Ola's blog" is the title of your page? It has interpreted `<title>Ola's blog</title>` and placed the text in the title bar of your browser (it will also be used for bookmarks and so on).
+あなたのページのタイトルが"Ola's blog"だと、ブラウザが認識してくれましたね？　<head>タグ内に書かれた `<title>Ola's blog</title>` をブラウザは解釈して、ブラウザのタイトルバーの文字が反映されました。(ブックマークのタイトルなどにも使われます).
 
-Probably you have also noticed that each opening tag is matched by a _closing tag_, with a `/`, and that elements are _nested_ (i.e. you can't close a particular tag until all the ones that were inside it have been closed too).
+おそらく既にお気づきでしょう。タグは開始タグと終了タグのペアになっていて、終了タグには`/`がつきます。そして要素の中にほかの要素が次々と入れ子になっています (入れ子なので、あるタグを閉じるときには、その中のタグもすべて閉じていなくてはなりません)。
 
-It's like putting things into boxes. You have one big box, `<html></html>`; inside it there is `<body></body>`, and that contains still smaller boxes: `<p></p>`.
+これは箱にものを入れるようなイメージです。まず最初に、`<html></html>`という大きな箱を１つもっています。その中に、`<body></body>`という箱があり、また更にその中に`<p></p>`という小さい箱が入っています。
 
-You need to follow these rules of _closing_ tags, and of _nesting_ elements - if you don't, the browser may not be able to interpret them properly and your page will display incorrectly.
+タグを閉じることと、入れ子にすることは、守らなければいけないルールです。タグを閉じていなかったり、入れ子になっていないと、ブラウザは正しく解釈ができないため、あなたのページは正しく表示されません。
 
 ## Customize your template
 
-You can now have a little fun and try to customize your template! Here are a few useful tags for that:
+テンプレートをつかって、カスタマイズしてちょっと遊んでみてください。よく使われるタグをいくつかご紹介しておきますね。:
 
-- `<h1>A heading</h1>` - for your most important heading
-- `<h2>A sub-heading</h2>` for a heading at the next level
-- `<h3>A sub-sub-heading</h3>` ... and so on, up to `<h6>`
-- `<em>text</em>` emphasizes your text
-- `<strong>text</strong>` strongly emphasizes your text
-- `<br />` goes to another line (you can't put anything inside br)
-- `<a href="http://djangogirls.org">link</a>` creates a link
-- `<ul><li>first item</li><li>second item</li></ul>` makes a list, just like this one!
-- `<div></div>` defines a section of the page
+- `<h1>見出し１</h1>` - 一番大きな見出し
+- `<h2>見出し２</h2>` 次に大きな見出し
+- `<h3>見出し３</h3>` ... 見出しのレベルは１〜６まであり、`<h6>`が一番小さい見出しとなります。
+- `<em>text</em>` 要素に囲まれたテキストを強調します。文章の意味合いとして強調すべき語句やフレーズを示します。
+- `<strong>text</strong>` 囲まれたテキストを強く強調します。文中の特定の語句が重要であることを示します。
+- `<br />` br は BReak(改行)の略です。テキストをこの位置で改行します。(brの中には、何も書いてはいけません)
+- `<a href="http://djangogirls.org">link</a>` リンクをつくります。
+- `<ul><li>first item</li><li>second item</li></ul>` リストをつくります。
+- `<div></div>` ブロック要素として囲みます。
 
-Here's an example of a full template:
+以下をテンプレートとして使って下さい。:
 
     <html>
         <head>
@@ -123,45 +123,45 @@ Here's an example of a full template:
         </body>
     </html>
 
-We've created three `div` sections here.
+ここで、３つの `div` ブロックを作りました。
 
-- The first `div` element contains the title of our blog - it's a heading and a link
-- Another two `div` elements contain our blogposts with a published date, `h2` with a post title that is clickable and two `p`s (paragraph) of text, one for the date and one for our blogpost.
+- 最初の `div` 要素は、ブログのタイトルです。見出しとリンクが含まれていますね。
+- その他の２つの `div` 要素は、ブログ記事を投稿日時とを囲んでいます。 `h2` の見出しは、リンクタグがついた記事のタイトルです。そして、２つの`p`　パラグラフがありますね。投稿日時とブログ記事の内容です。
 
-It gives us this effect:
+ブラウザで見るとこのようになります。:
 
 ![Figure 11.4](images/step6.png)
 
-Yaaay! But so far, our template only ever displays exactly __the same information__ - whereas earlier we were talking about templates as allowing us to display __different__ information in the __same format__.
+わーい！うまく表示されましたね！でも、まだこのテンプレートは__同じ情報__を表示するだけですね。 - 先ほどお話したようにテンプレートとは、__同じフォーマット__で、__異なる__情報を表示するものです。　
 
-What we really want to do is display real posts added in our Django admin - and that's where we're going next.
+私たちが本来やりたいことというのは、Djangoの管理画面に追加された記事の情報を、同じフォーマットで表示することです。では、次のレベルにいってみましょう。
 
 ## One more thing
 
-It'd be good to see if your website will be still working on Heroku, right? Let's try deploying again.
+このWebサイトがローカルだけでなく、同じようにHerokuでも動いているのを見たいですね。再度デプロイしてみましょう。
 
-First off, let's see what files have changed since we last deployed:
+まずは、先ほどのデプロイから、どのファイルが更新されたか状態を確認しましょう。:
 
     $ git status
 
-Let's tell `git` to include all the changes from the current directory:
+次に、作業ディレクトリ内のすべての変更を`git` に追加します。:
 
     $ git add -A .
 
-> __Note__ `-A` (short for "all") means that `git` will also recognize if you've deleted files (by default, it only recognizes new/modified files). Also remember (from chapter 3) that `.` means the current directory.
+> __補足__ `-A` ("all"の意味) とすると、削除されたファイルも`git`は認識します。（デフォルトでは、新規ファイルと変更のあったファイルだけを認識します）そして、チャプター3で説明があったように、 `.` は、カレントディレクトリを示していますので、忘れないようにしましょう。
 
-Before we upload all the files, let's check what `git` will be uploading (all the files that `git` will upload should now appear in green):
+すべてのファイルをアップロードする前に、 `git` が何をアップロードしようとしているのか、確認しておきましょう。（ `git`がアップロードしようとしている全てのファイルが緑色で表示されます）:
 
     $ git status
 
-We're almost there, now it's time to tell it to save this change in its history. We're going to give it a "commit message" where we describe what we've changed. You can type anything you'd like at this stage, but it's helpful to type something descriptive so that you can remember what you've done in the future.
+あとちょっとです！がんばりましょう。gitに変更を保存しておきましょう。どのような変更を加えたかわかるように、"コミットメッセージ"をつけておきます。メッセージはなんでも構いませんが、後でなにをしたかわかるような説明をしておくとよいでしょう。
 
     $ git commit -m "Changed the HTML for the site."
 
-> __Note__ Make sure you use double quotes around the commit message.
+> __補足__ コミットメッセージは、ダブルクォーテーションで囲みましょう。
 
-Once we've done that, we can finally upload (push) our changes to the website on heroku:
+この次に、やっと変更をHerokuのWebサイトにアップロード（プッシュ）することができます。:
 
     git push heroku master
 
-And that should be it! Once Heroku is finished, you can go ahead and refresh your website in the browser. Changes should be visible!
+アップロードの作業は以上です。Herokuでの処理がおわれば、ブラウザ上で変更を加えられたサイトが見れるでしょう。ブラウザを再読み込みして確認してください。変更されていますね！
