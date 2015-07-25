@@ -74,7 +74,7 @@ CSSを書く時間がやってきました！エディタの中で、`static/css
 
 `h1 a` はCSSセレクタです。`h1` 要素の中にある`a` 要素 （例：このようなコードのこと `<h1><a href="">link</a></h1>`）にスタイルを適用します、という意味になります。この場合、テキストの色を`#FCA205`、オレンジ色にする、という意味です。もちろん、あなたの好きな色に変更してもいいですよ。
 
-CSSファイルで、HTMLの各要素のスタイルを指定していきます。 要素は要素名（i.e. `a`, `h1`, `body`）や`class`属性、`id`属性で識別されます。class名とid名はあなた自身が指定するものです。classは要素のグループを定義し、idは具体的な要素を指します。例えば、以下のタグはCSSによってグ名が`a`、class名が`external_link`、id名が`link_to_wiki_page`と識別されます：
+CSSファイルで、HTMLの各要素のスタイルを指定していきます。 要素は要素名（i.e. `a`, `h1`, `body`）や`class`属性、`id`属性で識別されます。class名とid名はあなた自身が指定するものです。classは要素のグループを定義し、idは具体的な要素を指します。例えば、以下のタグはCSSによってタグ名が`a`、class名が`external_link`、id名が`link_to_wiki_page`と識別されます：
 
     <a href="http://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
 

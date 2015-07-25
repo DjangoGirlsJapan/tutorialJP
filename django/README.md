@@ -16,7 +16,7 @@ Djangoを本当に理解するために、サーバーの役割についても�
 
 ## What happens when someone requests a website from your server?
 
-Webサーバーにリクエストがあると、Djangoに伝えられ、リクエストの内容を把握しようとします。　まずWebページのアドレスを調べ、リクエストに対して何をするか決めます。これは、Djangoの__urlresolver__が行います。（WebサイトのアドレスはURLと呼ばれます。 Uniform Resource Locator　の略です。ーresolverとは「解決するもの」という意味ですので、*urlresolver* というのはうなずけますよね。)。あまり賢いとはいえません。Djangoは上から下にURLパターンを順に調べていきます。そこで何かがマッチすると、Djangoは*ビュー*と呼ばれる関数にリクエストを送ります。
+Webサーバーにリクエストがあると、Djangoに伝えられ、リクエストの内容を把握しようとします。　まずWebページのアドレスを調べ、リクエストに対して何をするか決めます。これは、Djangoの__urlresolver__が行います。（WebサイトのアドレスはURLと呼ばれます。 Uniform Resource Locator　の略です。-resolverとは「解決するもの」という意味ですので、*urlresolver* というのはうなずけますよね。)。あまり賢いとはいえません。Djangoは上から下にURLパターンを順に調べていきます。そこで何かがマッチすると、Djangoは*ビュー*と呼ばれる関数にリクエストを送ります。
 
 郵便配達員を思い浮かべてください。配達員は、通りを歩き、ひとつひとつの家の番地と、手紙に書かれている番地を見比べて行きます。マッチする番地があったら、手紙をそこに置いていきます。urlresolverも同じ仕組みです。
 

@@ -66,7 +66,7 @@ Djangoの便利な機能の一つに、 __テンプレートの拡張機能__ �
         </div>
     </body>
 
-続いて `{% for post in posts %}{% endfor %}` という部分も、以下の様に書き換えましょう。
+基本的に、`{% for post in posts %}{% endfor %}`の間を、以下の様に書き換えただけですね:
 
     {% block content %}
     {% endblock %}
