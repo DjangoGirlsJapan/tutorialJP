@@ -1,40 +1,40 @@
-# Django templates
+# Djangoテンプレート
 
-Time to display some data! Django gives us some helpful, built-in __template tags__ for that.
+何かデータを表示しましょう！Djangoはそれをビルトインの __テンプレートタグ__ で実現できます。
 
-## What are template tags?
+## テンプレートタグとは？
 
-You see, in HTML, you can't really put Python code, because browsers don't understand it. They only know HTML. We know that HTML is rather static, while Python is much more dynamic.
+HTMLではブラウザがpythonを認識できないのでpythonのコードは書けません。HTMLはより静的でpythonは動的です。
 
-__Django template tags__ allow us to transfer Python-like things into HTML, so you can build dynamic websites faster and easier. Yikes!
+__Djangoテンプレートタグ__ はHTMLにPyhtonのようなコードを埋め込むことができて、動的なウェブサイトがより早く簡単に作れます!
 
-## Display post list template
+## ブログ一覧テンプレート
 
-In the previous chapter we gave our template a list of posts in the `posts` variable. Now we will display it in HTML.
+前の章で、posts変数でテンプレートに記事のリストを渡しました。今からHTMLで表示をしてみましょう。
 
-To print a variable in Django template, we use double curly brackets with the variable's name inside, like this:
+Djangoテンプレートで変数を表示する為には、変数の名前を二重括弧で括ります:
 
     {{ posts }}
 
-Try this in your `blog/templates/blog/post_list.html` template (replace the second and third pair of `<div></div>` tags with `{{ posts }}` line), save the file and refresh the page to see the results:
+これを`blog/templates/blog/post_list.html`に書いてみて下さい。（２つめと３つ目の`<div></div>`タグをまるごと `{{posts}}` に置き換えて下さい。）ファイルを保存してページをリロードしますと：
 
 ![Figure 13.1](images/step1.png)
 
-As you can see, all we've got is this:
+見たとおり、このようになります。
 
     [<Post: My second post>, <Post: My first post>]
 
-This means that Django understands it as a list of objects. Remember from __Introduction to Python__ how we can display lists? Yes, with the for loops! In a Django template, you do them this way:
+Djangoはオブジェクトのリストと認識します。__Introduction to Python__を思い出して下さい。ループを使ってリストを表示しましたよね。Djangoテンプレートではこう書きます:
 
     {% for post in posts %}
         {{ post }}
     {% endfor %}
 
-Try this in your template.
+これをブログのテンプレートで使ってみましょう。
 
 ![Figure 13.2](images/step2.png)
 
-It works! But we want them to be displayed like the static posts we created earlier in the __Introduction to HTML__ chapter. You can mix HTML and template tags. Our `body` will look like this:
+動きましたね。しかし、__Introduction to HTML__で作った静的な記事のような表示です。HTMLとテンプレートタグを混ぜてみましょう。bodyタグの中を次のように書いてください:
 
     <div>
         <h1><a href="/">Django Girls Blog</a></h1>
@@ -48,28 +48,35 @@ It works! But we want them to be displayed like the static posts we created earl
         </div>
     {% endfor %}
 
-Everything you put between `{% for %}` and `{% endfor %}` will be repeated for each object in the list. Refresh your page:
+`{% for %}`と`{% endfor %}`の間にリストの中のオブジェクトごとに表示したい内容を書くとオブジェクトの数だけ繰り返し書かれます。ページをリロードしてみましょう。
 
 ![Figure 13.3](images/step3.png)
 
-Have you noticed that we used a slightly different notation this time `{{ post.title }}` or `{{ post.text }}`? We are accessing data in each of the fields defined in our `Post` model. Also the `|linebreaks` is piping the posts' text through a filter to convert line-breaks into paragraphs.
+`post` 変数がさっきと違って、`{{ post.title }}` や `{{ post.text }}` になっていることに気づきましたか？ `Post` モデルで定義したそれぞれのフィールドにアクセスしています。`|linebreaks` はPostのテキスト中の改行を段落に変換するフィルタに通すという意味です。
 
+## もう一つ...
 
-## One more thing
+PythonAnywhereでデプロイして、インターネットでウェブサイトを公開できます。おさらいしましょう。
 
-It'd be good to see if your website will still be working on Heroku, right? Let's try deploying again. If you forgot how to do it, check the end of chapter 15:
+$ git status
+[...]
+$ git add -A .
+$ git status
+[...]
+$ git commit -m "Added views to create/edit blog post inside the site."
+[...]
+$ git push
 
-    $ git status
-    ...
-    $ git add -A .
-    $ git status
-    ...
-    $ git commit -m "Used Django templates instead of static HTML."
-    ...
-    $ git push heroku master
+そしたら、Pythonanywhereに戻って、Bashコンソール（か、新しいコンソール）に入って、動かしましょう：
 
-Congrats! Now go ahead and try adding a new post in your Django admin (remember to add published_date!), then refresh your page to see if the post appears there.
+$ cd my-first-blog
+$ git pull
+[...]
 
-Works like a charm? We're proud! Step away from your computer for a bit, you have earned a break. :)
+最後にブラウザのタブを開いてアプリをリロードします。更新が反映されています！
+
+おめでとう！これができたら、Django adminとして新しい投稿を追加しましょう。（published_dateを忘れないで！）それから、投稿したものがそこに見えるか、リロードしましょう。
+
+動くのが楽しくなってきたでしょう？少しパソコンから離れて、休憩しましょう：）
 
 ![Figure 13.4](images/donut.png)
