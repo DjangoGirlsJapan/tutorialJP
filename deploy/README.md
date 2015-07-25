@@ -1,58 +1,57 @@
 # Deploy!
 
-> __Note__: The following chapter can be sometimes a bit hard to get through. Persist and finish it; deployment is an important part of the website development process. This chapter is placed in the middle of the tutorial so that your mentor can help with the slightly tricker process of getting your website online. This means you can still finish the tutorial on your own if you run out of time.
+> __補足__: このチャプターはちょっと難しいことが沢山書かれています。頑張って最後までやりきってください。デプロイはウェブサイトを開発するプロセスの上で、とても重要な部分ですが、躓きやすいポイントも多く含まれています。チュートリアルの途中にこのチャプターを入れています。そういった躓きやすい箇所はメンターに質問して、あなたが作っているウェブサイトをオンラインでみれるようにしてください。言い換えれば、もし時間切れでワークショップ内でチュートリアルを終わらせることができなかったとしても、この後のチュートリアルはきっと自分で終わらせることができるでしょう。
 
-Until now your website was only available on your computer, now you will learn how to deploy it! Deploying is the process of publishing your application on the Internet so people can finally go and see your app :).
+今、あなたのウェブサイトはあなたのコンピューターでのみ見ることができますね。では、これをデプロイする方法を学んでいきましょう。デプロイとは、あなたが作っているアプリケーションをインターネットで公開することです。あなた以外の人もウェブサイトを見ることができるようになりますよ。 :)
 
-As you learned, a website has to be located on a server. There are a lot of providers, but we will use the one with the simplest deployment process: [Heroku](http://heroku.com/). Heroku is free for small applications that don't have too many visitors, it'll definitely be enough for you now.
+これまでに学んだとおり、ウェブサイトはサーバーに置かれています。様々なサーバーがありますが、ここでは最もシンプルなやり方でデプロイすることができるものを使いましょう。[Heroku](http://heroku.com/)です。Herokuは、多くの人がアクセスするものではない小さいアプリケーションは無料で公開できます。今回には最適でしょう。
 
-We will be following this tutorial: https://devcenter.heroku.com/articles/getting-started-with-django, but we pasted it here so it's easier for you.
+Heroku のチュートリアル (https://devcenter.heroku.com/articles/getting-started-with-django) に従ってすすめていきます。以下に同内容を記していますので、このまま進めていってください。
 
 ## The `requirements.txt` file
 
-We need to create a `requirements.txt` file to tell Heroku what Python packages need to be installed on our server.
+最初に、`requirements.txt`ファイルを作成します。あなたのサーバーにどんなPythonパッケージがインストールされる必要があるか、Herokuに伝えるものです。
 
-But first, Heroku needs us to install a few packages. Go to your console with `virtualenv` activated and type this:
+その前に、Herokuを使うために必要ないくつかのパッケージをインストールしておきましょう。コンソールを開いて、 `virtualenv` を実行し、次のように入力して下さい:
 
     (myvenv) $ pip install dj-database-url gunicorn whitenoise
 
-After the installation is finished, go to the `djangogirls` directory and run this command:
+インストールが終わったら、`djangogirls`ディレクトリに行き、次のコマンドを実行します:
 
     (myvenv) $ pip freeze > requirements.txt
 
-This will create a file called `requirements.txt` with a list of your installed packages (i.e. Python libraries that you are using, for example Django :)).
+これで、`requirements.txt`とよばれるファイルが作成されます。必要なパッケージのリストが書かれています。どんなPythonライブラリを使っているかといった情報です。（例えばDjangoとか）:)).
 
-> __Note__: `pip freeze` outputs a list of all the Python libraries installed in your virtualenv, and the `>` takes the output of `pip freeze` and puts it into a file. Try running `pip freeze` without the `> requirements.txt` to see what happens!
+> __補足__: `pip freeze` は、あなたのvirtualenvにインストール済みの全てのPythonライブラリを一覧にして出力します。その`pip freeze`した出力先を、`>`　の後に示しファイルに保存します。`> requirements.txt` を含まずに `pip freeze` だけで実行してみて、何が起こるか試してみるとよいでしょう。
 
-Open this file and add the following line at the bottom:
+ファイルを開いて、最終行に次の1行を追加しましょう:
 
     psycopg2==2.5.4
 
-This line is needed for your application to work on Heroku.
+これは、あなたのアプリケーションをHerokuで動かすために必要な１行です。
 
 
 ## Procfile
 
-Another thing we need to create is a Procfile. This will let Heroku know which commands to run in order to start our website.
-Open up your code editor, create a file called `Procfile` in `djangogirls` directory and add this line:
+次に必要なものは、Procfileです。このファイルが、どのコマンドを実行してウェブサイトをスタートするかHerokuに伝えます。エディタを開いて、`djangogirls` ディレクトリに`Procfile`という名前のファイルを作成して下さい。ファイルに次のとおり入力しましょう:
 
     web: gunicorn mysite.wsgi
 
-This line means that we're going to be deploying a `web` application, and we'll do that by running the command `gunicorn mysite.wsgi` (`gunicorn` is a program that's like a more powerful version of Django's `runserver` command).
+この１行が何を意味しているのでしょうか。私たちは`web` アプリケーションをデプロイしようとしていること、そして`gunicorn mysite.wsgi`というコマンドを実行することでデプロイすることを意味しています。（`gunicorn`は、Djangoの`runserver`コマンドのもっとパワフルなものと考えて下さい。）
 
-Then save it. Done!
+これで完了です！保存しましょう。
 
 ## The `runtime.txt` file
 
-We need to tell Heroku which Python version we want to use. This is done by creating a `runtime.txt` in the `djangogirls` directory using your editor's "new file" command, and putting the following text (and nothing else!) inside:
+Herokuに使っているPythonのバージョンを伝えなければいけません。`djangogirls`ディレクトリに`runtime.txt` ファイルを作ってその中に書きます。エディタで新規ファイルを作成して、次のように書いてください:
 
     python-3.4.2
 
 ## mysite/local_settings.py
 
-There is a difference between settings we are using locally (on our computer) and settings for our server. Heroku is using one database, and your computer is using a different database. That's why we need to create a separate file for settings that will only be available for our local environment.
+コンピューター上のローカルとサーバーでは設定に違いがあります。Herokuとコンピューターでは別のデータベースをそれぞれつかっています。そこで、別途ファイルを作成し、ローカル環境で動かすための設定を保存しておく必要があります。
 
-Go ahead and create `mysite/local_settings.py` file. It should contain your `DATABASE` setup from your `mysite/settings.py` file. Just like that:
+では、ファイルを作成しましょう。`mysite/local_settings.py`というファイルです。その中には、`mysite/settings.py`ファイルからの `DATABASE` の設定が必要です。次のように記述してください:
 
     import os
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -66,11 +65,11 @@ Go ahead and create `mysite/local_settings.py` file. It should contain your `DAT
 
     DEBUG = True
 
-Then just save it! :)
+保存しておきましょう :)
 
 ## mysite/settings.py
 
-Another thing we need to do is modify our website's `settings.py` file. Open `mysite/settings.py` in your editor and add the following lines at the end of the file:
+すべき事がまだあります。ウェブサイトの`settings.py` ファイルに変更を加えておきましょう。エディタで、`mysite/settings.py` ファイルを開いて下さい。最終行に、次のとおり追加しましょう:
 
     import dj_database_url
     DATABASES['default'] = dj_database_url.config()
@@ -88,41 +87,42 @@ Another thing we need to do is modify our website's `settings.py` file. Open `my
     except ImportError:
         pass
 
-It'll do necessary configuration for Heroku and also it'll import all of your local settings if `mysite/local_settings.py` exists.
+このファイルは、Herokuに必要な構成だけでなく、`mysite/local_settings.py`ファイルがある時にはローカルの設定にも重要な役割となります。
 
-Then save the file.
+保存してください。
 
 ## mysite/wsgi.py
 
-Open the `mysite/wsgi.py` file and add these lines at the end:
+次に`mysite/wsgi.py`ファイルを開き、最終行に次のとおり追加してください:
 
     from whitenoise.django import DjangoWhiteNoise
     application = DjangoWhiteNoise(application)
 
-All right!
+よし、できましたね!
 
 ## Heroku account
 
-You need to install your Heroku toolbelt which you can find here (you can skip the installation if you've already installed it during setup): https://toolbelt.heroku.com/
+では、Heroku toolbeltをインストールしましょう。Herokuをコマンドライン操作を行うためのアプリケーションです。（すでに設定でインストール済みでしたら飛ばしてください。）インストーラーはここから入手できます: https://toolbelt.heroku.com/
 
-> When running the Heroku toolbelt installation program on Windows make sure to choose "Custom Installation" when being asked which components to install. In the list of components that shows up after that please additionally check the checkbox in front of "Git and SSH".
+> WindowsでHeroku toolbelt をインストールする方は、インストールするコンポーネントを選択する際に"Custom Installation" を選択してください。コンポーネントを選択すると、さらにチェックボックスがありますので、"Git and SSH"にチェックを入れて下さい。
 
-> On Windows you also must run the following command to add Git and SSH to your command prompt's `PATH`: `setx PATH "%PATH%;C:\Program Files\Git\bin"`. Restart the command prompt program afterwards to enable the change.
+> Windowsの方は、コマンドプロンプトの`PATH`にGitとSSHを追加するために、次のように入力し実行してください: `setx PATH "%PATH%;C:\Program Files\Git\bin"`.
+コマンドプロンプトを一旦閉じて、再度起動しましょう。すると変更が適用されます。
 
-> After restarting your command prompt, don't forget to go to your `djangogirls` folder again and activate your virtualenv! (Hint: [Check the Django installation chapter](../django_installation/README.md#working-with-virtualenv))
+> コマンドプロンプトを再起動したら、`djangogirls`フォルダに移動し、virtualenvを実行することを忘れないでくださいね！(ヒント: [Check the Django installation chapter](../django_installation/README.md#working-with-virtualenv))
 
-Please also create a free Heroku account here: https://id.heroku.com/signup/www-home-top
+Herokuの無料アカウントを作成してください: https://id.heroku.com/signup/www-home-top
 
-Then authenticate your Heroku account on your computer by running this command:
+コマンドプロンプトでHerokuにログインします。コマンドプロンプトを起動して、次のコマンドを入力しましょう:
 
     $ heroku login
 
-In case you don't have an SSH key this command will automatically create one. SSH keys are required to push code to the Heroku.
+SSHキーがない場合はここで自動的に作成されます。SSHキーは、コードをHerokuにプッシュするために必要なものです。
 
 ## Git
-Git is a version control system used by a lot of programmers - software which keeps track of changes to a file or set of files over time so that you can recall specific versions later. Heroku uses a git repository to manage your project files, so we need to use it too.
+Gitとは、バージョン管理システムです。多くのプログラマーがつかっています。ファイルの変更履歴を記録・追跡するシステムです。そのため、一度編集したファイルを特定の変更前の状態に戻したり、編集箇所の差分を表示したりすることができます。Herokuでは、Gitのリポジトリを使って、プロジェクトのファイルを管理します。
 
-Create a file named `.gitignore` in your `djangogirls` directory with the following content:
+`djangogirls`ディレクトリに、`.gitignore`という名前のファイルを作成しましょう。次のとおりに記述してください:
 
     myvenv
     __pycache__
@@ -131,22 +131,22 @@ Create a file named `.gitignore` in your `djangogirls` directory with the follow
     db.sqlite3
     *.py[co]
 
-and save it. The dot on the beginning of the file name is important! As you can see, we're now telling Heroku to ignore `local_settings.py` and don't download it, so it's only available on your computer (locally).
+Git に `local_settings.py` は無視してアップロードしないように伝えています。あなたのコンピューター上（ローカル環境）でのみ動作します。それでは保存しておきましょう。ファイル名の最初にあるドットはとても重要ですよ。
 
-Next, we’ll create a new git repository and save our changes.
+次に、Gitのリポジトリを作成し、これまでの変更を記録しておきましょう。
 
-> __Note__: Check out your current working directory with a `pwd` command before initializing the repository. You should be in the `djangogirls` folder.
+> __補足__: リポジトリを作成する前に、現在作業しているディレクトリを確認しておきましょう。`pwd`コマンドでしたね。 `djangogirls`フォルダになっていればOKです。
 
-Go to your console and run these commands:
+コンソールを開き、次のコマンドを実行しましょう:
 
     $ git init
     Initialized empty Git repository in ~/djangogirls/.git/
     $ git config user.name "Your Name"
     $ git config user.email you@example.com
 
-Initializing the git repository is something we only need to do once per project.
+Gitリポジトリを作成するのは、プロジェクトにつき最初の１度だけです。
 
-It's a good idea to use a `git status` command before `git add` or whenever you find yourself unsure of what will be done, to prevent any surprises from happening (e.g. wrong files will be added or commited). The `git status` command returns information about any untracked/modifed/staged files, branch status and much more. The output should be similar to:
+間違ったファイルを追加したりコミットすることがないように、 `git add` コマンドを実行する前や、どのような変更を加えたか定かでない時は、 `git status` コマンドを実行しておくとよいでしょう。 `git status` コマンドを実行すると、ステージされた変更内容、されていない変更内容、Git による追跡の対象外となっているファイルやブランチのステータス等が表示されます。次のような情報が出力されることでしょう:
 
     $ git status
     On branch master
@@ -168,7 +168,7 @@ It's a good idea to use a `git status` command before `git add` or whenever you 
 
     nothing added to commit but untracked files present (use "git add" to track)
 
-And finally we save our changes. Go to your console and run these commands:
+この変更を保存しましょう。コンソールで次のコマンドを実行してください:
 
     $ git add -A .
     $ git commit -m "My Django Girls app"
@@ -186,61 +186,60 @@ And finally we save our changes. Go to your console and run these commands:
 
 ## Pick an application name
 
-We'll be making your blog available on the Web at `[your blog's name].herokuapp.com`, so we need to choose a name that nobody else has taken. This name doesn't need to be related to the Django `blog` app or to `mysite` or anything we've created so far. The name can be anything you want, but Heroku is quite strict as to what characters you can use: you're only allowed to use simple lowercase letters (no capital letters or accents), numbers, and dashes (`-`).
+アプリケーションの名前を考えましょう。オンライン上にブログを作る際に、そのURLは `[your blog's name].herokuapp.com` となります。 `[your blog's name]` には、だれもつけていない名前をつける必要があります。この名前は、Django `blog` app や `mysite`といったこれまでに作成したプロジェクト名等と関連している必要はありません。あなたの好きな名前をつけていいですよ。ただし、小文字の英数字とダッシュ(`-`)の組み合わせにしてください。大文字や記号はつかえません。
 
-Once you've thought of a name (maybe something with your name or nickname in it), run this command, replacing `djangogirlsblog` with your own application name:
+アプリケーション名が決まれば（おそらくあなたの名前やニックネームが入ったものでしょう。）、次のコマンドを実行してください。ここでは、アプリケーションの名前を`djangogirlsblog` としていますので、あなたのアプリケーション名に置き換えてください:
 
     $ heroku create djangogirlsblog
 
-> __Note__: Remember to replace `djangogirlsblog` with the name of your application on Heroku.
+> __補足__: `djangogirlsblog`を、Herokuで使うあなたのアプリケーション名に置き換えることを忘れずに！
 
-If you can't think of a name, you can instead run
+もし名前が自分で思いつかない時は、かわりに次のコマンドを実行してください。
 
     $ heroku create
 
-and Heroku will pick an unused name for you (probably something like `enigmatic-cove-2527`).
+Herokuが代わって名前をつけてくれます。(おそらく `enigmatic-cove-2527`といった感じに。)
 
-If you ever feel like changing the name of your Heroku application, you can do so at any time with this command (replace `the-new-name` with the new name you want to use):
+もし、あとでHerokuのアプリケーション名を変更したくなれば、次のコマンドでいつでも変更することができます。 (`the-new-name` を変更する新しい名前におきかえてください。):
 
     $ heroku apps:rename the-new-name
 
-> __Note__: Remember that after you change your application's name, you'll need to visit `[the-new-name].herokuapp.com` to see your site.
+> __補足__: アプリケーション名を変更したら、あなたのウェブサイトのURLは `[the-new-name].herokuapp.com` に変わります。
 
 ## Deploy to Heroku!
 
-That was a lot of configuration and installing, right? But you only need to do that once! Now you can deploy!
+ここまで沢山のインスト―ルや設定がありましたね。けど、次がこのチャプターの最後です。いよいよデプロイします！
 
-When you ran `heroku create`, it automatically added the Heroku remote for our app to our repository. Now we can do a simple git push to deploy our application:
+先ほど`heroku create`を実行した時に、自動的にherokuという名前でリモートリポジトリが作成されています。アプリケーションをデプロイするには、これをGitでプッシュするだけです:
 
     $ git push heroku master
 
-> __Note__: This will probably produce a *lot* of output the first time you run it, as Heroku compiles and installs psycopg. You'll know it's succeeded if you see something like `https://yourapplicationname.herokuapp.com/ deployed to Heroku` near the end of the output.
+> __補足__: これを最初の実行後は、Heroku が psycopg をコンパイルしてインストールするのにともない*沢山*の出力が表示されることでしょう。暫く待って、最後の方に `https://yourapplicationname.herokuapp.com/ deployed to Heroku` というような出力があれば、成功した印です。
 
 ## Visit your application
 
-You’ve deployed your code to Heroku, and specified the process types in a `Procfile` (we chose a `web` process type earlier).
-We can now tell Heroku to start this `web process`.
+これであなたのコードをHerokuにデプロイすることができました。そして、プロセスは`Procfile`と指定されています。(先ほど、プロセスタイプを`web`と選びましたね。)最後に、Herokuのウェブプロセスを起動します。
 
-To do that, run the following command:
+次のコマンドを実行してください:
 
     $ heroku ps:scale web=1
 
-This tells Heroku to run just one instance of our `web` process. Since our blog application is quite simple, we don't need too much power and so it's fine to run just one process. It's possible to ask Heroku to run more processes (by the way, Heroku calls these processes "Dynos" so don't be surprised if you see this term) but it will no longer be free.
+ウェブプロセスが１つ起動しました。このブログアプリケーションはとてもシンプルなものですので、沢山のパワーは必要ありません。１つのウェブプロセスで十分です。Herokuでそれ以上のウェブプロセスを起動することは可能ですが、今は無料ではないようです。（ところで、Herokuではこのプロセスを”Dynos”と呼んでいます。この言葉が出てきてもびっくりしないでくださいね。）
 
-We can now visit the app in our browser with `heroku open`.
+さて、ブラウザでアプリケーションを開いてみましょう。`heroku open`コマンドです。
 
     $ heroku open
 
-> __Note__: you will see an error page! We'll talk about that in a minute.
+> __補足__: エラーページが表示されますね。これについては、すぐ説明するので心配しなくていいですよ。
 
-This will open a url like [https://djangogirlsblog.herokuapp.com/]() in your browser, and at the moment you will probably see an error page. Since we only created the admin view for the app so far, add `admin/` to the url (e.g. [https://djangogirlsblog.herokuapp.com/admin/]()) to see a working page of our web app.
+コマンドで、[https://djangogirlsblog.herokuapp.com/]()といったあなたのアプリケーションのURLがブラウザで開かれます。おそらくエラーページが表示されることでしょう。これは、私たちがまだadmin viewしか作成していないからです。URLの後ろに `admin/` をつけてアプリケーションが動いているのをみてみましょう。(例 [https://djangogirlsblog.herokuapp.com/admin/]())
 
-The error you saw was because we when we deployed to Heroku, we created a new database and it's empty. We need to run the ```migrate``` command like we did when we first started our project to set our database up properly:
+エラーが表示されたのは、Herokuにデプロイする時に新しいデータベースを作成したため、まだデータベースが空っぽの状態だからです。そこで、プロジェクトの最初にローカルにデータベースをセットアップした時のように、再度```migrate``` コマンドを実行します:
 
     $ heroku run python manage.py migrate
 
     $ heroku run python manage.py createsuperuser
 
-The command prompt will ask you to choose a username and a password again. These will be your login details on your live website's admin page. Refresh it in your browser, and you're good to go!
+コマンドプロンプトは、ユーザーネームとパスワードを選ぶよう再度きいてきます。これは、オンライン上のウェブサイトのログインに必要となるログイン情報です。ブラウザを再読み込みして、完了です！
 
-You should now be able to see your website in a browser! Congrats :)!
+これで、あなたのウェブサイトがブラウザでみられるようになりました！おめでとう！！ :)
