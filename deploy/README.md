@@ -22,7 +22,7 @@ Heroku のチュートリアル (https://devcenter.heroku.com/articles/getting-s
 
 これで、`requirements.txt`とよばれるファイルが作成されます。必要なパッケージのリストが書かれています。どんなPythonライブラリを使っているかといった情報です。（例えばDjangoとか）:)).
 
-> __補足__: `pip freeze` は、あなたのvirtualenvにインストール済みの全てのPythonライブラリを一覧にして出力します。その`pip freeze`した出力先を、`>`　の後に示しファイルに保存します。`> requirements.txt` を含まずに `pip freeze` だけで実行してみて、何が起こるか試してみるとよいでしょう。
+> __補足__: `pip freeze` は、あなたのvirtualenvにインストール済みの全てのPythonライブラリを一覧にして出力します。その`pip freeze`した出力先を、`>`の後に示しファイルに保存します。`> requirements.txt` を含まずに `pip freeze` だけで実行してみて、何が起こるか試してみるとよいでしょう。
 
 ファイルを開いて、最終行に次の1行を追加しましょう:
 

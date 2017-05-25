@@ -8,9 +8,9 @@
 
 ## Gedit
 
-Gedit　はオープンソースの無料エディタです。全てのOSで使用できます。 
+Gedit はオープンソースの無料エディタです。全てのOSで使用できます。
 
-[ダウンロード](https://wiki.gnome.org/Apps/Gedit#Download) 
+[ダウンロード](https://wiki.gnome.org/Apps/Gedit#Download)
 
 ## Sublime Text 2
 

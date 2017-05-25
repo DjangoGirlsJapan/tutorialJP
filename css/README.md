@@ -16,7 +16,7 @@ Bootstrap は美しいWebサイトを開発するためのHTMLとCSSのフレー
 
 ## Install Bootstrap
 
-Bootstrapをインストールするには、 `.html` ファイル (`blog/templates/blog/post_list.html`)　の`<head>` の中に、次のとおり書き加えます：
+Bootstrapをインストールするには、 `.html` ファイル (`blog/templates/blog/post_list.html`) の`<head>` の中に、次のとおり書き加えます：
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
