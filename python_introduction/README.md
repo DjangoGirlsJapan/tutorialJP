@@ -13,7 +13,7 @@ Pythonであそぶために、*コマンドライン* を開きましょう。 �
 Pythonコンソールを開きましょう。Windowsなら`python`、Mac OSやLinuxなら`python3`とタイプして Enterキーをおしてください。.
 
     $ python3
-    Python 3.4.2 (...)
+    Python 3.5.2 (...)
     Type "copyright", "credits" or "license" for more information.
     >>>
 

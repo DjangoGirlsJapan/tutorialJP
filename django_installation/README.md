@@ -22,11 +22,11 @@ Djangoをインストールする前に、まずはあなたのコンピュー�
 
 ### Windows
 
-新しい`virtualenv`を作成するために、コンソールを開き（コンソールについては何章か前にお話ししましたね。覚えてますか？）、`C:\Python34\python -m venv myvenv`を実行して下さい。たとえばこのように入力します：
+新しい`virtualenv`を作成するために、コンソールを開き（コンソールについては何章か前にお話ししましたね。覚えてますか？）、`C:\Python35\python -m venv myvenv`を実行して下さい。たとえばこのように入力します：
 
-    C:\Users\Name\djangogirls> C:\Python34\python -m venv myvenv
+    C:\Users\Name\djangogirls> C:\Python35\python -m venv myvenv
 
-`C:\Python34\python`はあなたがPythonをインストールしたディレクトリ、`myvenv`はあなたの'virtualenv'の名前です。どんな名前でも使うことができますが、必ず小文字で表記し、スペース・アクセント記号・特殊文字は入れないでください。短い名前にしておくのもいいアイデアですーあなたはこの名前を何度も参照しますから！
+`C:\Python35\python`はあなたがPythonをインストールしたディレクトリ、`myvenv`はあなたの'virtualenv'の名前です。どんな名前でも使うことができますが、必ず小文字で表記し、スペース・アクセント記号・特殊文字は入れないでください。短い名前にしておくのもいいアイデアですーあなたはこの名前を何度も参照しますから！
 
 ### Linux and OS X
 
@@ -37,15 +37,6 @@ LnuxやOX Xで'virtualenv'を作るときは、`python3 -m venv myvenv`と実行
     ~/djangogirls$ python3 -m venv myvenv
 
 `myvenv`はあなたの`virtualenv`の名前です。どんな名前でも使うことができますが、必ず小文字で表記し、スペースは入れないでください。短い名前にしておくのもいいアイデアですーあなたはこの名前を何度も参照しますから！
-
-> __備考:__ この方法によるUbuntu 14.04でのvirtual environmentの初期化は次のエラーが出ます：
-
->     Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1
-
-> このエラーを回避するために、代わりに`virtualenv`コマンドを使います。
-
->     ~/djangogirls$ sudo apt-get install python-virtualenv
->     ~/djangogirls$ virtualenv --python=python3.4 myvenv
 
 
 ## virtualenvを使う
@@ -83,10 +74,10 @@ OK、これでDjangoのインストール前に入れておきたい依存関係
 
 ##Djangoのインストール
 
-いまあなたの`virtualenv`は起動しているので、`pip`を使ってDjangoをインストールすることができます。コンソールの中で、`pip install django==1.8`(ここではダブルイコールサイン `==` を使います)と実行して下さい。
+いまあなたの`virtualenv`は起動しているので、`pip`を使ってDjangoをインストールすることができます。コンソールの中で、`pip install django==1.11`(ここではダブルイコールサイン `==` を使います)と実行して下さい。
 
-    (myvenv) ~$ pip install django==1.8
-    Downloading/unpacking django==1.8
+    (myvenv) ~$ pip install django==1.11
+    Downloading/unpacking django==1.11
     Installing collected packages: django
     Successfully installed django
     Cleaning up...
@@ -97,6 +88,6 @@ Windowsの場合
 
 Linuxの場合
 
-> Ubuntu 12.04でpipを呼んだときにエラーが起きた場合は、virtualenv内でpipインストールをフィックスするために`python -m pip install -U --force-reinstall pip`を実行して下さい。
+> Ubuntu 16.04でpipを呼んだときにエラーが起きた場合は、virtualenv内でpipインストールをフィックスするために`python -m pip install -U --force-reinstall pip`を実行して下さい。
 
 以上です！あなたは（ついに）Djangoアプリケーションを作成する準備が整いました！

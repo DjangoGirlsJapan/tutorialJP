@@ -34,12 +34,12 @@ On Windows:
 
 ```
 djangogirls
-├───manage.py
-└───mysite
-        settings.py
-        urls.py
-        wsgi.py
-        __init__.py
+├── manage.py
+└── mysite
+    ├── __init__.py
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
 ```
 
 `manage.py` はサイト管理用のスクリプトです。これで、他のものを一切インストールすることなく、コンピューター上でWebサーバーを動かすことができます。

@@ -2,6 +2,7 @@
 
 何かデータを表示しましょう！Djangoはそれをビルトインの __テンプレートタグ__ で実現できます。
 
+
 ## テンプレートタグとは？
 
 HTMLではブラウザがpythonを認識できないのでpythonのコードは書けません。HTMLはより静的でpythonは動的です。
@@ -56,22 +57,16 @@ Djangoはオブジェクトのリストと認識します。__Introduction to Py
 
 ## もう一つ...
 
-PythonAnywhereでデプロイして、インターネットでウェブサイトを公開できます。おさらいしましょう。
+Herokuにデプロイして、インターネットでウェブサイトを公開できます。おさらいしましょう。
 
-$ git status
-[...]
-$ git add -A .
-$ git status
-[...]
-$ git commit -m "Added views to create/edit blog post inside the site."
-[...]
-$ git push
-
-そしたら、Pythonanywhereに戻って、Bashコンソール（か、新しいコンソール）に入って、動かしましょう：
-
-$ cd my-first-blog
-$ git pull
-[...]
+    $ git status
+    [...]
+    $ git add -A .
+    $ git status
+    [...]
+    $ git commit -m "Added views to create/edit blog post inside the site."
+    [...]
+    $ git push # heroku master
 
 最後にブラウザのタブを開いてアプリをリロードします。更新が反映されています！
 

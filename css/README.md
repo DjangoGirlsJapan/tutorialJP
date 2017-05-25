@@ -56,7 +56,7 @@ CSSファイルを作って、Webサイトにあなたのスタイル設定し�
 
     static
     └─── css
-            blog.css
+        └── blog.css
 
 CSSを書く時間がやってきました！エディタの中で、`static/css/blog.css`ファイルを開いて下さい。
 

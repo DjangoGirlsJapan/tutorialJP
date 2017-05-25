@@ -41,7 +41,7 @@ Djangoの重要な他のパーツと同じように、フォームのための�
 
 `blog/templates/blog/base.html` を開き、 `div class="page-header"` タグ内にリンクを追加します:
 
-    <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 
 新しいビュー `post_new` を呼び出していることに注意してください。
 
@@ -58,7 +58,7 @@ Djangoの重要な他のパーツと同じように、フォームのための�
         </head>
         <body>
             <div class="page-header">
-                <a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 <h1><a href="/">Django Girls Blog</a></h1>
             </div>
             <div class="content container">
@@ -179,9 +179,9 @@ Djangoの重要な他のパーツと同じように、フォームのための�
 
 それをファイルの先頭に追加します。これでようやく、新しく作成されたポストのための `post_detail` ページに移動する処理を書けます。
 
-    return redirect('blog.views.post_detail', pk=post.pk)
+    return redirect('post_detail', pk=post.pk)
 
-`blog.views.post_detail` は新しく作成されたポストのために `post_detail` ページに移動するためのビューです。 この *view* では `pk` 変数が必須であることを覚えていますか? `post` では新しいブログ記事が作成されます。
+`post_detail` は新しく作成されたポストのために `post_detail` ページに移動するためのビューです。 この *view* では `pk` 変数が必須であることを覚えていますか? `post` では新しいブログ記事が作成されます。
 
 OK, たくさんのことを説明しました。全体の *view* は以下のようになります。
 
@@ -192,7 +192,7 @@ OK, たくさんのことを説明しました。全体の *view* は以下の�
                 post = form.save(commit=False)
                 post.author = request.user
                 post.save()
-                return redirect('blog.views.post_detail', pk=post.pk)
+                return redirect('post_detail', pk=post.pk)
         else:
             form = PostForm()
         return render(request, 'blog/post_edit.html', {'form': form})
@@ -257,7 +257,7 @@ Djangoはフォームのすべてのフィールドが正しいことを検証�
                 post = form.save(commit=False)
                 post.author = request.user
                 post.save()
-                return redirect('blog.views.post_detail', pk=post.pk)
+                return redirect('post_detail', pk=post.pk)
         else:
             form = PostForm(instance=post)
         return render(request, 'blog/post_edit.html', {'form': form})
@@ -282,7 +282,7 @@ OK, 動作確認しましょう。 `post_detail` ページにいきます。そ�
 
 おめでとう！アプリケーションが完成しました。
 
-Djangoのフォームについての詳細を知りたい場合、Django Projectのドキュメントを読んでください: https://docs.djangoproject.com/en/1.8/topics/forms/
+Djangoのフォームについての詳細を知りたい場合、Django Projectのドキュメントを読んでください: https://docs.djangoproject.com/ja/1.11/topics/forms/
 
 ## もう一つ: deployの時間です!
 

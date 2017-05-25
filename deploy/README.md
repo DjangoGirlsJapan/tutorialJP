@@ -45,7 +45,7 @@ Heroku のチュートリアル (https://devcenter.heroku.com/articles/getting-s
 
 Herokuに使っているPythonのバージョンを伝えなければいけません。`djangogirls`ディレクトリに`runtime.txt` ファイルを作ってその中に書きます。エディタで新規ファイルを作成して、次のように書いてください:
 
-    python-3.4.2
+    python-3.5.2
 
 ## mysite/local_settings.py
 
