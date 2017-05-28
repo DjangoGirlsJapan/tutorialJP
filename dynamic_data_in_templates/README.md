@@ -58,4 +58,4 @@
 
 どうでしたか？次は、このクエリセットをテンプレートで表示させるところを、やってみましょう。
 
-Djangoのクエリセットについて、もっと知りたければ、英語のドキュメントですが、こちらも読んでみてくださいね。 https://docs.djangoproject.com/en/1.8/ref/models/querysets/
+Djangoのクエリセットについて、もっと知りたければ、英語のドキュメントですが、こちらも読んでみてくださいね。 https://docs.djangoproject.com/ja/1.11/ref/models/querysets/

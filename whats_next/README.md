@@ -18,11 +18,11 @@
 
 他にオススメの資料のリストを下記に記述します。とてもいいですよ。
 
-- [Django's official tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial01/)
+- [Django's official tutorial](https://docs.djangoproject.com/ja/1.11/intro)
 - [New Coder tutorials](http://newcoder.io/tutorials/)
 - [Code Academy Python course](http://www.codecademy.com/en/tracks/python)
 - [Code Academy HTML & CSS course](http://www.codecademy.com/tracks/web)
 - [Django Carrots tutorial](http://django.carrots.pl/en/)
 - [Learn Python The Hard Way book](http://learnpythonthehardway.org/book/)
 - [Getting Started With Django video lessons](http://gettingstartedwithdjango.com/)
-- [Two Scoops of Django: Best Practices for Django](http://twoscoopspress.org/products/two-scoops-of-django-1-6) book
+- [Two Scoops of Django: Best Practices for Django](http://twoscoopspress.org/products/two-scoops-of-django-1-11) book

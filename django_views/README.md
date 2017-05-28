@@ -17,7 +17,6 @@
 まだ何もないですね。とりあえず、次のような、ちょっとした *ビュー* を作ってみましょう。
 
     def post_list(request):
-
         return render(request, 'blog/post_list.html', {})
 
 よく見てみましょうか。まず `post_list` というメソッド( `def` から始まる部分のことです)を、記述しています。この `post_list` は `request` を引数に取り、`render` メソッドを `return` しています。`render` メソッドは `blog/post_list.html` というテンプレートファイルを使って、引数で受け取った `request` の内容を出力しています。
@@ -30,4 +29,4 @@
 
 この *TemplatedoesNoteExist* エラーの解決は、簡単です。テンプレートファイルがないだけなので、それでは次の章でテンプレートを作ってみましょう！
 
-> Djangoのビューについてもっと知りたいのなら、英語で書かれていますが、オフィシャルドキュメントを是非読んでみてください：https://docs.djangoproject.com/en/1.8/topics/http/views/
+> Djangoのビューについてもっと知りたいのなら、英語で書かれていますが、オフィシャルドキュメントを是非読んでみてください：https://docs.djangoproject.com/ja/1.11/topics/http/views/

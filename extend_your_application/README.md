@@ -10,9 +10,7 @@
 
 ## Create a link in the template
 
-We will start with adding a link inside `blog/templates/blog/post_list.html` file. So far it should look like:
-
-`blog/templates/blog/post_list.html`ファイルにリンクを追加しましょう。次のように：
+`blog/templates/blog/post_list.html`ファイルに次のようにリンクを追加しましょう：
 
     {% extends 'blog/base.html' %}
 
@@ -30,11 +28,11 @@ We will start with adding a link inside `blog/templates/blog/post_list.html` fil
 
 投稿のタイトルから詳細記事へリンクさせたい時は、`<h1><a href="">{{ post.title }}</a></h1>`の箇所をリンク先に変えてみましょう。
 
-    <h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+    <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
 
-`{% url 'blog.views.post_detail' pk=post.pk %}`という不思議なものについて説明しましょう。うすうすわかっているかもしれませんが、`{% %}`という表記はDjangoのテンプレートタグを使っているということを意味します。今回書いたこれは、URLに変換されます。
+`{% url 'post_detail' pk=post.pk %}`という不思議なものについて説明しましょう。うすうすわかっているかもしれませんが、`{% %}`という表記はDjangoのテンプレートタグを使っているということを意味します。今回書いたこれは、URLに変換されます。
 
-`blog.views.post_detail`は`post_detail`ビューへのパスです。注：blogはアプリケーションの名前です。ビューは`views.py`ファイルの名前で`post_detail`はビューの名前です。
+`post_detail`は`post_detail`ビューへのパスです。注：blogはアプリケーションの名前です。ビューは`views.py`ファイルの名前で`post_detail`はビューの名前です。
 
 http://127.0.0.1:8000/ にアクセスすると、エラーとなりますが、これは想定通り。URLや`post_detail`のビューをまだ作ってないからです。このようになります：
 
@@ -51,7 +49,7 @@ Djangoに`post_detail`が呼び出すビューを作りましょう。このビ�
 
     urlpatterns = [
         url(r'^$', views.post_list),
-        url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail),
+        url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
     ]
 
 何だか変に見えますが、心配しないで下さい、説明しますと、
@@ -60,15 +58,13 @@ Djangoに`post_detail`が呼び出すビューを作りましょう。このビ�
 
 - `post/` はURLに__post__と__/__を含む
 
-- `(?P<pk>[0-9]+)`　これはトリッキーな部分です。Djangoはここに書いた全てを受けてそれを`pk`という変数としてビューへ渡します。`[0-9]`は（0から9の間の)数字のみを意味し、`+`はそれが一桁以上続くことを意味しています。`http://127.0.0.1:8000/post//` はダメで`http://127.0.0.1:8000/post/1234567890/` はOKです。
+- `(?P<pk>[0-9]+)` これはトリッキーな部分です。Djangoはここに書いた全てを受けてそれを`pk`という変数としてビューへ渡します。`[0-9]`は（0から9の間の)数字のみを意味し、`+`はそれが一桁以上続くことを意味しています。`http://127.0.0.1:8000/post//` はダメで`http://127.0.0.1:8000/post/1234567890/` はOKです。
 
 - `/` - もう一度__/__が必要です。
 
 - `$`は「文字列の終了」を意味します。
 
 ブラウザで`http://127.0.0.1:8000/post/5/`を表示した時、Djangoはビューが`post_detail`を呼び出すということを理解します。そして、`pk`の部分は5とビューへ渡します。
-
-`pk` is shortcut for `primary key`. This name is often used in Django projects. But you can name your variable as you like (remember: lowercase and `_` instead of whitespaces!). For example instead of `(?P<pk>[0-9]+)` we could have variable `post_id`, so this bit would look like: `(?P<post_id>[0-9]+)`.
 
 `pk`とはprimary keyの省略です。
 この名前はDjangoプロジェクトでよく使われますが、好きに名前を付けることもできます（でも、英小文字と`_`だけで、空白などは入れないように！）。`(?P<pk>[0-9]+)` の代わりに、`post_id`と名付けるとすれば`(?P<post_id>[0-9]+)` となります。
@@ -86,8 +82,6 @@ OK,ページ http://127.0.0.1:8000 をリロードしてみましょう。けど
 `pk`で指定されたブログの記事を取得するにはクエリセットを使います:
 
     Post.objects.get(pk=pk)
-
-But this code has a problem. If there is no `Post` with given `primary key` (`pk`) we will have a super ugly error!
 
 しかしこのコードには問題があります。指定された`pk`を持つブログ記事がないと、なんだかとてもダサいエラーが出てきます。
 
@@ -151,9 +145,7 @@ OK,ページをリロードして、もう「ページがありません」と�
 
 ## One more thing: deploy time!
 
-It'd be good to see if your website will still be working on Heroku, right? Let's try deploying again. If you forgot how to do it, check the end of chapter [Deploy](../deploy/README.md):
-
-もしウェブサイトがHerokuで動いているなら、良いかもしれないですが、もう一度deployしてみましょう。どのようにやるか忘れていたら、[Deploy](../deploy/README.md) の章を確認しましょう。
+もしウェブサイトがHerokuで動いているなら、確認するのは良いことです。もう一度deployしてみましょう。どのようにやるか忘れていたら、[Deploy](../deploy/README.md) の章を確認しましょう。
 
     $ git status
     ...
