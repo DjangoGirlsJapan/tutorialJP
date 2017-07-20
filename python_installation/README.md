@@ -10,7 +10,7 @@ Pythonは1980年台の終わりに、人間が読みやすい（機械だけで�
 
 > このセクションは、Geek Girls Carrots \([http://django.carrots.pl/\)のチュートリアルをもとに作成されています。](http://django.carrots.pl/%29のチュートリアルをもとに作成されています。)
 
-Django は、Pythonで開発されています。なにをするにせよ、まずはPythonが必要です。インストールしましょう！ Python 3.5 をインストールします。3.5以前のバージョンをインストール済みの場合は、アップグレードしてください。
+Django は、Pythonで開発されています。なにをするにせよ、まずはPythonが必要です。インストールしましょう！ Python 3.6 をインストールします。3.5以前のバージョンをインストール済みの場合は、アップグレードしてください。
 
 ### Windows
 
@@ -22,7 +22,7 @@ Windowsをお使いのかたは、 次のリンクからダウンロードする
 
 ```
 $ python3 --version
-Python 3.5.2
+Python 3.6.2
 ```
 
 もし、Pythonがインストールされていない場合、あるいはバージョンが古い場合は、次の指示に従ってインストールしてください。
@@ -32,7 +32,7 @@ Python 3.5.2
 次のコマンドをコンソールに打って下さい。
 
 ```
-sudo apt-get install python3.5 python3.5-venv
+sudo apt-get install python3.6 python3.6-venv
 ```
 
 #### Fedora
@@ -40,7 +40,7 @@ sudo apt-get install python3.5 python3.5-venv
 次のコマンドをコンソールに打って下さい。
 
 ```
-sudo yum install python3.5
+sudo yum install python3.6
 ```
 
 ### OS X
@@ -55,7 +55,7 @@ Webサイトからダウンロードしてインストールしましょう。 [
 
 ```
 $ python3 --version
-Python 3.5.2
+Python 3.6.2
 ```
 
 ---
