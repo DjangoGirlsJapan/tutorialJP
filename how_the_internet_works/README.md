@@ -2,20 +2,25 @@
 
 > This chapter is inspired by a talk "How the Internet works" by Jessica McKellar \([http://web.mit.edu/jesstess/www/](http://web.mit.edu/jesstess/www/)\).
 
-We bet you use the Internet every day. But do you actually know what happens when you type an address like [http://djangogirls.org](http://djangogirls.org) into your browser and press 'Enter'?
+私達は毎日インターネットにつながっていますよね。でも、あなたがブラウザのアドレス欄に　[http://djangogirls.org](https://www.gitbook.com/book/djangogirlsjapan/workshop_tutorialjp/edit#)　のように入力をしてEnterキーを押している事がどういう意味がるのかわかりますか？
 
-The first thing you need to understand is that a website is just a bunch of files saved on a hard disk. Just like your movies, music or pictures.  
-However, there is one part that is unique for websites: they include computer code called HTML.
 
-If you're not familiar with programming, it can be hard to grasp HTML at first, but your web browsers \(like Chrome, Safari, Firefox, etc.\) love it. Web browsers are designed to understand this code,  
-follow its instructions and present all these files that your website is made of exactly the way you want them to be presented.
 
-As with every file, we need to store HTML files somewhere on a hard disk. For the Internet, we use special, powerful computers called _servers_. They don't have  
-a screen, mouse or a keyboard, because their main purpose is to store data and serve it. That's why they're called _servers_ -- because they _serve_ you data.
+最初に理解してほしいのは、あなたが自分のパソコンのハードディスクに映画や音楽や写真を沢山保存しているように、Webサイトもハードディスクに保存される沢山のファイルの集合であるという事です。
 
-OK, but you want to know how the Internet looks like, right?
 
-We drew you a picture! It looks like this:
+
+しかし、Webサイトは映画や音楽、写真のようなデータとは違ってHTMLというコンピュータのコードを持っているのです。もし、あなたがプログラミングに精通していなかったら、最初はHTMLも難しく感じるでしょう。でも、あなたがよく使うWebブラウザ（ChromeやSafariやFirefox等々）はHTMLのコードを理解しているのです。Webブラウザが正しく理解できるように、ファイルを作成する必要があります。
+
+
+
+あなたのパソコンへファイルを保存するのと同じで私達はHTMLをハードディスクに格納する必要があります。インターネットの場合、そのハードディスクはサーバーと呼ばれている、パワフルなコンピュータを使います。サーバーの主な目的はデータを格納して、それに供給することであるので、マウスまたはキーボードを持っていません。また、データを供給する役割を持っているので、サーバーと呼ばれるのです。
+
+
+
+インターネットはどのように見えますか？
+
+私達は絵をかいてみました。
 
 ![Figure 1.1](images/internet_1.png)
 
