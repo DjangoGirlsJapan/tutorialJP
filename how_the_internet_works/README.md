@@ -35,15 +35,17 @@ Your letter goes to the post office closest to you. Then it goes to another that
 
 ![Figure 1.4](images/internet_4.png)
 
-Yes, it is as simple as that. You send messages and you expect some response. Of course, instead of paper and pen you use bytes of data, but the idea is the same!
+簡単ですよね。あなたはメッセージを送信し、何らかの応答を期待します。 もちろん、紙とペンではなく、データのバイトを使用しますが、アイデアは同じです！
 
-Instead of addresses with a street name, city, zip code and country name, we use IP addresses. Your computer first asks the DNS \(Domain Name System\) to translate djangogirls.org into an IP address. It works a little bit like old-fashioned phonebooks where you could look for the name of the person you want to contact and find their phone number and address.
+市町村名、郵便番号、国名の住所の代わりに、IPアドレスを使用します。 お使いのコンピュータは、まずdjangogirls.orgをIPアドレスに変換するようにDNS（Domain Name System）に依頼します。 あなたが連絡したい人の名前を探し、電話番号と住所を見つけることができる昔ながらの電話帳のようなものです。
 
-When you send a letter, it needs to have certain features to be delivered correctly: an address, stamp etc. You also use a language that the receiver understands, right? The same is with _data packets_ you send in order to see a website: you use a protocol called HTTP \(Hypertext Transfer Protocol\).
+手紙を送るときには、住所、切手など、正しく配送される特定の機能が必要ですよね。また、受信者が理解できる言語も使用している必要がありますよね？ Webサイトを表示するために送信するデータパケットにも同じように特定の機能があります。それはHTTP（Hypertext Transfer Protocol）というプロトコルを使用します。
 
-So, basically, when you have a website you need to have a _server_ \(machine\) where it lives. The _server_ is waiting for any incoming _requests_ \(letters that ask the server to send your website\) and it sends back your website \(in another letter\).
+だから、基本的に、あなたがウェブサイトを持っているときには、サーバー（マシン）が必要です。 サーバーは着信要求（サーバーにWebサイトの送信を要求する文字）を待機し、Webサイトに別の手紙を送信します。
 
-Since this is a Django tutorial, you will ask what Django does. When you send a response, you don't always want to send the same thing to everybody. It is so much better if your letters are personalized, especially for the person that has just written to you, right? Django helps you with creating these personalized, interesting letters :\).
+これはDjangoチュートリアルなので、あなたはDjangoが何をしているのかを知りたでしょう？ あなたが返事を返す時、 みんなに同じ返事を返すより、個々にパーソナライズされた返事を返せた方が良いでしょう？（Djangoはこれらのパーソナライズされた興味深い文字を作成するのに役立ちます:\)。
 
-Enough talk, time to create!
+
+
+インターネットの話は以上です！さあ、いよいよあなたのブログサイトを作成する時間です！
 
