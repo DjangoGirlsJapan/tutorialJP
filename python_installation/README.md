@@ -28,6 +28,59 @@ Django is written in Python. We need Python to do anything in Django. Let's star
 
 Windowsをお使いのかたは、 次のリンクからダウンロードすることができます。 [https://www.python.org/downloads/release/python-352/](https://www.python.org/downloads/release/python-352/).  **\*.msi** ファイルをダウンロードしたら、ダブルクリックして実行して、指示のとおりインストールしてください。Pythonをどのディレクトリにインストールしたか確認して、おぼえておいてくださいね。後ほど必要になってきます。
 
+## Windows {#windows}
+
+First check whether your computer is running a 32-bit version or a 64-bit version of Windows, by pressing the Windows key + Pause/Break key which will open your System info, and look at the "System type" line. You can download Python for Windows from the website[https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/). Click on the "Latest Python 3 Release - Python x.x.x" link. If your computer is running a**64-bit**version of Windows, download the**Windows x86-64 executable installer**. Otherwise, download the**Windows x86 executable installer**. After downloading the installer, you should run it \(double-click on it\) and follow the instructions there.
+
+One thing to watch out for: During the installation you will notice a window marked "Setup". Make sure you tick the "Add Python 3.5 to PATH" checkbox and click on "Install Now", as shown here:
+
+
+
+In upcoming steps, you'll be using the Windows Command Line \(which we'll also tell you about\). For now, if you need to type in some commands, go to Start menu → All Programs → Accessories → Command Prompt. You can also hold in the Windows key and press the "R"-key until the "Run" window pops up. To open the Command Line, type "cmd" and press enter in the "Run" window. \(On newer versions of Windows, you might have to search for "Command Prompt" since it's sometimes hidden.\)
+
+
+
+Note: if you are using an older version of Windows \(7, Vista, or any older version\) and the Python 3.5.x installer fails with an error, you can try either:
+
+1. install all Windows Updates and try to install Python 3.5 again; or
+2. install an
+   [older version of Python](https://www.python.org/downloads/windows/)
+   , e.g.,
+   [3.4.4](https://www.python.org/downloads/release/python-344/)
+   .
+
+If you install an older version of Python, the installation screen may look a bit different than shown above. Make sure you scroll down to see "Add python.exe to Path", then click the button on the left and pick "Will be installed on local hard drive":
+
+
+
+### OS X
+
+Webサイトからダウンロードしてインストールしましょう。 [https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+* _Mac OS X 64-bit/32-bit installer_ _DMG_ ファイルをダウンロードして下さい。
+* ダブルクリックで開いてください。
+* _Python.mpkg_ をダブルクリックして、インストーラーを実行してください。
+
+インストールが正しく行われたか確認するために、 _ターミナル_ を開いて、`python3` コマンド次のようにタイプしてみましょう。
+
+```
+$ python3 --version
+Python 3.5.2
+```
+
+> **Note**Before you install Python on OS X, you should ensure your Mac settings allow installing packages that aren't from the App Store. Go to System Preferences \(it's in the Applications folder\), click "Security & Privacy," and then the "General" tab. If your "Allow apps downloaded from:" is set to "Mac App Store," change it to "Mac App Store and identified developers."
+
+You need to go to the website[https://www.python.org/downloads/release/python-351/](https://www.python.org/downloads/release/python-351/)and download the Python installer:
+
+* Download the
+  _Mac OS X 64-bit/32-bit installer_
+  file,
+* Double click
+  _python-3.5.1-macosx10.6.pkg_
+  to run the installer.
+
+### 
+
 ### Linux
 
 おそらく殆どの場合、Pythonはすでにインストール済みでしょう。インストールされているか確認するためには（バージョンを確認するためにも）、コンソールを起動して次のコマンドを打ってください。
@@ -55,26 +108,15 @@ sudo apt-get install python3.5 python3.5-venv
 sudo yum install python3.5
 ```
 
-### OS X
 
-Webサイトからダウンロードしてインストールしましょう。 [https://www.python.org/downloads/](https://www.python.org/downloads/)
-
-* _Mac OS X 64-bit/32-bit installer_ _DMG_ ファイルをダウンロードして下さい。
-* ダブルクリックで開いてください。
-* _Python.mpkg_ をダブルクリックして、インストーラーを実行してください。
-
-インストールが正しく行われたか確認するために、 _ターミナル_ を開いて、`python3` コマンド次のようにタイプしてみましょう。
-
-```
-$ python3 --version
-Python 3.5.2
-```
 
 ---
 
 分からない時や、質問がある時は、コーチに質問してくださいね。ときどき上手くいかないこともあります。そんな時は、経験豊富な人に聞くといいですよ。
 
----
+
+
+
 
 
 
