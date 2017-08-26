@@ -34,11 +34,13 @@ First check whether your computer is running a 32-bit version or a 64-bit versio
 
 One thing to watch out for: During the installation you will notice a window marked "Setup". Make sure you tick the "Add Python 3.5 to PATH" checkbox and click on "Install Now", as shown here:
 
+![](/assets/python-installation-options.png)
+
 
 
 In upcoming steps, you'll be using the Windows Command Line \(which we'll also tell you about\). For now, if you need to type in some commands, go to Start menu → All Programs → Accessories → Command Prompt. You can also hold in the Windows key and press the "R"-key until the "Run" window pops up. To open the Command Line, type "cmd" and press enter in the "Run" window. \(On newer versions of Windows, you might have to search for "Command Prompt" since it's sometimes hidden.\)
 
-
+![](/assets/windows-plus-r.png)
 
 Note: if you are using an older version of Windows \(7, Vista, or any older version\) and the Python 3.5.x installer fails with an error, you can try either:
 
@@ -50,6 +52,8 @@ Note: if you are using an older version of Windows \(7, Vista, or any older vers
    .
 
 If you install an older version of Python, the installation screen may look a bit different than shown above. Make sure you scroll down to see "Add python.exe to Path", then click the button on the left and pick "Will be installed on local hard drive":
+
+![](/assets/add_python_to_windows_path.png)
 
 
 
@@ -108,15 +112,7 @@ sudo apt-get install python3.5 python3.5-venv
 sudo yum install python3.5
 ```
 
-
-
 ---
 
 分からない時や、質問がある時は、コーチに質問してくださいね。ときどき上手くいかないこともあります。そんな時は、経験豊富な人に聞くといいですよ。
-
-
-
-
-
-
 
