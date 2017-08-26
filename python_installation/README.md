@@ -32,7 +32,7 @@ Python 3.6.2
 次のコマンドをコンソールに打って下さい。
 
 ```
-sudo apt-get install python3.６ python3.６-venv
+sudo apt-get install python3.6 python3.6-venv
 ```
 
 #### Fedora
@@ -40,7 +40,7 @@ sudo apt-get install python3.６ python3.６-venv
 次のコマンドをコンソールに打って下さい。
 
 ```
-sudo yum install python3.６
+sudo yum install python3.6
 ```
 
 ### OS X
