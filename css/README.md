@@ -42,10 +42,8 @@ CSSは静的ファイルです。そのためCSSをカスタマイズするた�
 
 ```
 djangogirls
-├── blog
-│   ├── migrations
-│   └── static
-└── mysite
+├─── static
+└─── manage.py
 ```
 
 `mysite/settings.py` ファイルを開き、下にスクロールして次の行を追加して下さい。
@@ -64,10 +62,9 @@ CSSファイルを作って、Webサイトにあなたのスタイル設定し�
 
 ```
 djangogirls
-└─── blog
-     └─── static
-          └─── css
-               └─── blog.css
+└─── static
+     └─── css
+          └─── blog.css
 ```
 
 CSSを書く時間がやってきました！エディタの中で、`static/css/blog.css`ファイルを開いて下さい。
