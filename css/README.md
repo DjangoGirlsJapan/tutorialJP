@@ -42,8 +42,10 @@ CSSは静的ファイルです。そのためCSSをカスタマイズするた�
 
 ```
 djangogirls
-├─── static
-└─── manage.py
+├── blog
+│   ├── migrations
+│   └── static
+└── mysite
 ```
 
 `mysite/settings.py` ファイルを開き、下にスクロールして次の行を追加して下さい。
@@ -61,9 +63,11 @@ STATICFILES_DIRS = (
 CSSファイルを作って、Webサイトにあなたのスタイル設定していきましょう。 `static` ディレクトリの中に、`css` という名前の新しいディレクトリを作成してください。. その`css` ディレクトリの中に、`blog.css` という名前の新しいファイルを作成してください。準備はいいですか？
 
 ```
-static
-└─── css
-    └── blog.css
+djangogirls
+└─── blog
+     └─── static
+          └─── css
+               └─── blog.css
 ```
 
 CSSを書く時間がやってきました！エディタの中で、`static/css/blog.css`ファイルを開いて下さい。
