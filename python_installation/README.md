@@ -8,7 +8,7 @@ Pythonは1980年台の終わりに、人間が読みやすい（機械だけで�
 
 # Python installation
 
-> このセクションは、Geek Girls Carrots \([http://django.carrots.pl/\)のチュートリアルをもとに作成されています。](http://django.carrots.pl/%29のチュートリアルをもとに作成されています。)
+> **Note** このセクションは、Geek Girls Carrots \([http://django.carrots.pl/\)のチュートリアルをもとに作成されています。](http://django.carrots.pl/%29のチュートリアルをもとに作成されています。)
 
 Django は、Pythonで開発されています。なにをするにせよ、まずはPythonが必要です。インストールしましょう！ Python 3.5 をインストールします。3.5以前のバージョンをインストール済みの場合は、アップグレードしてください。
 
@@ -23,10 +23,6 @@ Django は、Pythonで開発されています。なにをするにせよ、ま�
 > This section is based on a tutorial by Geek Girls Carrots \([https://github.com/ggcarrots/django-carrots](https://github.com/ggcarrots/django-carrots)\)
 
 Django is written in Python. We need Python to do anything in Django. Let's start by installing it! We want you to install Python 3.5, so if you have any earlier version, you will need to upgrade it.
-
-
-
-
 
 ### Windows
 
