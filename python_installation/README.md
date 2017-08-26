@@ -1,4 +1,4 @@
-# Let’s start with Python
+# Let’s start with Python {#lets-start-with-python}
 
 ついにここまで来ました！
 
@@ -11,6 +11,22 @@ Pythonは1980年台の終わりに、人間が読みやすい（機械だけで�
 > このセクションは、Geek Girls Carrots \([http://django.carrots.pl/\)のチュートリアルをもとに作成されています。](http://django.carrots.pl/%29のチュートリアルをもとに作成されています。)
 
 Django は、Pythonで開発されています。なにをするにせよ、まずはPythonが必要です。インストールしましょう！ Python 3.5 をインストールします。3.5以前のバージョンをインストール済みの場合は、アップグレードしてください。
+
+# Python installation {#python-installation}
+
+> **Note**If you're using a Chromebook, skip this chapter and make sure you follow the[Chromebook Setup](https://tutorial.djangogirls.org/en/chromebook_setup/README.md)instructions.
+>
+> **Note**If you already worked through the Installation steps, there's no need to do this again – you can skip straight ahead to the next chapter!
+>
+> For readers at home: this chapter is covered in the[Installing Python & Code Editor](https://www.youtube.com/watch?v=pVTaqzKZCdA)video.
+>
+> This section is based on a tutorial by Geek Girls Carrots \([https://github.com/ggcarrots/django-carrots](https://github.com/ggcarrots/django-carrots)\)
+
+Django is written in Python. We need Python to do anything in Django. Let's start by installing it! We want you to install Python 3.5, so if you have any earlier version, you will need to upgrade it.
+
+
+
+
 
 ### Windows
 
@@ -61,4 +77,8 @@ Python 3.5.2
 ---
 
 分からない時や、質問がある時は、コーチに質問してくださいね。ときどき上手くいかないこともあります。そんな時は、経験豊富な人に聞くといいですよ。
+
+---
+
+
 
