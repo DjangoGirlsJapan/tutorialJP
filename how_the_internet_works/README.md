@@ -2,7 +2,7 @@
 
 > This chapter is inspired by a talk "How the Internet works" by Jessica McKellar \([http://web.mit.edu/jesstess/www/](http://web.mit.edu/jesstess/www/)\).
 
-私達は毎日インターネットにつながっていますよね。でも、あなたがブラウザのアドレス欄に　[http://djangogirls.org](https://www.gitbook.com/book/djangogirlsjapan/workshop_tutorialjp/edit#)　のように入力をしてEnterキーを押している事がどういう意味がるのかわかりますか？
+私達は毎日インターネットにつながっていますよね。でも、あなたがブラウザのアドレス欄に　[http://djangogirls.org](http://djangogirls.org)　のように入力をしてEnterキーを押している事がどういう意味がるのかわかりますか？
 
 
 
@@ -24,19 +24,17 @@
 
 ![Figure 1.1](images/internet_1.png)
 
-Looks like a mess, right? In fact it is a network of connected machines \(the above mentioned _servers_\). Hundreds of thousands of machines! Many, many kilometers of cables around the world! You can visit a Submarine Cable Map website \([http://submarinecablemap.com/](http://submarinecablemap.com/)\) to see how complicated the net is. Here is a screenshot from the website:
+上記の絵は混乱しているように見えますよね？接続されたマシンのネットワークは実際こんな感じです。数十万台のマシン！ 世界中はりめぐらされたケーブル！ Submarine Cable Mapのウェブサイト（[http://submarinecablemap.com/](http://submarinecablemap.com/)）にアクセスすれば、ネットの複雑さを知ることができます。 ここにウェブサイトからのスクリーンショットがあります：
 
-![Figure 1.2](images/internet_3.png)
+インターネットに接続されているすべてのマシンとマシンの間にワイヤを置くことは不可能です。 したがって、マシン（例えば　[http://djangogirls.org](http://djangogirls.org)　が保存されているマシン）に到達するためには、多くの異なるマシンを介してリクエストを渡す必要があります。
 
-It is fascinating, isn't it? But obviously, it is not possible to have a wire between every machine connected to the Internet. So, to reach a machine \(for example the one where [http://djangogirls.org](http://djangogirls.org) is saved\) we need to pass a request through many, many different machines.
-
-It looks like this:
+それは次のようになります。
 
 ![Figure 1.3](images/internet_2.png)
 
-Imagine that when you type [http://djangogirls.org](http://djangogirls.org), you send a letter that says: "Dear Django Girls, I want to see the djangogirls.org website. Send it to me, please!"
+あなたが [http://djangogirls.org ](http://djangogirls.org)と入力すると、「親愛ならDjango Girlsへ。私はdjangogirls.orgのWebサイトが見たいです」とリクエスト（手紙）を送る事になります。
 
-Your letter goes to the post office closest to you. Then it goes to another that is a bit nearer to your addressee, then to another and another till it is delivered at its destination. The only unique thing is that if you send letters \(_data packets_\) frequently to the same place, each letter might go through totally different post offices \(_routers_\), depending on how they are distributed in each office.
+あなたの手紙（リクエスト）は、まずあなたの一番近くの郵便局にいきますよね。そしてそこから、もう少し宛先に少し近い別の郵便局に行き、またそこからもう少し近い郵便局に行って・・そしてあなたの目的地まで行きます。
 
 ![Figure 1.4](images/internet_4.png)
 
