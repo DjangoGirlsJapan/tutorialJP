@@ -96,7 +96,7 @@ urlpatterns = [
 
 いいですか？ [http://127.0.0.1:8000/](http://127.0.0.1:8000/) を開いて結果を見てみましょう。
 
-![Error](images/error1.png)![](/django_urls/images/error1.png)
+![Error](images/error1.png)
 
 どう見ても「うまく動いた」感じはしませんね。でも心配しないで、これはただのエラーページで、怖がるものではありません。むしろ、結構便利なものなんですよ：
 
