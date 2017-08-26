@@ -21,9 +21,7 @@ We drew you a picture! It looks like this:
 
 上記の絵は混乱しているように見えますよね？接続されたマシンのネットワークは実際こんな感じです。数十万台のマシン！ 世界中はりめぐらされたケーブル！ Submarine Cable Mapのウェブサイト（[http://submarinecablemap.com/](http://submarinecablemap.com/)）にアクセスすれば、ネットの複雑さを知ることができます。 ここにウェブサイトからのスクリーンショットがあります：
 
-
-
-インターネットに接続されているすべてのマシンとマシンの間ににワイヤを置くことは不可能です。 したがって、マシン（例えば　[http://djangogirls.org](http://djangogirls.org)　が保存されているマシン）に到達するためには、多くの異なるマシンを介してリクエストを渡す必要があります。
+インターネットに接続されているすべてのマシンとマシンの間にワイヤを置くことは不可能です。 したがって、マシン（例えば　[http://djangogirls.org](http://djangogirls.org)　が保存されているマシン）に到達するためには、多くの異なるマシンを介してリクエストを渡す必要があります。
 
 それは次のようになります。
 
@@ -31,11 +29,7 @@ We drew you a picture! It looks like this:
 
 あなたが [http://djangogirls.org ](http://djangogirls.org)と入力すると、「親愛ならDjango Girlsへ。私はdjangogirls.orgのWebサイトが見たいです」とリクエスト（手紙）を送る事になります。
 
-
-
-あなたの手紙（リクエスト）は、まずあなたの一番近くの郵便局にいきますよね。そしてそこから、もう少し宛先に少し近い別の郵便局に行き、またそこからもう少し近い郵便局に行って・・そしてあなたの目的地まで行きます。
-
-![Figure 1.4](images/internet_4.png)
+あなたの手紙（リクエスト）は、まずあなたの一番近くの郵便局にいきますよね。そしてそこから、もう少し宛先に少し近い別の郵便局に行き、またそこからもう少し近い郵便局に行って・・そしてあなたの目的地まで行きます。![Figure 1.4](images/internet_4.png)
 
 Yes, it is as simple as that. You send messages and you expect some response. Of course, instead of paper and pen you use bytes of data, but the idea is the same!
 
