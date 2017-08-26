@@ -1,4 +1,4 @@
-# Let’s start with Python {#lets-start-with-python}
+# Pythonを始めましょう {#lets-start-with-python}
 
 ついにここまで来ました！
 
@@ -6,23 +6,13 @@
 
 Pythonは1980年台の終わりに、人間が読みやすい（機械だけでなく）言語を目的に開発されました。だから、他の言語に比べて、Pythonはとてもシンプルで、勉強しやすいのです。でもご心配なく、Pythonはとってもパワフルな言語でもありますから！
 
-# Python installation
+# Pythonのインストール {#python-installation}
 
-> **Note** このセクションは、Geek Girls Carrots \([http://django.carrots.pl/\)のチュートリアルをもとに作成されています。](http://django.carrots.pl/%29のチュートリアルをもとに作成されています。)
+> 注意：すでにインストール手順を実行している場合は、これをもう一度行う必要はありません。次の章に進むことができます。
+>
+> このセクションはGeek Girls Carrots（[https://github.com/ggcarrots/django-carrots](https://github.com/ggcarrots/django-carrots)）のチュートリアルに基づいています。
 
 Django は、Pythonで開発されています。なにをするにせよ、まずはPythonが必要です。インストールしましょう！ Python 3.5 をインストールします。3.5以前のバージョンをインストール済みの場合は、アップグレードしてください。
-
-# Python installation {#python-installation}
-
-> **Note**If you're using a Chromebook, skip this chapter and make sure you follow the[Chromebook Setup](https://tutorial.djangogirls.org/en/chromebook_setup/README.md)instructions.
->
-> **Note**If you already worked through the Installation steps, there's no need to do this again – you can skip straight ahead to the next chapter!
->
-> For readers at home: this chapter is covered in the[Installing Python & Code Editor](https://www.youtube.com/watch?v=pVTaqzKZCdA)video.
->
-> This section is based on a tutorial by Geek Girls Carrots \([https://github.com/ggcarrots/django-carrots](https://github.com/ggcarrots/django-carrots)\)
-
-Django is written in Python. We need Python to do anything in Django. Let's start by installing it! We want you to install Python 3.5, so if you have any earlier version, you will need to upgrade it.
 
 ### Windows
 
@@ -30,32 +20,36 @@ Windowsをお使いのかたは、 次のリンクからダウンロードする
 
 ## Windows {#windows}
 
-First check whether your computer is running a 32-bit version or a 64-bit version of Windows, by pressing the Windows key + Pause/Break key which will open your System info, and look at the "System type" line. You can download Python for Windows from the website[https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/). Click on the "Latest Python 3 Release - Python x.x.x" link. If your computer is running a**64-bit**version of Windows, download the**Windows x86-64 executable installer**. Otherwise, download the**Windows x86 executable installer**. After downloading the installer, you should run it \(double-click on it\) and follow the instructions there.
+Windowsをお使いのかたは、まずシステム情報を開き、システムの種類が34-bitバージョンか64-bitバージョンかを確認します。
 
-One thing to watch out for: During the installation you will notice a window marked "Setup". Make sure you tick the "Add Python 3.5 to PATH" checkbox and click on "Install Now", as shown here:
+（システム情報の開き方：Windowsキー + Pause/Break キー　もしくは　コントロールパネル&gt;システムとセキュリティ&gt;システムを開く\)
+
+Python for Windowsは　[https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)　からダウンロードできます。 「最新のPython 3 Release - Python x.x.x」リンクをクリックしてください。 お使いのコンピュータが64ビット版のWindowsを実行している場合は、Windows x86-64実行可能インストーラをダウンロードしてください。 それ以外の場合は、Windows x86実行可能インストーラーをダウンロードします。 インストーラをダウンロードしたら、それを実行して（ダブルクリックして）インストーラの指示に従ってください。（画像は3.5.1ですが2017/08/26時点の最新バージョンは3.6.2です。）
+
+**インストール時に必ずAdd Python 3.x to Path にチェックをいれましょう**:
 
 ![](/assets/python-installation-options.png)
 
 
 
-In upcoming steps, you'll be using the Windows Command Line \(which we'll also tell you about\). For now, if you need to type in some commands, go to Start menu → All Programs → Accessories → Command Prompt. You can also hold in the Windows key and press the "R"-key until the "Run" window pops up. To open the Command Line, type "cmd" and press enter in the "Run" window. \(On newer versions of Windows, you might have to search for "Command Prompt" since it's sometimes hidden.\)
+次のステップでは、Windowsコマンドラインを使用します。 今のところ、いくつかのコマンドを入力する必要がある場合は、**スタートメニュー→すべてのプログラム→アクセサリ→コマンドプロンプト\(Windows10 Windowsロゴマーク→Windowsシステムツール→コマンドプロンプト）**を開きます。 または、**Windowsキー + 「R」キー**　「ファイル名を指定して実行」ウィンドウを起動して　"cmd" と入力しenterキーを押します。（新しいバージョンのWindowsでは、コマンドプロンプトが非表示になることがあるため、「コマンドプロンプト」を検索する必要があるかもしれません）。
+
+
 
 ![](/assets/windows-plus-r.png)
 
-Note: if you are using an older version of Windows \(7, Vista, or any older version\) and the Python 3.5.x installer fails with an error, you can try either:
 
-1. install all Windows Updates and try to install Python 3.5 again; or
-2. install an
-   [older version of Python](https://www.python.org/downloads/windows/)
-   , e.g.,
-   [3.4.4](https://www.python.org/downloads/release/python-344/)
-   .
 
-If you install an older version of Python, the installation screen may look a bit different than shown above. Make sure you scroll down to see "Add python.exe to Path", then click the button on the left and pick "Will be installed on local hard drive":
+> 注意：古いバージョンのWindows（7、Vista、またはそれ以前のバージョン）を使用していて、Python 3.5.xインストーラがエラーで失敗した場合、次のいずれかを試みることができます：
+
+1. すべてのWindowsアップデートをインストールして、Python 3.5を再インストールしてみる。
+2. 古いバージョンのPythonをインストールしてみる。\([https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)\)
+
+古いバージョンのPythonをインストールした場合、インストール画面は上記のものとは多少異なる場合があります。 下にスクロールして「python.exeをパスに追加」し、左側のボタンをクリックして「ローカルハードドライブにインストールされます」を選択してください。:
+
+
 
 ![](/assets/add_python_to_windows_path.png)
-
-
 
 ### OS X
 
@@ -72,9 +66,9 @@ $ python3 --version
 Python 3.5.2
 ```
 
-> **Note**Before you install Python on OS X, you should ensure your Mac settings allow installing packages that aren't from the App Store. Go to System Preferences \(it's in the Applications folder\), click "Security & Privacy," and then the "General" tab. If your "Allow apps downloaded from:" is set to "Mac App Store," change it to "Mac App Store and identified developers."
+> 注意:OS XにPythonをインストールする前に、Macの設定でApp Store以外のパッケージをインストールできるようにする必要があります。 「システム環境設定」（「アプリケーション」フォルダ内）に移動し、「セキュリティとプライバシー」、「一般」タブの順にクリックします。 「ダウンロードしたアプリを許可する」が「Mac App Store」に設定されている場合は、「Mac App Storeと識別された開発者」に変更します。
 
-You need to go to the website[https://www.python.org/downloads/release/python-351/](https://www.python.org/downloads/release/python-351/)and download the Python installer:
+あなたはウェブサイト　[https://www.python.org/downloads/mac-osx/](https://www.python.org/downloads/mac-osx/)　に行き、Pythonインストーラをダウンロードする必要があります：
 
 * Download the
   _Mac OS X 64-bit/32-bit installer_
@@ -82,8 +76,6 @@ You need to go to the website[https://www.python.org/downloads/release/python-35
 * Double click
   _python-3.5.1-macosx10.6.pkg_
   to run the installer.
-
-### 
 
 ### Linux
 
