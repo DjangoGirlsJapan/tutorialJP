@@ -22,7 +22,7 @@ Windowsをお使いのかたは、 次のリンクからダウンロードする
 
 ```
 $ python3 --version
-Python 3.5.2
+Python 3.6.2
 ```
 
 もし、Pythonがインストールされていない場合、あるいはバージョンが古い場合は、次の指示に従ってインストールしてください。
@@ -32,7 +32,7 @@ Python 3.5.2
 次のコマンドをコンソールに打って下さい。
 
 ```
-sudo apt-get install python3.5 python3.5-venv
+sudo apt-get install python3.６ python3.６-venv
 ```
 
 #### Fedora
@@ -40,7 +40,7 @@ sudo apt-get install python3.5 python3.5-venv
 次のコマンドをコンソールに打って下さい。
 
 ```
-sudo yum install python3.5
+sudo yum install python3.６
 ```
 
 ### OS X
