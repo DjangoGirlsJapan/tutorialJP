@@ -70,7 +70,7 @@ urlpatterns = [
 
 ## blog.urls
 
-新しく`blogs/urls.py`という空のファイルを作って下さい。そして最初の2行を以下のように書きます：
+新しく`blog/urls.py`という空のファイルを作って下さい。そして最初の2行を以下のように書きます：
 
 ```
 from django.conf.urls import include, url
